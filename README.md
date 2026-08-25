@@ -163,14 +163,16 @@ scans, warns and **blocks** leaked secrets and non-compliant launches by default
 
 ---
 
-## 📊 The last few weeks
+## 📊 Activity
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Srimi1&show_icons=true&hide=stars,issues&count_private=true&include_all_commits=true&theme=tokyonight&hide_border=true&bg_color=0B1020&title_color=7C5CFF&icon_color=39D0D8&text_color=C7D2E6" height="165" alt="GitHub stats" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Srimi1&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0B1020&title_color=7C5CFF&text_color=C7D2E6" height="165" alt="Top languages" />
+<img src="https://streak-stats.demolab.com?user=Srimi1&theme=tokyonight&hide_border=true&background=0B1020&stroke=1B2440&ring=7C5CFF&fire=39D0D8&currStreakLabel=7C5CFF&sideLabels=C7D2E6&dates=6E7E9E" alt="Commit streak" />
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Srimi1&theme=tokyo-night&bg_color=0B1020&color=C7D2E6&line=7C5CFF&point=39D0D8&hide_border=true&area=true" width="100%" alt="Contribution graph" />
+<img src="https://ghchart.rshah.org/7c5cff/Srimi1" width="94%" alt="Contribution chart" />
+
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Srimi1&theme=nord_dark" height="180" alt="Repositories per language" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Srimi1&theme=nord_dark" height="180" alt="Most committed language" />
 
 </div>
 
