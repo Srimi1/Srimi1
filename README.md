@@ -180,16 +180,6 @@ scans, warns and **blocks** leaked secrets and non-compliant launches by default
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Srimi1/Srimi1/main/assets/six-eyes.svg" alt="Two burning cyan eyes flanking a hand reaching upward through embers" width="100%" />
-
-<sub>Eyes burning, a hand reaching, embers rising. Original artwork — a nod to <em>Jujutsu Kaisen</em>, drawn from scratch rather than borrowed.</sub>
-
-</div>
-
----
-
-<div align="center">
-
 ### Say hello
 
 <a href="https://linkedin.com/in/srijan-saanand"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
