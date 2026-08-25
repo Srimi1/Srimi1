@@ -1,128 +1,167 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="280" viewBox="0 0 860 280" role="img" aria-label="Two luminous cyan eyes opening over a field of embers">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="300" viewBox="0 0 860 300" role="img" aria-label="Two burning cyan eyes flanking a hand reaching upward through embers">
   <defs>
-    <radialGradient id="ember" cx="50%" cy="62%" r="72%">
-      <stop offset="0%" stop-color="#ff7a1a"/>
-      <stop offset="34%" stop-color="#c2260c"/>
-      <stop offset="70%" stop-color="#4a0a06"/>
-      <stop offset="100%" stop-color="#0a0402"/>
+    <radialGradient id="ember" cx="50%" cy="70%" r="78%">
+      <stop offset="0%" stop-color="#ff8f2a"/>
+      <stop offset="26%" stop-color="#e03a0c"/>
+      <stop offset="58%" stop-color="#7a1206"/>
+      <stop offset="100%" stop-color="#080201"/>
     </radialGradient>
     <radialGradient id="iris">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="18%" stop-color="#b8f6ff"/>
-      <stop offset="46%" stop-color="#22c8ff"/>
-      <stop offset="78%" stop-color="#0a5cc8"/>
-      <stop offset="100%" stop-color="#03204f"/>
+      <stop offset="14%" stop-color="#c9f8ff"/>
+      <stop offset="40%" stop-color="#1fd0ff"/>
+      <stop offset="72%" stop-color="#0a63d8"/>
+      <stop offset="100%" stop-color="#031a45"/>
     </radialGradient>
     <radialGradient id="eyeGlow">
-      <stop offset="0%" stop-color="#6fe4ff" stop-opacity="0.95"/>
-      <stop offset="55%" stop-color="#1b9bff" stop-opacity="0.35"/>
+      <stop offset="0%" stop-color="#7fe9ff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#1b9bff" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="#0a5cc8" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="handSkin" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#2a0803"/>
+      <stop offset="45%" stop-color="#b8420f"/>
+      <stop offset="100%" stop-color="#ffb056"/>
+    </linearGradient>
     <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#22c8ff"/>
-      <stop offset="50%" stop-color="#ff7a1a"/>
-      <stop offset="100%" stop-color="#22c8ff"/>
+      <stop offset="0%" stop-color="#1fd0ff"/>
+      <stop offset="50%" stop-color="#ff8f2a"/>
+      <stop offset="100%" stop-color="#1fd0ff"/>
       <animate attributeName="x1" values="0;1;0" dur="8s" repeatCount="indefinite"/>
       <animate attributeName="x2" values="1;2;1" dur="8s" repeatCount="indefinite"/>
     </linearGradient>
-    <filter id="bloom" x="-70%" y="-70%" width="240%" height="240%">
-      <feGaussianBlur stdDeviation="10"/>
-    </filter>
-    <filter id="softBloom" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="3.5"/>
-    </filter>
-    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
-      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.75"/>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="72%">
+      <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
     </radialGradient>
-    <clipPath id="frame"><rect width="860" height="280" rx="18"/></clipPath>
-    <path id="eyeShape" d="M -104 0 C -62 -52, 62 -52, 104 0 C 62 52, -62 52, -104 0 Z"/>
-    <clipPath id="lidL"><use href="#eyeShape" x="286" y="120"/></clipPath>
-    <clipPath id="lidR"><use href="#eyeShape" x="574" y="120"/></clipPath>
+    <filter id="bloom" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="11"/></filter>
+    <filter id="rimGlow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="4"/></filter>
+    <clipPath id="frame"><rect width="860" height="300" rx="18"/></clipPath>
+    <path id="eyeShape" d="M -120 0 C -74 -60, 74 -60, 120 0 C 74 60, -74 60, -120 0 Z"/>
+    <clipPath id="lidL"><use href="#eyeShape" x="176" y="104" transform="rotate(-9 176 104)"/></clipPath>
+    <clipPath id="lidR"><use href="#eyeShape" x="684" y="104" transform="rotate(9 684 104)"/></clipPath>
   </defs>
 
   <g clip-path="url(#frame)">
-    <rect width="860" height="280" fill="url(#ember)"/>
+    <rect width="860" height="300" fill="url(#ember)"/>
 
-    <!-- embers rising -->
-    <g fill="#ffb057">
-      <circle cx="120" cy="300" r="2.2" opacity="0.9"><animate attributeName="cy" values="300;-20" dur="7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7s" repeatCount="indefinite"/></circle>
-      <circle cx="245" cy="300" r="1.6" opacity="0.8"><animate attributeName="cy" values="300;-20" dur="9s" begin="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0" dur="9s" begin="1.5s" repeatCount="indefinite"/></circle>
-      <circle cx="430" cy="300" r="2.6" opacity="0.85"><animate attributeName="cy" values="300;-20" dur="6.2s" begin="0.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.85;0" dur="6.2s" begin="0.8s" repeatCount="indefinite"/></circle>
-      <circle cx="612" cy="300" r="1.9" opacity="0.85"><animate attributeName="cy" values="300;-20" dur="8.4s" begin="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.85;0" dur="8.4s" begin="2.2s" repeatCount="indefinite"/></circle>
-      <circle cx="738" cy="300" r="2.1" opacity="0.9"><animate attributeName="cy" values="300;-20" dur="7.6s" begin="3.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7.6s" begin="3.1s" repeatCount="indefinite"/></circle>
-      <circle cx="812" cy="300" r="1.4" opacity="0.7"><animate attributeName="cy" values="300;-20" dur="10s" begin="4.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="10s" begin="4.4s" repeatCount="indefinite"/></circle>
-      <circle cx="60" cy="300" r="1.5" opacity="0.7"><animate attributeName="cy" values="300;-20" dur="11s" begin="5.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="11s" begin="5.6s" repeatCount="indefinite"/></circle>
-    </g>
-
-    <!-- cursed energy rising between them -->
-    <g filter="url(#bloom)">
-      <path d="M430 285 C 404 230, 452 208, 430 150 C 408 208, 456 230, 430 285 Z" fill="#ff8a2b" opacity="0.5">
-        <animate attributeName="opacity" values="0.28;0.6;0.28" dur="3.4s" repeatCount="indefinite"/>
+    <!-- flame licks off the floor -->
+    <g filter="url(#rimGlow)" opacity="0.85">
+      <path d="M300 300 C 288 250, 320 232, 306 196 C 296 234, 272 250, 300 300 Z" fill="#ff6a12" opacity="0.45">
+        <animate attributeName="opacity" values="0.2;0.55;0.2" dur="2.9s" repeatCount="indefinite"/>
       </path>
-      <path d="M430 285 C 416 240, 444 222, 430 182 C 416 222, 444 240, 430 285 Z" fill="#ffc46b" opacity="0.45">
-        <animate attributeName="opacity" values="0.5;0.22;0.5" dur="2.6s" repeatCount="indefinite"/>
+      <path d="M560 300 C 574 244, 544 226, 558 190 C 570 228, 592 246, 560 300 Z" fill="#ff6a12" opacity="0.45">
+        <animate attributeName="opacity" values="0.5;0.18;0.5" dur="3.6s" repeatCount="indefinite"/>
       </path>
     </g>
 
-    <!-- ══ left eye ══ -->
-    <g>
-      <ellipse cx="286" cy="120" rx="150" ry="96" fill="url(#eyeGlow)" filter="url(#bloom)">
-        <animate attributeName="opacity" values="0.75;1;0.75" dur="3.2s" repeatCount="indefinite"/>
-      </ellipse>
-      <use href="#eyeShape" x="286" y="120" fill="#04121f"/>
-      <g clip-path="url(#lidL)">
-        <circle cx="286" cy="120" r="38" fill="url(#iris)">
-          <animate attributeName="r" values="38;32;38" dur="4.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="286" cy="120" r="14" fill="#02101f">
-          <animate attributeName="r" values="14;9;14" dur="4.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="266" cy="102" r="5" fill="#ffffff" opacity="0.85"/>
-        <!-- perception ring pushing outward -->
-        <circle cx="286" cy="120" r="38" fill="none" stroke="#9ef0ff" stroke-width="1.5" opacity="0">
-          <animate attributeName="r" values="38;150" dur="3.6s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.8;0" dur="3.6s" repeatCount="indefinite"/>
-        </circle>
-        <!-- eyelid -->
-        <rect x="170" y="20" width="232" height="200" fill="#0a0402">
-          <animate attributeName="y" values="-190;-190;20;-190;-190" dur="8s" repeatCount="indefinite" keyTimes="0;0.62;0.66;0.70;1"/>
-        </rect>
-      </g>
-      <use href="#eyeShape" x="286" y="120" fill="none" stroke="#bff0ff" stroke-width="2" opacity="0.9" filter="url(#softBloom)"/>
+    <!-- embers -->
+    <g fill="#ffc074">
+      <circle cx="120" cy="320" r="2.4"><animate attributeName="cy" values="320;-20" dur="6.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.95;0" dur="6.4s" repeatCount="indefinite"/></circle>
+      <circle cx="238" cy="320" r="1.7"><animate attributeName="cy" values="320;-20" dur="8.6s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.85;0" dur="8.6s" begin="1.4s" repeatCount="indefinite"/></circle>
+      <circle cx="352" cy="320" r="2.1"><animate attributeName="cy" values="320;-20" dur="7.2s" begin="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7.2s" begin="2.6s" repeatCount="indefinite"/></circle>
+      <circle cx="508" cy="320" r="2.8"><animate attributeName="cy" values="320;-20" dur="5.9s" begin="0.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="5.9s" begin="0.7s" repeatCount="indefinite"/></circle>
+      <circle cx="642" cy="320" r="1.9"><animate attributeName="cy" values="320;-20" dur="9.1s" begin="3.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.85;0" dur="9.1s" begin="3.3s" repeatCount="indefinite"/></circle>
+      <circle cx="768" cy="320" r="2.2"><animate attributeName="cy" values="320;-20" dur="7.8s" begin="4.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="7.8s" begin="4.6s" repeatCount="indefinite"/></circle>
+      <circle cx="60" cy="320" r="1.5"><animate attributeName="cy" values="320;-20" dur="10.5s" begin="5.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.7;0" dur="10.5s" begin="5.8s" repeatCount="indefinite"/></circle>
+      <circle cx="820" cy="320" r="1.6"><animate attributeName="cy" values="320;-20" dur="9.8s" begin="2.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.75;0" dur="9.8s" begin="2.1s" repeatCount="indefinite"/></circle>
     </g>
 
-    <!-- ══ right eye ══ -->
-    <g>
-      <ellipse cx="574" cy="120" rx="150" ry="96" fill="url(#eyeGlow)" filter="url(#bloom)">
-        <animate attributeName="opacity" values="1;0.75;1" dur="3.2s" repeatCount="indefinite"/>
+    <!-- ══════ left eye ══════ -->
+    <g transform="rotate(-9 176 104)">
+      <ellipse cx="176" cy="104" rx="176" ry="112" fill="url(#eyeGlow)" filter="url(#bloom)">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="3.1s" repeatCount="indefinite"/>
       </ellipse>
-      <use href="#eyeShape" x="574" y="120" fill="#04121f"/>
-      <g clip-path="url(#lidR)">
-        <circle cx="574" cy="120" r="38" fill="url(#iris)">
-          <animate attributeName="r" values="38;32;38" dur="4.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="574" cy="120" r="14" fill="#02101f">
-          <animate attributeName="r" values="14;9;14" dur="4.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="554" cy="102" r="5" fill="#ffffff" opacity="0.85"/>
-        <circle cx="574" cy="120" r="38" fill="none" stroke="#9ef0ff" stroke-width="1.5" opacity="0">
-          <animate attributeName="r" values="38;150" dur="3.6s" begin="1.8s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.8;0" dur="3.6s" begin="1.8s" repeatCount="indefinite"/>
-        </circle>
-        <rect x="458" y="20" width="232" height="200" fill="#0a0402">
-          <animate attributeName="y" values="-190;-190;20;-190;-190" dur="8s" repeatCount="indefinite" keyTimes="0;0.62;0.66;0.70;1"/>
-        </rect>
-      </g>
-      <use href="#eyeShape" x="574" y="120" fill="none" stroke="#bff0ff" stroke-width="2" opacity="0.9" filter="url(#softBloom)"/>
+      <use href="#eyeShape" x="176" y="104" fill="#050d18"/>
+    </g>
+    <g clip-path="url(#lidL)">
+      <circle cx="176" cy="104" r="44" fill="url(#iris)">
+        <animate attributeName="r" values="44;37;44" dur="4.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="176" cy="104" r="16" fill="#020a16">
+        <animate attributeName="r" values="16;10;16" dur="4.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="154" cy="86" r="6" fill="#ffffff" opacity="0.9"/>
+      <circle cx="176" cy="104" r="44" fill="none" stroke="#a9f2ff" stroke-width="1.6" opacity="0">
+        <animate attributeName="r" values="44;170" dur="3.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.85;0" dur="3.4s" repeatCount="indefinite"/>
+      </circle>
+      <rect x="40" y="-4" width="272" height="220" fill="#080201">
+        <animate attributeName="y" values="-220;-220;-4;-220;-220" dur="8s" repeatCount="indefinite" keyTimes="0;0.63;0.665;0.70;1"/>
+      </rect>
+    </g>
+    <g transform="rotate(-9 176 104)">
+      <use href="#eyeShape" x="176" y="104" fill="none" stroke="#ffd08a" stroke-width="3" opacity="0.95" filter="url(#rimGlow)"/>
+      <use href="#eyeShape" x="176" y="104" fill="none" stroke="#fff4dd" stroke-width="1.2" opacity="0.9"/>
     </g>
 
-    <text x="430" y="252" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#ffd7ad" letter-spacing="4" opacity="0.75">
-      天上天下唯我独尊
-      <animate attributeName="opacity" values="0.45;0.9;0.45" dur="6s" repeatCount="indefinite"/>
-    </text>
+    <!-- ══════ right eye ══════ -->
+    <g transform="rotate(9 684 104)">
+      <ellipse cx="684" cy="104" rx="176" ry="112" fill="url(#eyeGlow)" filter="url(#bloom)">
+        <animate attributeName="opacity" values="1;0.7;1" dur="3.1s" repeatCount="indefinite"/>
+      </ellipse>
+      <use href="#eyeShape" x="684" y="104" fill="#050d18"/>
+    </g>
+    <g clip-path="url(#lidR)">
+      <circle cx="684" cy="104" r="44" fill="url(#iris)">
+        <animate attributeName="r" values="44;37;44" dur="4.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="684" cy="104" r="16" fill="#020a16">
+        <animate attributeName="r" values="16;10;16" dur="4.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="662" cy="86" r="6" fill="#ffffff" opacity="0.9"/>
+      <circle cx="684" cy="104" r="44" fill="none" stroke="#a9f2ff" stroke-width="1.6" opacity="0">
+        <animate attributeName="r" values="44;170" dur="3.4s" begin="1.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.85;0" dur="3.4s" begin="1.7s" repeatCount="indefinite"/>
+      </circle>
+      <rect x="548" y="-4" width="272" height="220" fill="#080201">
+        <animate attributeName="y" values="-220;-220;-4;-220;-220" dur="8s" repeatCount="indefinite" keyTimes="0;0.63;0.665;0.70;1"/>
+      </rect>
+    </g>
+    <g transform="rotate(9 684 104)">
+      <use href="#eyeShape" x="684" y="104" fill="none" stroke="#ffd08a" stroke-width="3" opacity="0.95" filter="url(#rimGlow)"/>
+      <use href="#eyeShape" x="684" y="104" fill="none" stroke="#fff4dd" stroke-width="1.2" opacity="0.9"/>
+    </g>
 
-    <rect width="860" height="280" fill="url(#vignette)"/>
-    <rect x="0" y="276" width="860" height="4" fill="url(#rule)"/>
+    <!-- ══════ the hand, reaching ══════ -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 16; 0 -8; 0 16" dur="5.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.4 1;0.4 0 0.4 1"/>
+      <ellipse cx="430" cy="180" rx="104" ry="126" fill="#ff7a1a" opacity="0.55" filter="url(#bloom)">
+        <animate attributeName="opacity" values="0.38;0.7;0.38" dur="3.3s" repeatCount="indefinite"/>
+      </ellipse>
+      <g transform="translate(430 300) scale(1.34) translate(-430 -300)">
+        <path fill="url(#handSkin)" stroke="#ffd9a0" stroke-width="1.1" stroke-linejoin="round" d="
+          M406 300
+          L402 250
+          C396 240 388 232 380 222
+          C368 208 356 196 362 188
+          C369 180 382 192 392 206
+          C395 214 398 220 400 226
+          C399 208 399 190 400 176
+          C401 158 404 138 411 136
+          C418 134 419 152 419 172
+          C419 184 419 194 420 202
+          C420 182 421 156 424 138
+          C426 122 431 116 436 118
+          C442 120 442 142 441 164
+          C440 178 440 192 440 202
+          C442 184 445 162 449 150
+          C453 136 459 132 463 136
+          C468 141 466 162 463 180
+          C461 192 460 198 459 206
+          C462 194 466 182 470 176
+          C476 168 482 170 483 178
+          C484 190 476 214 468 232
+          C463 244 460 248 458 254
+          L456 300
+          Z">
+          <animate attributeName="opacity" values="1;1" dur="6s" repeatCount="indefinite"/>
+        </path>
+        <path d="M406 300 L402 262 Q430 254 456 262 L456 300 Z" fill="#140301" opacity="0.9"/>
+      </g>
+    </g>
+
+    <rect width="860" height="300" fill="url(#vignette)"/>
+    <rect x="0" y="296" width="860" height="4" fill="url(#rule)"/>
   </g>
 </svg>
