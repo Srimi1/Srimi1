@@ -180,6 +180,16 @@ scans, warns and **blocks** leaked secrets and non-compliant launches by default
 
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/Srimi1/Srimi1/main/assets/limitless.svg" alt="Cursed energy: red and blue collide into a purple core behind an infinity barrier" width="100%" />
+
+<sub>Red and blue collide, the imaginary mass answers, and the barrier holds. Original artwork — a nod to <em>Jujutsu Kaisen</em>, not a copy of it.</sub>
+
+</div>
+
+---
+
+<div align="center">
+
 ### Say hello
 
 <a href="https://linkedin.com/in/srijan-saanand"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
