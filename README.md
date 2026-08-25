@@ -180,9 +180,9 @@ scans, warns and **blocks** leaked secrets and non-compliant launches by default
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Srimi1/Srimi1/main/assets/limitless.svg" alt="Cursed energy: red and blue collide into a purple core behind an infinity barrier" width="100%" />
+<img src="https://raw.githubusercontent.com/Srimi1/Srimi1/main/assets/six-eyes.svg" alt="Two luminous cyan eyes opening over a field of embers" width="100%" />
 
-<sub>Red and blue collide, the imaginary mass answers, and the barrier holds. Original artwork — a nod to <em>Jujutsu Kaisen</em>, not a copy of it.</sub>
+<sub>Six eyes open, and the ember field answers. Original artwork — a nod to <em>Jujutsu Kaisen</em>, drawn from scratch rather than borrowed.</sub>
 
 </div>
 
