@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="240" viewBox="0 0 860 240" role="img" aria-label="Srijan Saanand — building native apps and agent tooling">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="55%" stop-color="#111a33"/>
+      <stop offset="100%" stop-color="#1b1030"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c5cff"/>
+      <stop offset="50%" stop-color="#39d0d8"/>
+      <stop offset="100%" stop-color="#7c5cff"/>
+      <animate attributeName="x1" values="0;1;0" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;2;1" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <clipPath id="rounded">
+      <rect width="860" height="240" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#rounded)">
+    <rect width="860" height="240" fill="url(#sky)"/>
+
+    <!-- drifting glow -->
+    <circle cx="150" cy="60" r="90" fill="#7c5cff" opacity="0.22" filter="url(#soft)">
+      <animate attributeName="cx" values="150;700;150" dur="18s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="60;190;60" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="690" cy="180" r="70" fill="#39d0d8" opacity="0.18" filter="url(#soft)">
+      <animate attributeName="cx" values="690;220;690" dur="21s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="180;50;180" dur="16s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- the notch, opening and closing -->
+    <g>
+      <rect x="360" y="0" width="140" height="30" rx="15" fill="#05070f" stroke="url(#accent)" stroke-width="1.2">
+        <animate attributeName="x" values="360;300;300;360;360" dur="7s" repeatCount="indefinite"
+                 keyTimes="0;0.18;0.62;0.8;1" calcMode="spline"
+                 keySplines="0.3 0 0 1;0 0 1 1;0.3 0 0 1;0 0 1 1"/>
+        <animate attributeName="width" values="140;260;260;140;140" dur="7s" repeatCount="indefinite"
+                 keyTimes="0;0.18;0.62;0.8;1" calcMode="spline"
+                 keySplines="0.3 0 0 1;0 0 1 1;0.3 0 0 1;0 0 1 1"/>
+        <animate attributeName="height" values="30;58;58;30;30" dur="7s" repeatCount="indefinite"
+                 keyTimes="0;0.18;0.62;0.8;1" calcMode="spline"
+                 keySplines="0.3 0 0 1;0 0 1 1;0.3 0 0 1;0 0 1 1"/>
+      </rect>
+      <!-- contents that appear only while it is open -->
+      <g opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;0;0" dur="7s" repeatCount="indefinite"
+                 keyTimes="0;0.22;0.32;0.58;0.68;1"/>
+        <circle cx="330" cy="29" r="8" fill="#39d0d8" opacity="0.85"/>
+        <rect x="348" y="22" width="96" height="6" rx="3" fill="#ffffff" opacity="0.65"/>
+        <rect x="348" y="34" width="60" height="5" rx="2.5" fill="#ffffff" opacity="0.35"/>
+        <g fill="#ffffff" opacity="0.55">
+          <rect x="470" y="24" width="4" height="12" rx="2">
+            <animate attributeName="height" values="12;4;12" dur="0.9s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="24;28;24" dur="0.9s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="480" y="20" width="4" height="20" rx="2">
+            <animate attributeName="height" values="20;7;20" dur="0.7s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="20;26;20" dur="0.7s" repeatCount="indefinite"/>
+          </rect>
+          <rect x="490" y="26" width="4" height="9" rx="2">
+            <animate attributeName="height" values="9;18;9" dur="1.1s" repeatCount="indefinite"/>
+            <animate attributeName="y" values="26;21;26" dur="1.1s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+      </g>
+    </g>
+
+    <text x="48" y="132" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="40" font-weight="700" fill="#ffffff">
+      Srijan Saanand
+    </text>
+    <text x="48" y="168" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="15" fill="#9fb0d0">
+      native apps for macOS, iOS and Android
+    </text>
+
+    <!-- prompt line -->
+    <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="15">
+      <text x="48" y="204" fill="#39d0d8">$</text>
+      <text x="66" y="204" fill="#c7d2e6">swift build &amp;&amp; ./scripts/check.sh</text>
+      <rect x="374" y="192" width="9" height="16" fill="#7c5cff">
+        <animate attributeName="opacity" values="1;1;0;0" dur="1.1s" repeatCount="indefinite" keyTimes="0;0.45;0.5;1"/>
+      </rect>
+    </g>
+
+    <rect x="0" y="0" width="860" height="240" fill="url(#fade)"/>
+    <rect x="0" y="236" width="860" height="4" fill="url(#accent)"/>
+  </g>
+</svg>
