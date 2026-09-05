@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/hero.svg" width="100%" alt="Srijan Saanand — Build what you wish existed. Native apps, useful tools, and agent experiments." />
+<img src="assets/hero-v2.svg" width="100%" alt="Srijan Saanand — Build what you wish existed. Native apps, useful tools, and agent experiments." />
 
 <br />
 

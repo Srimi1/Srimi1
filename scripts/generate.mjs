@@ -13,7 +13,7 @@ let hero=start(420,'Srijan Saanand — Build what you wish existed.','Developer 
 hero+=`<defs><clipPath id="portrait"><rect x="720" y="24" width="356" height="372" rx="18"/></clipPath><linearGradient id="line"><stop stop-color="#08a9ff"/><stop offset="1" stop-color="#6edfff"/></linearGradient></defs><path d="M40 36H665" stroke="#203547"/><circle cx="49" cy="69" r="4" fill="#52e1bf"/>`;
 hero+=text(65,74,'SRIJAN SAANAND / @SRIMI1',14,'mono')+text(40,150,'Build what you',52)+text(40,211,'wish existed.',52)+text(40,263,'Native apps. Useful tools. Agent experiments.',21,'muted')+text(40,300,'Developer & student · India',17,'muted');
 hero+=`<rect x="40" y="337" width="626" height="3" rx="2" fill="url(#line)"/>`+text(40,375,'SWIFT   /   RUST   /   TYPESCRIPT   /   PYTHON   /   KOTLIN',12,'mono')+`<image x="720" y="24" width="356" height="372" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait)" xlink:href="${avatar}"/></svg>`;
-await writeFile('assets/hero.svg',hero);
+await writeFile('assets/hero-v2.svg',hero);
 const colors={NONE:'#172b3c',FIRST_QUARTILE:'#125676',SECOND_QUARTILE:'#087fb3',THIRD_QUARTILE:'#08a9ee',FOURTH_QUARTILE:'#77e3ff'};
 const pos=d=>[38+d.x*19.35,110+d.y*19.35];
 let svg=start(390,'Quiet Days Quest — Srijan’s contribution calendar',`${s.total} contributions, ${s.active} contribution days and ${s.quiet} days with no recorded contributions. A mini avatar follows empty calendar cells. GitHub contributions do not measure all work.`);
