@@ -1,133 +1,13 @@
 [
   {
-    "name": "muse-codex",
-    "html_url": "https://github.com/Srimi1/muse-codex",
-    "description": "Independent macOS compatibility gateway connecting Meta Muse Code to OpenAI models while preserving Muse tools, approvals, and sandboxing.",
+    "name": "-claude-design-mcp-",
+    "html_url": "https://github.com/Srimi1/-claude-design-mcp-",
+    "description": "MCP server in Rust that connects Claude Code with claude.ai/design for automatic UI/UX assistance",
     "language": "Rust",
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-05T15:34:42Z"
-  },
-  {
-    "name": "Internet-speed-reader",
-    "html_url": "https://github.com/Srimi1/Internet-speed-reader",
-    "description": "Native macOS menu-bar network monitor with automatic live traffic and manual speed tests. Built with Swift 6.",
-    "language": "Swift",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-09-05T12:04:15Z"
-  },
-  {
-    "name": "Notch-hub",
-    "html_url": "https://github.com/Srimi1/Notch-hub",
-    "description": "Native, local-first macOS dashboard for the MacBook notch: Next Up, timers, media, calendar, reminders, clipboard, Focus, battery, and system status.",
-    "language": "Swift",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-09-05T05:13:08Z"
-  },
-  {
-    "name": "P-Agents",
-    "html_url": "https://github.com/Srimi1/P-Agents",
-    "description": "Model-agnostic multi-agent AI harness in Rust \u2014 streaming ReAct loop, isolated sub-agents, gated tools, replayable sessions. Learning in public.",
-    "language": "Rust",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-09-01T04:41:53Z"
-  },
-  {
-    "name": "TradingAgents",
-    "html_url": "https://github.com/Srimi1/TradingAgents",
-    "description": "I am also joining",
-    "language": null,
-    "fork": true,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-06-17T18:17:31Z"
-  },
-  {
-    "name": "potential-octo-dollop",
-    "html_url": "https://github.com/Srimi1/potential-octo-dollop",
-    "description": null,
-    "language": "Swift",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-29T20:37:22Z"
-  },
-  {
-    "name": "Time-travel-debugger",
-    "html_url": "https://github.com/Srimi1/Time-travel-debugger",
-    "description": null,
-    "language": null,
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-29T16:49:14Z"
-  },
-  {
-    "name": "P-Harness",
-    "html_url": "https://github.com/Srimi1/P-Harness",
-    "description": null,
-    "language": "TypeScript",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-27T17:07:45Z"
-  },
-  {
-    "name": "LifeOs-Inbox",
-    "html_url": "https://github.com/Srimi1/LifeOs-Inbox",
-    "description": null,
-    "language": "TypeScript",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-25T19:26:54Z"
-  },
-  {
-    "name": "Srimi1",
-    "html_url": "https://github.com/Srimi1/Srimi1",
-    "description": null,
-    "language": null,
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-25T18:42:37Z"
-  },
-  {
-    "name": "trieonlabs.com",
-    "html_url": "https://github.com/Srimi1/trieonlabs.com",
-    "description": "Official site of Trieon Labs \u2014 liquid-glass landing page with live GitHub feed",
-    "language": "CSS",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-25T17:59:46Z"
-  },
-  {
-    "name": "The-Keyboard-project",
-    "html_url": "https://github.com/Srimi1/The-Keyboard-project",
-    "description": "An iOS keyboard extension that brings the native Android keyboard layout, key placement, and typing feel to iPhone.",
-    "language": "Swift",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-22T12:05:03Z"
-  },
-  {
-    "name": "Wallps",
-    "html_url": "https://github.com/Srimi1/Wallps",
-    "description": null,
-    "language": "Swift",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-22T11:22:37Z"
+    "pushed_at": "2026-05-06T15:57:32Z"
   },
   {
     "name": "120fps-player",
@@ -140,76 +20,6 @@
     "pushed_at": "2026-08-20T10:01:52Z"
   },
   {
-    "name": "iphone-clipboard",
-    "html_url": "https://github.com/Srimi1/iphone-clipboard",
-    "description": null,
-    "language": "Swift",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-13T10:20:01Z"
-  },
-  {
-    "name": "nightcrawler-v",
-    "html_url": "https://github.com/Srimi1/nightcrawler-v",
-    "description": "Local AI powered red teamer on a phone",
-    "language": null,
-    "fork": true,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-08-07T01:50:14Z"
-  },
-  {
-    "name": "CodexBar",
-    "html_url": "https://github.com/Srimi1/CodexBar",
-    "description": "CodexBar fork with added Sakana AI provider support, including API key validation, console-cookie quota tracking, 5-hour and weekly usage display, and native Sakana branding.",
-    "language": "Swift",
-    "fork": true,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-06-28T09:53:16Z"
-  },
-  {
-    "name": "oh-my-pi",
-    "html_url": "https://github.com/Srimi1/oh-my-pi",
-    "description": "\u2325  AI Coding agent for the terminal \u2014 hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
-    "language": "TypeScript",
-    "fork": true,
-    "archived": false,
-    "stargazers_count": 1,
-    "pushed_at": "2026-06-18T05:06:46Z"
-  },
-  {
-    "name": "Constitution",
-    "html_url": "https://github.com/Srimi1/Constitution",
-    "description": null,
-    "language": "Shell",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 1,
-    "pushed_at": "2026-06-16T14:40:21Z"
-  },
-  {
-    "name": "ruflo",
-    "html_url": "https://github.com/Srimi1/ruflo",
-    "description": "\ud83c\udf0a The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
-    "language": "TypeScript",
-    "fork": true,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-06-04T18:45:00Z"
-  },
-  {
-    "name": "Sera-Autonomous-Agent",
-    "html_url": "https://github.com/Srimi1/Sera-Autonomous-Agent",
-    "description": "Autonomous personal agent with a self-improving Python core \u2014 typed-causal memory, on-device LoRA, encrypted approvals, and multi-channel presence.",
-    "language": "Python",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-05-26T08:31:41Z"
-  },
-  {
     "name": "Ai.Trader",
     "html_url": "https://github.com/Srimi1/Ai.Trader",
     "description": null,
@@ -220,194 +30,14 @@
     "pushed_at": "2026-05-29T12:26:03Z"
   },
   {
-    "name": "-claude-design-mcp-",
-    "html_url": "https://github.com/Srimi1/-claude-design-mcp-",
-    "description": "MCP server in Rust that connects Claude Code with claude.ai/design for automatic UI/UX assistance",
-    "language": "Rust",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-05-06T15:57:32Z"
-  },
-  {
-    "name": "Friday-001",
-    "html_url": "https://github.com/Srimi1/Friday-001",
-    "description": null,
-    "language": null,
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-05-03T16:34:21Z"
-  },
-  {
-    "name": "iphone-wallpaper-resizer",
-    "html_url": "https://github.com/Srimi1/iphone-wallpaper-resizer",
-    "description": "Resize any photo to exact iPhone 17 screen dimensions \u2014 drag, drop, download. Zero dependencies, works offline.",
-    "language": "HTML",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-05-03T14:58:47Z"
-  },
-  {
-    "name": "Veronica",
-    "html_url": "https://github.com/Srimi1/Veronica",
+    "name": "Anti",
+    "html_url": "https://github.com/Srimi1/Anti",
     "description": null,
     "language": "JavaScript",
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-05-02T17:59:09Z"
-  },
-  {
-    "name": "Friday-core",
-    "html_url": "https://github.com/Srimi1/Friday-core",
-    "description": null,
-    "language": "JavaScript",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-05-02T13:27:24Z"
-  },
-  {
-    "name": "tiny-tts",
-    "html_url": "https://github.com/Srimi1/tiny-tts",
-    "description": "The Smallest English TTS Model with only 1M parameters",
-    "language": null,
-    "fork": true,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-10T08:46:53Z"
-  },
-  {
-    "name": "line-bot-2",
-    "html_url": "https://github.com/Srimi1/line-bot-2",
-    "description": null,
-    "language": "TypeScript",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-26T16:10:03Z"
-  },
-  {
-    "name": "First-A.I-Bot",
-    "html_url": "https://github.com/Srimi1/First-A.I-Bot",
-    "description": null,
-    "language": "Python",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-24T13:53:58Z"
-  },
-  {
-    "name": "Prompt-Forge",
-    "html_url": "https://github.com/Srimi1/Prompt-Forge",
-    "description": "Turns messy ideas into production-ready AI prompts. Built for Claude, Codex, ChatGPT, Gemini \u2014 any AI.",
-    "language": null,
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-23T23:26:44Z"
-  },
-  {
-    "name": "New-Jarvis",
-    "html_url": "https://github.com/Srimi1/New-Jarvis",
-    "description": "Clap twice and JARVIS launches your full workspace. macOS voice assistant with internet check, music, and dev environment automation.",
-    "language": "Python",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-23T15:46:44Z"
-  },
-  {
-    "name": "Project-Websites",
-    "html_url": "https://github.com/Srimi1/Project-Websites",
-    "description": null,
-    "language": "TypeScript",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-22T18:45:02Z"
-  },
-  {
-    "name": "New_Friday",
-    "html_url": "https://github.com/Srimi1/New_Friday",
-    "description": null,
-    "language": "HTML",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-19T21:09:43Z"
-  },
-  {
-    "name": "Nagi-plugin",
-    "html_url": "https://github.com/Srimi1/Nagi-plugin",
-    "description": null,
-    "language": null,
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-18T19:25:06Z"
-  },
-  {
-    "name": "Research-Pro",
-    "html_url": "https://github.com/Srimi1/Research-Pro",
-    "description": "Plugin that will help you fro Research",
-    "language": null,
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-15T15:43:08Z"
-  },
-  {
-    "name": "ESG-Project-For-Claude",
-    "html_url": "https://github.com/Srimi1/ESG-Project-For-Claude",
-    "description": null,
-    "language": null,
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-14T19:20:47Z"
-  },
-  {
-    "name": "skills-copilot-codespaces-vscode",
-    "html_url": "https://github.com/Srimi1/skills-copilot-codespaces-vscode",
-    "description": "My clone repository",
-    "language": null,
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-14T10:35:46Z"
-  },
-  {
-    "name": "Claude_plugins",
-    "html_url": "https://github.com/Srimi1/Claude_plugins",
-    "description": null,
-    "language": "Python",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-11T13:22:16Z"
-  },
-  {
-    "name": "friday",
-    "html_url": "https://github.com/Srimi1/friday",
-    "description": null,
-    "language": "Python",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-09T12:38:42Z"
-  },
-  {
-    "name": "First-ai-agent",
-    "html_url": "https://github.com/Srimi1/First-ai-agent",
-    "description": "An autonomous AI career agent that manages your job search pipeline. It intelligently scores roles based on resume fit, performs risk-reward analysis, and sends personalized cold emails. Features automated response monitoring and calendar scheduling for a disciplined, data-backed job search.",
-    "language": "Python",
-    "fork": false,
-    "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-04-06T13:14:45Z"
+    "pushed_at": "2026-04-03T17:12:27Z"
   },
   {
     "name": "bots",
@@ -430,6 +60,126 @@
     "pushed_at": "2026-04-04T09:17:54Z"
   },
   {
+    "name": "Claude_plugins",
+    "html_url": "https://github.com/Srimi1/Claude_plugins",
+    "description": null,
+    "language": "Python",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-11T13:22:16Z"
+  },
+  {
+    "name": "CodexBar",
+    "html_url": "https://github.com/Srimi1/CodexBar",
+    "description": "CodexBar fork with added Sakana AI provider support, including API key validation, console-cookie quota tracking, 5-hour and weekly usage display, and native Sakana branding.",
+    "language": "Swift",
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-06-28T09:53:16Z"
+  },
+  {
+    "name": "Constitution",
+    "html_url": "https://github.com/Srimi1/Constitution",
+    "description": null,
+    "language": "Shell",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 1,
+    "pushed_at": "2026-06-16T14:40:21Z"
+  },
+  {
+    "name": "ESG-Project-For-Claude",
+    "html_url": "https://github.com/Srimi1/ESG-Project-For-Claude",
+    "description": null,
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-14T19:20:47Z"
+  },
+  {
+    "name": "First-A.I-Bot",
+    "html_url": "https://github.com/Srimi1/First-A.I-Bot",
+    "description": null,
+    "language": "Python",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-24T13:53:58Z"
+  },
+  {
+    "name": "First-ai-agent",
+    "html_url": "https://github.com/Srimi1/First-ai-agent",
+    "description": "An autonomous AI career agent that manages your job search pipeline. It intelligently scores roles based on resume fit, performs risk-reward analysis, and sends personalized cold emails. Features automated response monitoring and calendar scheduling for a disciplined, data-backed job search.",
+    "language": "Python",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-06T13:14:45Z"
+  },
+  {
+    "name": "friday",
+    "html_url": "https://github.com/Srimi1/friday",
+    "description": null,
+    "language": "Python",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-09T12:38:42Z"
+  },
+  {
+    "name": "Friday-001",
+    "html_url": "https://github.com/Srimi1/Friday-001",
+    "description": null,
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-05-03T16:34:21Z"
+  },
+  {
+    "name": "Friday-core",
+    "html_url": "https://github.com/Srimi1/Friday-core",
+    "description": null,
+    "language": "JavaScript",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-05-02T13:27:24Z"
+  },
+  {
+    "name": "Internet-speed-reader",
+    "html_url": "https://github.com/Srimi1/Internet-speed-reader",
+    "description": "Native macOS menu-bar network monitor with automatic live traffic and manual speed tests. Built with Swift 6.",
+    "language": "Swift",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-05T12:04:15Z"
+  },
+  {
+    "name": "iphone-clipboard",
+    "html_url": "https://github.com/Srimi1/iphone-clipboard",
+    "description": null,
+    "language": "Swift",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-08-13T10:20:01Z"
+  },
+  {
+    "name": "iphone-wallpaper-resizer",
+    "html_url": "https://github.com/Srimi1/iphone-wallpaper-resizer",
+    "description": "Resize any photo to exact iPhone 17 screen dimensions — drag, drop, download. Zero dependencies, works offline.",
+    "language": "HTML",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-05-03T14:58:47Z"
+  },
+  {
     "name": "jarvis",
     "html_url": "https://github.com/Srimi1/jarvis",
     "description": null,
@@ -440,14 +190,154 @@
     "pushed_at": "2026-04-03T18:49:19Z"
   },
   {
-    "name": "Anti",
-    "html_url": "https://github.com/Srimi1/Anti",
+    "name": "LifeOs-Inbox",
+    "html_url": "https://github.com/Srimi1/LifeOs-Inbox",
     "description": null,
-    "language": "JavaScript",
+    "language": "TypeScript",
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-04-03T17:12:27Z"
+    "pushed_at": "2026-08-25T19:26:54Z"
+  },
+  {
+    "name": "line-bot-2",
+    "html_url": "https://github.com/Srimi1/line-bot-2",
+    "description": null,
+    "language": "TypeScript",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-26T16:10:03Z"
+  },
+  {
+    "name": "muse-codex",
+    "html_url": "https://github.com/Srimi1/muse-codex",
+    "description": "Independent macOS compatibility gateway connecting Meta Muse Code to OpenAI models while preserving Muse tools, approvals, and sandboxing.",
+    "language": "Rust",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-05T15:34:42Z"
+  },
+  {
+    "name": "Nagi-plugin",
+    "html_url": "https://github.com/Srimi1/Nagi-plugin",
+    "description": null,
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-18T19:25:06Z"
+  },
+  {
+    "name": "NeoScholarAPI",
+    "html_url": "https://github.com/Srimi1/NeoScholarAPI",
+    "description": null,
+    "language": "Python",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2025-03-08T12:51:27Z"
+  },
+  {
+    "name": "New-Jarvis",
+    "html_url": "https://github.com/Srimi1/New-Jarvis",
+    "description": "Clap twice and JARVIS launches your full workspace. macOS voice assistant with internet check, music, and dev environment automation.",
+    "language": "Python",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-23T15:46:44Z"
+  },
+  {
+    "name": "New_Friday",
+    "html_url": "https://github.com/Srimi1/New_Friday",
+    "description": null,
+    "language": "HTML",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-19T21:09:43Z"
+  },
+  {
+    "name": "nightcrawler-v",
+    "html_url": "https://github.com/Srimi1/nightcrawler-v",
+    "description": "Local AI powered red teamer on a phone",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-08-07T01:50:14Z"
+  },
+  {
+    "name": "Notch-hub",
+    "html_url": "https://github.com/Srimi1/Notch-hub",
+    "description": "Native, local-first macOS dashboard for the MacBook notch: Next Up, timers, media, calendar, reminders, clipboard, Focus, battery, and system status.",
+    "language": "Swift",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-05T05:13:08Z"
+  },
+  {
+    "name": "oh-my-pi",
+    "html_url": "https://github.com/Srimi1/oh-my-pi",
+    "description": "⌥  AI Coding agent for the terminal — hash-anchored edits, optimized tool harness, LSP, Python, browser, subagents, and more",
+    "language": "TypeScript",
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 1,
+    "pushed_at": "2026-06-18T05:06:46Z"
+  },
+  {
+    "name": "P-Agents",
+    "html_url": "https://github.com/Srimi1/P-Agents",
+    "description": "Model-agnostic multi-agent AI harness in Rust — streaming ReAct loop, isolated sub-agents, gated tools, replayable sessions. Learning in public.",
+    "language": "Rust",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-01T04:41:53Z"
+  },
+  {
+    "name": "P-Harness",
+    "html_url": "https://github.com/Srimi1/P-Harness",
+    "description": null,
+    "language": "TypeScript",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-08-27T17:07:45Z"
+  },
+  {
+    "name": "potential-octo-dollop",
+    "html_url": "https://github.com/Srimi1/potential-octo-dollop",
+    "description": null,
+    "language": "Swift",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-08-29T20:37:22Z"
+  },
+  {
+    "name": "Project-Websites",
+    "html_url": "https://github.com/Srimi1/Project-Websites",
+    "description": null,
+    "language": "TypeScript",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-22T18:45:02Z"
+  },
+  {
+    "name": "Prompt-Forge",
+    "html_url": "https://github.com/Srimi1/Prompt-Forge",
+    "description": "Turns messy ideas into production-ready AI prompts. Built for Claude, Codex, ChatGPT, Gemini — any AI.",
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-23T23:26:44Z"
   },
   {
     "name": "PYTHON",
@@ -460,13 +350,123 @@
     "pushed_at": "2025-07-16T15:27:33Z"
   },
   {
-    "name": "NeoScholarAPI",
-    "html_url": "https://github.com/Srimi1/NeoScholarAPI",
-    "description": null,
+    "name": "Research-Pro",
+    "html_url": "https://github.com/Srimi1/Research-Pro",
+    "description": "Plugin that will help you fro Research",
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-15T15:43:08Z"
+  },
+  {
+    "name": "ruflo",
+    "html_url": "https://github.com/Srimi1/ruflo",
+    "description": "🌊 The leading agent meta-harness for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
+    "language": "TypeScript",
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-06-04T18:45:00Z"
+  },
+  {
+    "name": "Sera-Autonomous-Agent",
+    "html_url": "https://github.com/Srimi1/Sera-Autonomous-Agent",
+    "description": "Autonomous personal agent with a self-improving Python core — typed-causal memory, on-device LoRA, encrypted approvals, and multi-channel presence.",
     "language": "Python",
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2025-03-08T12:51:27Z"
+    "pushed_at": "2026-05-26T08:31:41Z"
+  },
+  {
+    "name": "skills-copilot-codespaces-vscode",
+    "html_url": "https://github.com/Srimi1/skills-copilot-codespaces-vscode",
+    "description": "My clone repository",
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-14T10:35:46Z"
+  },
+  {
+    "name": "Srimi1",
+    "html_url": "https://github.com/Srimi1/Srimi1",
+    "description": null,
+    "language": "JavaScript",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-05T15:44:32Z"
+  },
+  {
+    "name": "The-Keyboard-project",
+    "html_url": "https://github.com/Srimi1/The-Keyboard-project",
+    "description": "An iOS keyboard extension that brings the native Android keyboard layout, key placement, and typing feel to iPhone.",
+    "language": "Swift",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-08-22T12:05:03Z"
+  },
+  {
+    "name": "Time-travel-debugger",
+    "html_url": "https://github.com/Srimi1/Time-travel-debugger",
+    "description": null,
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-08-29T16:49:14Z"
+  },
+  {
+    "name": "tiny-tts",
+    "html_url": "https://github.com/Srimi1/tiny-tts",
+    "description": "The Smallest English TTS Model with only 1M parameters",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-04-10T08:46:53Z"
+  },
+  {
+    "name": "TradingAgents",
+    "html_url": "https://github.com/Srimi1/TradingAgents",
+    "description": "I am also joining",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-06-17T18:17:31Z"
+  },
+  {
+    "name": "trieonlabs.com",
+    "html_url": "https://github.com/Srimi1/trieonlabs.com",
+    "description": "Official site of Trieon Labs — liquid-glass landing page with live GitHub feed",
+    "language": "CSS",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-08-25T17:59:46Z"
+  },
+  {
+    "name": "Veronica",
+    "html_url": "https://github.com/Srimi1/Veronica",
+    "description": null,
+    "language": "JavaScript",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-05-02T17:59:09Z"
+  },
+  {
+    "name": "Wallps",
+    "html_url": "https://github.com/Srimi1/Wallps",
+    "description": null,
+    "language": "Swift",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-08-22T11:22:37Z"
   }
 ]
