@@ -1,0 +1,56 @@
+[
+  {
+    "repo": "Notch-hub",
+    "name": "NotchHub",
+    "stack": "Native macOS",
+    "title": "The MacBook notch, put to work.",
+    "description": "Meetings, clipboard, media, Focus, and system status in a local-first AppKit and SwiftUI dashboard.",
+    "strength": "Native desktop engineering",
+    "image": "assets/projects/notch-hub.png"
+  },
+  {
+    "repo": "Wallps",
+    "name": "Wallps",
+    "stack": "macOS + Windows",
+    "title": "Give the desktop a little life.",
+    "description": "Live video wallpapers, a local library, and battery-aware playback. SwiftUI / AVFoundation on Mac; Electron on Windows.",
+    "strength": "Cross-platform release",
+    "image": "assets/projects/wallps.png"
+  },
+  {
+    "repo": "Internet-speed-reader",
+    "name": "Internet Speed Reader",
+    "stack": "Swift \u00b7 macOS",
+    "title": "Know what your connection is doing.",
+    "description": "Live traffic in the menu bar, manual speed tests, and outage detection. Public builds are ad-hoc signed, not notarized.",
+    "strength": "Everyday utility",
+    "image": "assets/projects/internet-speed-reader.png"
+  },
+  {
+    "repo": "muse-codex",
+    "name": "Muse Codex",
+    "stack": "Rust \u00b7 experimental",
+    "title": "A new model connection. The same tools.",
+    "description": "A compatibility gateway that preserves Muse\u2019s tools, approvals, and sandbox. Source-only, Apple silicon, pinned Muse version.",
+    "strength": "Runtime integration",
+    "image": "assets/projects/muse-codex.png"
+  },
+  {
+    "repo": "LifeOs-Inbox",
+    "name": "LifeOS Inbox",
+    "stack": "TypeScript \u00b7 agents",
+    "title": "An inbox an agent can reason about.",
+    "description": "Typed triage capabilities for follow-ups, obligations, and daily briefs, with services for persistence and scheduling.",
+    "strength": "Agent-first architecture",
+    "image": "assets/projects/lifeos-inbox.jpg"
+  },
+  {
+    "repo": "The-Keyboard-project",
+    "name": "The Keyboard Project",
+    "stack": "Swift \u00b7 iOS",
+    "title": "The Android typing feel, on iPhone.",
+    "description": "AOSP-inspired key geometry and multi-item clipboard history inside an iOS keyboard extension.",
+    "strength": "Native mobile engineering",
+    "image": "assets/projects/the-keyboard-project.png"
+  }
+]

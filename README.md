@@ -19,50 +19,86 @@ macOS · iOS · Android · agent tools & MCP
 
 ## The workshop
 
-### Everyday apps
+### Selected work
+
+A few projects that best show what I build: native interfaces, useful everyday tools, and the systems behind agents.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
+<a href="https://github.com/Srimi1/Notch-hub"><img src="docs/assets/projects/notch-hub.png" width="88" height="88" alt="NotchHub logo" /></a>
+
 #### [NotchHub ↗](https://github.com/Srimi1/Notch-hub)
 **The MacBook notch, put to work.**
 
-A local-first dashboard for meetings, timers, reminders, clipboard history, media, Focus, battery, and system status. AppKit and SwiftUI, with a compact fallback for displays without a notch.
+Meetings, clipboard, media, Focus, and system status in a local-first AppKit and SwiftUI dashboard.
 
-`Swift` · `macOS` · [Versions](https://github.com/Srimi1/Notch-hub/tags)
+`Native macOS` · Native desktop engineering
 
 </td>
 <td width="50%" valign="top">
 
+<a href="https://github.com/Srimi1/Wallps"><img src="docs/assets/projects/wallps.png" width="88" height="88" alt="Wallps logo" /></a>
+
 #### [Wallps ↗](https://github.com/Srimi1/Wallps)
 **Give the desktop a little life.**
 
-4K live video wallpapers, a local library, and battery-aware playback. Native SwiftUI and AVFoundation on macOS; Electron on Windows. Zero telemetry and an open wallpaper catalogue.
+Live video wallpapers, a local library, and battery-aware playback. SwiftUI / AVFoundation on Mac; Electron on Windows.
 
-`Swift / JavaScript` · `macOS / Windows` · [Releases](https://github.com/Srimi1/Wallps/releases)
+`macOS + Windows` · Cross-platform release
 
 </td>
 </tr>
 <tr>
-<td valign="top">
+<td width="50%" valign="top">
+
+<a href="https://github.com/Srimi1/Internet-speed-reader"><img src="docs/assets/projects/internet-speed-reader.png" width="88" height="88" alt="Internet Speed Reader logo" /></a>
 
 #### [Internet Speed Reader ↗](https://github.com/Srimi1/Internet-speed-reader)
 **Know what your connection is doing.**
 
-Live upload and download in the Mac menu bar, manual speed tests, outage detection, and clear stale-data indicators. Public builds are ad-hoc signed and not Apple-notarized.
+Live traffic in the menu bar, manual speed tests, and outage detection. Public builds are ad-hoc signed, not notarized.
 
-`Swift` · `macOS` · [Releases](https://github.com/Srimi1/Internet-speed-reader/releases)
+`Swift · macOS` · Everyday utility
 
 </td>
-<td valign="top">
+<td width="50%" valign="top">
+
+<a href="https://github.com/Srimi1/muse-codex"><img src="docs/assets/projects/muse-codex.png" width="88" height="88" alt="Muse Codex logo" /></a>
+
+#### [Muse Codex ↗](https://github.com/Srimi1/muse-codex)
+**A new model connection. The same tools.**
+
+A compatibility gateway that preserves Muse’s tools, approvals, and sandbox. Source-only, Apple silicon, pinned Muse version.
+
+`Rust · experimental` · Runtime integration
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+<a href="https://github.com/Srimi1/LifeOs-Inbox"><img src="docs/assets/projects/lifeos-inbox.jpg" width="88" height="88" alt="LifeOS Inbox logo" /></a>
+
+#### [LifeOS Inbox ↗](https://github.com/Srimi1/LifeOs-Inbox)
+**An inbox an agent can reason about.**
+
+Typed triage capabilities for follow-ups, obligations, and daily briefs, with services for persistence and scheduling.
+
+`TypeScript · agents` · Agent-first architecture
+
+</td>
+<td width="50%" valign="top">
+
+<a href="https://github.com/Srimi1/The-Keyboard-project"><img src="docs/assets/projects/the-keyboard-project.png" width="88" height="88" alt="The Keyboard Project logo" /></a>
 
 #### [The Keyboard Project ↗](https://github.com/Srimi1/The-Keyboard-project)
-**The Android keyboard feel, on iPhone.**
+**The Android typing feel, on iPhone.**
 
-AOSP-inspired geometry, familiar key placement, and multi-item clipboard history, inside an iOS keyboard extension. Part of my ongoing native mobile workshop.
+AOSP-inspired key geometry and multi-item clipboard history inside an iOS keyboard extension.
 
-`Swift` · `iOS` · [AIBoard experiment](https://github.com/Srimi1/iphone-clipboard)
+`Swift · iOS` · Native mobile engineering
 
 </td>
 </tr>
@@ -72,10 +108,8 @@ AOSP-inspired geometry, familiar key placement, and multi-item clipboard history
 
 | Project | What I’m building | Where it stands |
 | :--- | :--- | :--- |
-| **[Muse Codex](https://github.com/Srimi1/muse-codex)** | A compatibility gateway that connects stock Muse Code to other models while preserving its tools, approvals, and sandbox. | Experimental, source-only; pinned Muse version and Apple-silicon macOS. |
 | **[P-Agents](https://github.com/Srimi1/P-Agents)** | A Rust agent harness with streaming, isolated sub-agents, gated tools, and replayable sessions. | Learning and building in public. |
 | **[P-Harness](https://github.com/Srimi1/P-Harness)** | A TypeScript research CLI: deconstruct, explore, deep-read, and produce cited reports. | Research tooling. |
-| **[LifeOS Inbox](https://github.com/Srimi1/LifeOs-Inbox)** | Inbox triage as typed capabilities an agent can call: follow-ups, obligations, and daily briefs. | Engine-first; persistent services support scheduling and state. |
 | **[Sera](https://github.com/Srimi1/Sera-Autonomous-Agent)** | ReAct CLI, SQLite/FTS5 memory, provider adapters, approvals, and context compression. | First five phases of a 100-phase plan complete. |
 | **[AI.Trader](https://github.com/Srimi1/Ai.Trader)** | Multi-agent market research, alternative data, backtesting, and portfolio experiments. | Research; not investment advice. |
 | **[AI Constitution](https://github.com/Srimi1/Constitution)** | A shared governance layer for my AI tools, with secret checks and launch safeguards. | Workflow infrastructure. |
@@ -91,10 +125,25 @@ AOSP-inspired geometry, familiar key placement, and multi-item clipboard history
 [**New Jarvis**](https://github.com/Srimi1/New-Jarvis) starts a macOS workspace with a double clap.<br />
 [**Trieon Labs**](https://github.com/Srimi1/trieonlabs.com) is the home for the things I’m building.
 
+### More from the workshop
+
+Existing logos and project artwork from the rest of the collection.
+
+<table><tr>
+<td align="center" width="25%"><a href="https://github.com/Srimi1/P-Harness"><img src="docs/assets/projects/p-harness.jpg" width="72" height="72" alt="P-Harness artwork" /><br /><strong>P-Harness</strong></a></td>
+<td align="center" width="25%"><a href="https://github.com/Srimi1/Constitution"><img src="docs/assets/projects/constitution.png" width="72" height="72" alt="AI Constitution artwork" /><br /><strong>AI Constitution</strong></a></td>
+<td align="center" width="25%"><a href="https://github.com/Srimi1/Veronica"><img src="docs/assets/projects/veronica.png" width="72" height="72" alt="Veronica logo" /><br /><strong>Veronica</strong></a></td>
+<td align="center" width="25%"><a href="https://github.com/Srimi1/Friday-core"><img src="docs/assets/projects/friday-core.png" width="72" height="72" alt="Friday Core logo" /><br /><strong>Friday Core</strong></a></td>
+</tr><tr>
+<td align="center" width="25%"><a href="https://github.com/Srimi1/trieonlabs.com"><img src="docs/assets/projects/trieonlabs.com.svg" width="72" height="72" alt="Trieon Labs logo" /><br /><strong>Trieon Labs</strong></a></td>
+<td align="center" width="25%"><a href="https://github.com/Srimi1/Anti"><img src="docs/assets/projects/anti.svg" width="72" height="72" alt="Nagi / Anti logo" /><br /><strong>Nagi / Anti</strong></a></td>
+<td align="center" width="25%"><a href="https://github.com/Srimi1/bots"><img src="docs/assets/projects/bots.png" width="72" height="72" alt="DockBuddy artwork" /><br /><strong>DockBuddy</strong></a></td>
+</tr></table>
+
 ## A year, one square at a time
 
 <a href="https://srimi1.github.io/Srimi1/">
-<img src="assets/quest.svg" width="100%" alt="Animated Quiet Days Quest: mini Srijan winds through the empty cells of the real contribution calendar. Click to play." />
+<img src="assets/quest-v2.svg" width="100%" alt="Animated Quiet Days Quest: mini Srijan winds through the empty cells of the real contribution calendar. Click to play." />
 </a>
 
 **[Play Quiet Days Quest →](https://srimi1.github.io/Srimi1/)**<br />

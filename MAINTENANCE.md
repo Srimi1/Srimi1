@@ -14,7 +14,7 @@ The language chart counts original public repositories by primary language; fork
 
 ## Game
 
-GitHub READMEs cannot execute JavaScript, so `assets/quest.svg` contains a self-contained SVG motion animation. `docs/` contains the playable GitHub Pages edition at https://srimi1.github.io/Srimi1/.
+GitHub READMEs cannot execute JavaScript, so `assets/quest-v2.svg` contains a self-contained SVG motion animation. `docs/` contains the playable GitHub Pages edition at https://srimi1.github.io/Srimi1/.
 
 The route snakes down one week and up the next, selecting only zero-contribution squares. A roll advances 1–6 quiet squares, marking each square along the way. Blue contribution days are passed over; their data never changes. Finishing visits every quiet square. Auto tour plays the same game. Pause stops future rolls; a roll already moving finishes. Restart cancels any pending movement and resets progress. Space rolls unless focus is on another interactive control. Reduced motion removes sprite bobbing and interpolation; auto tour is always opt-in. Hiding the tab pauses the tour. The data is also available in a text table.
 
@@ -27,3 +27,9 @@ Preview locally: `python3 -m http.server 8080 --directory docs` then open http:/
 `docs/assets/avatar.png` is the supplied original avatar. `docs/assets/runner.png` is the miniature character produced with the built-in image generation tool. Its prompt is preserved in `assets/runner-prompt.txt`. PNG transparency is preserved. SVGs embed the images so GitHub's image renderer has no external image dependency. The GitHub account photo is a separate account setting.
 
 The public catalogue is a dated editorial scan. Daily refresh updates numeric charts and the game, not authored project descriptions; revisit those when project status changes.
+
+## Project identities and running animation
+
+The README and playground showcase six selected repositories with their existing logos. The smaller gallery and complete catalogue also include available logos and artwork from older projects. `docs/data/project-branding.json` records each original repository path and distinguishes logos from project artwork. Assets are copied unchanged; projects without an identity asset keep their names. Featured selections are editorial, not a star-count ranking.
+
+The revised game uses `docs/assets/run-cycle.png`, an eight-pose 4×2 sprite sheet. `docs/runner.mjs` defines frame viewports and a 640ms stride. Arms, knees, and feet change pose while the player travels; movement duration scales with distance, so longer gaps do not teleport at the speed of a single tile. Idle and reduced-motion states show a fixed frame. Reset cancels movement and restores the first pose. The README uses the same eight frames with discrete SVG animation, and the landing illustration previews the cycle in place. No route lines are drawn on either calendar.

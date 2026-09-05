@@ -1,0 +1,80 @@
+[
+  {
+    "repo": "Notch-hub",
+    "file": "assets/projects/notch-hub.png",
+    "source": "https://github.com/Srimi1/Notch-hub/blob/main/docs/assets/notchhub-mark.png",
+    "kind": "logo"
+  },
+  {
+    "repo": "Wallps",
+    "file": "assets/projects/wallps.png",
+    "source": "https://github.com/Srimi1/Wallps/blob/main/docs/assets/app_icon.png",
+    "kind": "logo"
+  },
+  {
+    "repo": "Internet-speed-reader",
+    "file": "assets/projects/internet-speed-reader.png",
+    "source": "https://github.com/Srimi1/Internet-speed-reader/blob/main/docs/branding/logo.png",
+    "kind": "logo"
+  },
+  {
+    "repo": "muse-codex",
+    "file": "assets/projects/muse-codex.png",
+    "source": "https://github.com/Srimi1/muse-codex/blob/main/assets/muse-codex-logo.png",
+    "kind": "logo"
+  },
+  {
+    "repo": "LifeOs-Inbox",
+    "file": "assets/projects/lifeos-inbox.jpg",
+    "source": "https://github.com/Srimi1/LifeOs-Inbox/blob/main/assets/branding/logo.jpg",
+    "kind": "logo"
+  },
+  {
+    "repo": "The-Keyboard-project",
+    "file": "assets/projects/the-keyboard-project.png",
+    "source": "https://github.com/Srimi1/The-Keyboard-project/blob/main/docs/assets/app_icon.png",
+    "kind": "logo"
+  },
+  {
+    "repo": "trieonlabs.com",
+    "file": "assets/projects/trieonlabs.com.svg",
+    "source": "https://github.com/Srimi1/trieonlabs.com/blob/main/assets/favicon.svg",
+    "kind": "logo"
+  },
+  {
+    "repo": "Veronica",
+    "file": "assets/projects/veronica.png",
+    "source": "https://github.com/Srimi1/Veronica/blob/main/src-tauri/icons/128x128.png",
+    "kind": "logo"
+  },
+  {
+    "repo": "Friday-core",
+    "file": "assets/projects/friday-core.png",
+    "source": "https://github.com/Srimi1/Friday-core/blob/main/src-tauri/icons/128x128.png",
+    "kind": "logo"
+  },
+  {
+    "repo": "P-Harness",
+    "file": "assets/projects/p-harness.jpg",
+    "source": "https://github.com/Srimi1/P-Harness/blob/main/docs/media/nano-banana-hero.jpg",
+    "kind": "artwork"
+  },
+  {
+    "repo": "Constitution",
+    "file": "assets/projects/constitution.png",
+    "source": "https://github.com/Srimi1/Constitution/blob/main/assets/banner.png",
+    "kind": "artwork"
+  },
+  {
+    "repo": "Anti",
+    "file": "assets/projects/anti.svg",
+    "source": "https://github.com/Srimi1/Anti/blob/main/NAGI/public/favicon.svg",
+    "kind": "logo"
+  },
+  {
+    "repo": "bots",
+    "file": "assets/projects/bots.png",
+    "source": "https://github.com/Srimi1/bots/blob/main/DockBuddy/Resources/octopus.png",
+    "kind": "artwork"
+  }
+]
