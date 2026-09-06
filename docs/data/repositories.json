@@ -217,7 +217,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-05T15:34:42Z"
+    "pushed_at": "2026-09-05T15:49:39Z"
   },
   {
     "name": "Nagi-plugin",
@@ -320,6 +320,16 @@
     "pushed_at": "2026-08-29T20:37:22Z"
   },
   {
+    "name": "ppt-master",
+    "html_url": "https://github.com/Srimi1/ppt-master",
+    "description": "AI turns documents or topics into real, native PowerPoint decks—with native shapes, transitions and animations, data-backed charts and tables on demand, audio narration from speaker notes, and support for your own .pptx templates. · by Hugo He",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-05T15:54:42Z"
+  },
+  {
     "name": "Project-Websites",
     "html_url": "https://github.com/Srimi1/Project-Websites",
     "description": null,
@@ -397,7 +407,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-05T15:44:32Z"
+    "pushed_at": "2026-09-05T15:54:59Z"
   },
   {
     "name": "The-Keyboard-project",
