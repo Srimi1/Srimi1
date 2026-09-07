@@ -323,11 +323,11 @@
     "name": "ppt-master",
     "html_url": "https://github.com/Srimi1/ppt-master",
     "description": "AI turns documents or topics into real, native PowerPoint decks—with native shapes, transitions and animations, data-backed charts and tables on demand, audio narration from speaker notes, and support for your own .pptx templates. · by Hugo He",
-    "language": null,
+    "language": "Python",
     "fork": true,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-05T15:54:42Z"
+    "pushed_at": "2026-09-06T11:26:10Z"
   },
   {
     "name": "Project-Websites",
@@ -407,7 +407,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-05T15:54:59Z"
+    "pushed_at": "2026-09-06T06:02:52Z"
   },
   {
     "name": "The-Keyboard-project",
