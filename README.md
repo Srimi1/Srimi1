@@ -4,7 +4,7 @@
 
 <br />
 
-**[The workshop](#the-workshop)** &nbsp; / &nbsp; **[Play Quiet Days Quest](https://srimi1.github.io/Srimi1/)** &nbsp; / &nbsp; **[All projects](#the-full-journey)** &nbsp; / &nbsp; **[Say hello](https://linkedin.com/in/srijan-saanand)**
+**[The workshop](#the-workshop)** &nbsp; / &nbsp; **[Play Break the Year](https://srimi1.github.io/Srimi1/)** &nbsp; / &nbsp; **[All projects](#the-full-journey)** &nbsp; / &nbsp; **[Say hello](https://linkedin.com/in/srijan-saanand)**
 
 </div>
 
@@ -143,11 +143,11 @@ Existing logos and project artwork from the rest of the collection.
 ## A year, one square at a time
 
 <a href="https://srimi1.github.io/Srimi1/">
-<img src="assets/quest-v2.svg" width="100%" alt="Animated Quiet Days Quest: mini Srijan winds through the empty cells of the real contribution calendar. Click to play." />
+<img src="assets/quest-v2.svg" width="100%" alt="Animated contribution calendar: mini Srijan follows the cells of the real GitHub year. Click to play." />
 </a>
 
-**[Play Quiet Days Quest →](https://srimi1.github.io/Srimi1/)**<br />
-Roll the dice or start the automatic tour. My mini avatar winds through the quiet squares, passing over contribution days. A small corner chart keeps track of active days, quiet days, and your journey.
+**[Play Break the Year →](https://srimi1.github.io/Srimi1/)**<br />
+A breakout arcade game built from my real contribution calendar: every brick is a recent calendar day, brighter bricks score more. Move the paddle, keep the ball alive, and clear the whole wall. Your best score is saved in the browser.
 
 <sub>An empty square means no recorded GitHub contributions, not “no work.” Studying, resting, and building offline belong in the story too. The README plays an animation; the linked playground is interactive.</sub>
 
@@ -175,6 +175,6 @@ The [previous README](README.previous.md) is preserved as a historical snapshot.
 **Most of what’s here started because I wanted the thing to exist.**<br />
 If one of them is useful to you too, that’s the best part.
 
-[GitHub](https://github.com/Srimi1) &nbsp; · &nbsp; [LinkedIn](https://linkedin.com/in/srijan-saanand) &nbsp; · &nbsp; [Play the mini game](https://srimi1.github.io/Srimi1/)
+[GitHub](https://github.com/Srimi1) &nbsp; · &nbsp; [LinkedIn](https://linkedin.com/in/srijan-saanand) &nbsp; · &nbsp; [Play Break the Year](https://srimi1.github.io/Srimi1/)
 
 </div>

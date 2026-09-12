@@ -17,7 +17,7 @@ hero+=`<rect x="40" y="337" width="626" height="3" rx="2" fill="url(#line)"/>`+t
 await writeFile('assets/hero-v2.svg',hero);
 const colors={NONE:'#172b3c',FIRST_QUARTILE:'#125676',SECOND_QUARTILE:'#087fb3',THIRD_QUARTILE:'#08a9ee',FOURTH_QUARTILE:'#77e3ff'};
 const pos=d=>[38+d.x*19.35,110+d.y*19.35];
-let svg=start(390,'Quiet Days Quest — Srijan’s contribution calendar',`${s.total} contributions, ${s.active} contribution days and ${s.quiet} days with no recorded contributions. A mini avatar follows empty calendar cells. GitHub contributions do not measure all work.`);
+let svg=start(390,'Srijan’s contribution calendar',`${s.total} contributions, ${s.active} contribution days and ${s.quiet} days with no recorded contributions. A mini avatar follows calendar cells. GitHub contributions do not measure all work.`);
 svg+=text(36,40,'QUIET DAYS QUEST',16,'mono')+text(36,68,'Every square is part of the journey.',18,'muted')+text(790,42,`${data.weeks[0].contributionDays[0].date} →`,12,'muted')+text(790,64,data.weeks.at(-1).contributionDays.at(-1).date,12,'muted');
 for(const [x,w] of data.weeks.entries()) for(const d of w.contributionDays) {
  const [px,py]=pos({...d,x,y:d.weekday});
