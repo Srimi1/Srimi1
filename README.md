@@ -143,7 +143,7 @@ Existing logos and project artwork from the rest of the collection.
 ## A year, one square at a time
 
 <a href="https://srimi1.github.io/Srimi1/">
-<img src="assets/quest-v2.svg" width="100%" alt="Animated contribution calendar: mini Srijan follows the cells of the real GitHub year. Click to play." />
+<img src="assets/breakout-v2.svg" width="100%" alt="Break the Year: an arcade breakout game built from Srijan's GitHub contribution calendar. Click to play." />
 </a>
 
 **[Play Break the Year →](https://srimi1.github.io/Srimi1/)**<br />
