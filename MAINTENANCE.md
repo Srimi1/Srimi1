@@ -1,12 +1,12 @@
 # Profile maintenance
 
-The previous profile is preserved in `README.previous.md` and in Git history. This redesign changes the profile repository; the project repositories are untouched.
+The previous profile is preserved in `README.previous.md` and in Git history. This redesign changes only the profile repository; the project repositories and the GitHub account avatar are untouched.
 
 ## Data and refresh
 
 `npm run refresh` reads GitHub's signed-out public contribution calendar and every page of public owned repositories, then regenerates the SVGs. It requires `GH_TOKEN` or `GITHUB_TOKEN`. It publishes an explicit allowlist of public metadata fields. Private repository names, descriptions, contents, and hidden activity are never part of the public snapshot. The calendar request has no Authorization header, even when the repository API uses a token. A change to GitHub’s calendar HTML fails closed instead of fabricating counts.
 
-`npm run generate` rebuilds assets from the checked-in snapshot without credentials. `npm test` checks route uniqueness, contribution filtering, finish clamping, empty calendars, and streak calculations. Node 22 or later; no package dependencies.
+`npm run generate` rebuilds assets from the checked-in snapshot without credentials. It reads `docs/assets/avatar.png` but never writes it. `npm test` checks calendar parsing, streak calculations, full-year slot generation, one/two/three-hit durability, protected contribution blocks, game phases, scoring, and a Matter.js collision reflection. Node 22 or later is required. Matter.js 0.20.0 is the only runtime dependency and its browser build is vendored at `docs/vendor/matter.min.js` for reliable static hosting.
 
 The refresh workflow runs daily at 01:23 UTC and can be dispatched manually. GitHub may delay scheduled runs. A failed API request leaves the last committed snapshot intact. The update date is visible on the charts and playground. GitHub's calendar can include up to 371 days across 53 weeks. Active days have a positive contribution count; quiet days have zero. An unfinished today does not reset the current streak until another quiet date intervenes.
 
@@ -14,22 +14,22 @@ The language chart counts original public repositories by primary language; fork
 
 ## Game
 
-GitHub READMEs cannot execute JavaScript, so `assets/quest-v2.svg` contains a self-contained SVG motion animation. `docs/` contains the playable GitHub Pages edition at https://srimi1.github.io/Srimi1/.
+GitHub READMEs cannot execute JavaScript, so `assets/breakout-v2.svg` is a deliberately static preview with no fake ball, paddle, hit spark, or mascot animation. It links to the playable GitHub Pages edition at https://srimi1.github.io/Srimi1/.
 
-The playable game is Breakout: the last ten calendar weeks become brick columns and weekdays become rows, so the wall is the recent contribution graph. Each brick scores 10–50 points by contribution level. The paddle follows mouse, touch, or ← → keys; Space or a click launches the ball. Three lives, clear every brick to win, best score persists in localStorage. Pure rules live in `docs/breakout-core.mjs` with unit tests in `tests/breakout.test.mjs`; `docs/breakout.mjs` renders SVG and handles input. Pause freezes the simulation; hiding the tab auto-pauses. Reduced motion slows the ball. The data is also available in a text table.
+The playable game builds all 365 dates in 2026. Dates after the public snapshot are non-colliding outlines. Elapsed quiet dates are destructible blocks: the first two days of a quiet run require one hit, days three through six require two, and day seven onward requires three. Dates with recorded contributions are indestructible pass-through energy shields whose shade follows GitHub contribution intensity. They emit collision events and visual/audio feedback but do not alter the ball trajectory, preventing quiet targets from becoming permanently enclosed. The player wins by clearing every quiet block; protected blocks remain standing.
 
-The SVG has a stationary sprite as its reduced-motion fallback. Browser animation support and GitHub image caching can affect when the updated animation is visible.
+Matter.js owns ball, paddle, wall, brick, and loss-sensor collisions. `docs/breakout-core.mjs` owns deterministic calendar and game rules. `docs/breakout.mjs` connects the physics engine to SVG rendering, staged cracks, shatter fragments, impact rings, a short ball trail, Web Audio feedback, combo scoring, saved best score, and pointer/touch/keyboard input. Pause freezes the simulation; hiding the tab auto-pauses. Reduced motion removes transient animation and lowers the starting speed. The public data is also available as an accessible text table.
 
-Preview locally: `python3 -m http.server 8080 --directory docs` then open http://localhost:8080. GitHub Pages is configured to deploy through Actions, serving only `docs/`.
+Preview locally with `python3 -m http.server 8080 --directory docs`, then open http://localhost:8080. GitHub Pages is configured to deploy through Actions, serving only `docs/`.
 
-## Avatar assets
+## Avatar and visual assets
 
-`docs/assets/avatar.png` is the supplied original avatar. `docs/assets/runner.png` is the miniature character produced with the built-in image generation tool. Its prompt is preserved in `assets/runner-prompt.txt`. PNG transparency is preserved. SVGs embed the images so GitHub's image renderer has no external image dependency. The GitHub account photo is a separate account setting.
+`docs/assets/avatar.png` is the existing avatar and must remain byte-identical. The generated hero embeds this file so GitHub's image renderer has no external image dependency. The GitHub account photo is a separate account setting and is never changed by this repository.
 
-The public catalogue is a dated editorial scan. Daily refresh updates numeric charts and the game, not authored project descriptions; revisit those when project status changes.
+The game art direction and impact references live in `design/` and are documented in `ASSETS.md`. P-Agents had no project identity asset, so `docs/assets/projects/p-agents.jpg` provides a generated mark. Existing project logos remain unchanged.
 
-## Project identities and running animation
+## Project selection and logo motion
 
-The README and playground showcase six selected repositories with their existing logos. The smaller gallery and complete catalogue also include available logos and artwork from older projects. `docs/data/project-branding.json` records each original repository path and distinguishes logos from project artwork. Assets are copied unchanged; projects without an identity asset keep their names. Featured selections are editorial, not a star-count ranking.
+The profile shows exactly four evidence-backed repositories: NotchHub, P-Agents, Internet Speed Reader, and The Keyboard Project. Selection requires a substantial implementation, concrete proof or reproducible validation, meaningful quality gates, reproducible setup, and honest claim boundaries. Stars and recency are not selection criteria. Experimental and partial projects remain available in the user's repository list but are not promoted on the profile.
 
-The README animation and landing illustration use `docs/assets/run-cycle.png`, an eight-pose 4×2 sprite sheet. `docs/runner.mjs` defines frame viewports and a 640ms stride, rendered with discrete SVG animation and a stationary reduced-motion fallback. The playable game no longer uses the sprite; it renders its own paddle, ball, and bricks.
+`docs/data/featured-projects.json` is the editorial shortlist and source for generated README logo wrappers. `assets/logo-orbits/*.svg` embeds each selected logo and applies a complete 360-degree CSS 3D rotation with a stationary reduced-motion fallback. The GitHub Pages cards apply the same rotation directly in CSS.

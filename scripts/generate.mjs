@@ -1,198 +1,97 @@
-import {readFile, writeFile} from 'node:fs/promises';
-import {cycleMarkup} from '../docs/runner.mjs';
+import {mkdir, readFile, writeFile} from 'node:fs/promises';
+import {extname} from 'node:path';
 import {summarize} from '../docs/game-core.mjs';
+import {LEVEL_COLORS, buildYearBoard, summarizeBoard} from '../docs/breakout-core.mjs';
 
-const read = p => readFile(p, 'utf8').then(JSON.parse);
+const read = path => readFile(path, 'utf8').then(JSON.parse);
 const data = await read('docs/data/activity.json');
 const repos = await read('docs/data/repositories.json');
-const s = summarize(data.weeks);
-const esc = s => String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
-const image = async p => 'data:image/png;base64,' + (await readFile(p)).toString('base64');
-const avatar = await image('docs/assets/avatar.png'), runner = await image('docs/assets/run-cycle.png');
+const featured = await read('docs/data/featured-projects.json');
+const stats = summarize(data.weeks);
+const escapeXml = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
+const mimeFor = path => ({'.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml'}[extname(path).toLowerCase()] || 'image/png');
+const dataUri = async path => `data:${mimeFor(path)};base64,${(await readFile(path)).toString('base64')}`;
+const avatar = await dataUri('docs/assets/avatar.png');
 
-const start = (h, title, desc) => `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="${h}" viewBox="0 0 1100 ${h}" role="img"><title>${esc(title)}</title><desc>${esc(desc)}</desc><style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:#edf5ff}.muted{fill:#8eabc3}.mono{font-family:"SF Mono",Monaco,"Cascadia Code","Roboto Mono",Consolas,monospace;letter-spacing:1.5px}.still{display:none}.reveal{transform-box:fill-box;transform-origin:bottom;animation:grow 1.5s ease-out both}@keyframes grow{from{transform:scaleY(.05)}to{transform:scaleY(1)}}@media(prefers-reduced-motion:reduce){*{animation:none!important}.moving{display:none}.still{display:inline}}</style><rect width="1100" height="${h}" rx="24" fill="#08121e" stroke="#1c3347" stroke-width="1.5"/>`;
-const text = (x, y, t, size=16, cls='') => `<text x="${x}" y="${y}" font-size="${size}" class="${cls}">${esc(t)}</text>`;
+const start = (height, title, description) => `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="${height}" viewBox="0 0 1100 ${height}" role="img"><title>${escapeXml(title)}</title><desc>${escapeXml(description)}</desc><style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:#edf5ff}.muted{fill:#8eabc3}.mono{font-family:"SF Mono",Monaco,"Cascadia Code","Roboto Mono",Consolas,monospace;letter-spacing:1.5px}.reveal{transform-box:fill-box;transform-origin:bottom;animation:grow 1.5s ease-out both}@keyframes grow{from{transform:scaleY(.05)}to{transform:scaleY(1)}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style><rect width="1100" height="${height}" rx="24" fill="#07131f" stroke="#1c3a50" stroke-width="1.5"/>`;
+const text = (x, y, value, size = 16, cssClass = '') => `<text x="${x}" y="${y}" font-size="${size}" class="${cssClass}">${escapeXml(value)}</text>`;
 
-// 1. HERO BANNER
-let hero = start(420, 'Srijan Saanand — Build what you wish existed.', 'Developer and student in India. Native apps, useful tools, and agent experiments.');
-hero += `<defs><clipPath id="portrait"><rect x="720" y="24" width="356" height="372" rx="18"/></clipPath><linearGradient id="line"><stop stop-color="#08a9ff"/><stop offset="1" stop-color="#6edfff"/></linearGradient></defs><path d="M40 36H665" stroke="#203547"/><circle cx="49" cy="69" r="4" fill="#52e1bf"/>`;
-hero += text(65, 74, 'SRIJAN SAANAND / @SRIMI1', 14, 'mono') + text(40, 150, 'Build what you', 52) + text(40, 211, 'wish existed.', 52) + text(40, 263, 'Native apps. Useful tools. Agent experiments.', 21, 'muted') + text(40, 300, 'Developer & student · India', 17, 'muted');
-hero += `<rect x="40" y="337" width="626" height="3" rx="2" fill="url(#line)"/>` + text(40, 375, 'SWIFT   /   RUST   /   TYPESCRIPT   /   PYTHON   /   KOTLIN', 12, 'mono') + `<image x="720" y="24" width="356" height="372" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait)" xlink:href="${avatar}"/></svg>`;
+// 1. HERO BANNER — the avatar remains read-only and byte-identical.
+let hero = start(420, 'Srijan Saanand — Build the proof.', 'Developer and student in India building native products and agent systems with honest evidence.');
+hero += `<defs><clipPath id="portrait"><rect x="720" y="24" width="356" height="372" rx="18"/></clipPath><linearGradient id="line"><stop stop-color="#168fe4"/><stop offset=".5" stop-color="#56d7ff"/><stop offset="1" stop-color="#61e6ca"/></linearGradient></defs><path d="M40 36H665" stroke="#203d52"/><circle cx="49" cy="69" r="4" fill="#61e6ca"/>`;
+hero += text(65, 74, 'SRIJAN SAANAND / @SRIMI1', 14, 'mono');
+hero += text(40, 150, 'Useful ideas.', 54);
+hero += text(40, 211, 'Built all the way.', 54);
+hero += text(40, 263, 'Native products. Agent systems. Honest evidence.', 20, 'muted');
+hero += text(40, 300, 'Developer & student · India', 17, 'muted');
+hero += `<rect x="40" y="337" width="626" height="3" rx="2" fill="url(#line)"/>`;
+hero += text(40, 375, 'SWIFT   /   RUST   /   TYPESCRIPT   /   PYTHON', 12, 'mono');
+hero += `<image x="720" y="24" width="356" height="372" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait)" xlink:href="${avatar}"/></svg>`;
 await writeFile('assets/hero-v2.svg', hero);
 
-// 2. BREAKOUT ARCADE BANNER (BREAK THE YEAR)
-const colors = {NONE: '#172b3c', FIRST_QUARTILE: '#125676', SECOND_QUARTILE: '#087fb3', THIRD_QUARTILE: '#0ba9ee', FOURTH_QUARTILE: '#77e3ff'};
-const pos = d => [38 + d.x * 19.35, 95 + d.y * 18];
-
-let breakout = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="390" viewBox="0 0 1100 390" role="img">
-<title>Break the Year — Srijan’s Contribution Breakout Arcade</title>
-<desc>An arcade breakout game built from Srijan's real GitHub contribution calendar: ${s.total} contributions across ${s.days} calendar days.</desc>
-<style>
-  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; fill: #edf5ff; }
-  .muted { fill: #8eabc3; }
-  .mono { font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace; letter-spacing: 1.5px; }
-  .accent { fill: #08a9ff; }
-  .still { display: none; }
-  @media (prefers-reduced-motion: reduce) {
-    .moving { display: none !important; }
-    .still { display: inline !important; }
-  }
-</style>
-<defs>
-  <linearGradient id="paddle-grad" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#08a9ff" />
-    <stop offset="50%" stop-color="#52e1bf" />
-    <stop offset="100%" stop-color="#77e3ff" />
-  </linearGradient>
-  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-    <feGaussianBlur stdDeviation="3" result="blur" />
-    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-  </filter>
-  <image id="run-sheet" width="1536" height="1024" xlink:href="${runner}"/>
-</defs>
-
-<!-- Background -->
-<rect width="1100" height="390" rx="24" fill="#08121e" stroke="#1c3347" stroke-width="1.5"/>
-
-<!-- Header -->
-<text x="38" y="42" font-size="15" class="mono" fill="#08a9ff" font-weight="600">BREAK THE YEAR · THE CONTRIBUTION ARCADE</text>
-<text x="38" y="68" font-size="14" class="muted">Smash through the calendar · Every brick is a GitHub contribution day</text>
-
-<!-- Date range -->
-<text x="760" y="42" font-size="12" class="muted" text-anchor="end">${data.weeks[0].contributionDays[0].date} →</text>
-<text x="760" y="64" font-size="12" class="muted" text-anchor="end">${data.weeks.at(-1).contributionDays.at(-1).date}</text>
-
-<!-- Play pill button -->
-<a href="https://srimi1.github.io/Srimi1/" target="_blank">
-  <g transform="translate(780, 28)" cursor="pointer">
-    <rect width="280" height="42" rx="21" fill="#08a9ff" fill-opacity="0.15" stroke="#08a9ff" stroke-width="1.5"/>
-    <text x="140" y="26" font-size="12" class="mono" text-anchor="middle" fill="#77e3ff" font-weight="bold">▶ PLAY ARCADE GAME ↗</text>
-  </g>
-</a>
-
-<!-- Bricks Wall -->
-<g id="bricks">
-`;
-
-for (const [x, w] of data.weeks.entries()) {
-  for (const d of w.contributionDays) {
-    const [px, py] = pos({...d, x, y: d.weekday});
-    const col = colors[d.contributionLevel] || colors.NONE;
-    breakout += `<rect x="${px}" y="${py}" width="15" height="14" rx="3" fill="${col}"><title>${d.date}: ${d.contributionCount} contributions</title></rect>\n`;
-  }
+// 2. STATIC FULL-YEAR ARCADE PREVIEW — intentionally no fake ball, paddle, mascot, or animation.
+const days = data.weeks.flatMap(week => week.contributionDays);
+const snapshotDate = days.at(-1).date;
+const board = buildYearBoard(data.weeks, {year: 2026, snapshotDate});
+const boardSummary = summarizeBoard(board);
+const cellX = slot => 37 + slot.weekIndex * 19.35;
+const cellY = slot => 99 + slot.weekday * 21;
+let breakout = `<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="390" viewBox="0 0 1100 390" role="img">
+<title>Break the Quiet Days — Srijan's 2026 Contribution Fortress</title>
+<desc>A static full-year game preview. ${boardSummary.quiet} quiet days are destructible; ${boardSummary.protected} dates with recorded contributions are protected pass-through energy shields.</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:#edf5ff}.muted{fill:#8eabc3}.mono{font-family:"SF Mono",Monaco,"Cascadia Code","Roboto Mono",Consolas,monospace;letter-spacing:1.35px}.quiet{fill:#173047}.future{fill:#0b1824;fill-opacity:.16;stroke:#28465a;stroke-dasharray:2 2}.hit1{stroke:#2d5873;stroke-width:1}.hit2{stroke:#5c8299;stroke-width:1.3}.hit3{stroke:#8fb8cb;stroke-width:1.7}</style>
+<defs><linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#168fe4"/><stop offset="1" stop-color="#61e6ca"/></linearGradient></defs>
+<rect width="1100" height="390" rx="24" fill="#07131f" stroke="#1c3a50" stroke-width="1.5"/>
+<text x="38" y="42" font-size="15" class="mono" fill="#42c8ff" font-weight="600">BREAK THE QUIET DAYS · 2026 CONTRIBUTION FORTRESS</text>
+<text x="38" y="68" font-size="14" class="muted">Clear the quiet dates. Every recorded contribution remains an indestructible pass-through energy shield.</text>
+<text x="1062" y="42" font-size="12" class="muted" text-anchor="end">SNAPSHOT ${escapeXml(snapshotDate)}</text>
+<text x="1062" y="64" font-size="11" class="mono" text-anchor="end" fill="#61e6ca">REAL GITHUB DATA</text>
+<g id="year-grid">`;
+for (const slot of board) {
+  const cssClass = slot.kind === 'future' ? 'future' : slot.kind === 'protected' ? '' : `quiet hit${slot.maxHits}`;
+  const fill = slot.kind === 'protected' ? LEVEL_COLORS[slot.level] : undefined;
+  breakout += `<rect x="${cellX(slot).toFixed(2)}" y="${cellY(slot)}" width="15" height="15" rx="2.5" class="${cssClass}"${fill ? ` fill="${fill}"` : ''}><title>${escapeXml(slot.kind === 'protected' ? `${slot.date}: ${slot.count} contributions · protected` : slot.kind === 'future' ? `${slot.date}: future date` : `${slot.date}: quiet · ${slot.maxHits} hits`)}</title></rect>`;
 }
-
 breakout += `</g>
-
-<!-- Animated Paddle -->
-<g class="moving">
-  <rect y="234" width="104" height="11" rx="5.5" fill="url(#paddle-grad)" filter="url(#glow)">
-    <animate attributeName="x" dur="10s" repeatCount="indefinite"
-      values="448; 618; 318; 718; 448"
-      keyTimes="0; 0.25; 0.50; 0.75; 1"
-      calcMode="spline"
-      keySplines="0.42 0 0.58 1; 0.42 0 0.58 1; 0.42 0 0.58 1; 0.42 0 0.58 1" />
-  </rect>
-</g>
-<rect class="still" x="498" y="234" width="104" height="11" rx="5.5" fill="url(#paddle-grad)" />
-
-<!-- Animated Ball -->
-<g class="moving">
-  <circle r="6.5" fill="#ffffff" stroke="#77e3ff" stroke-width="1.5" filter="url(#glow)">
-    <animateMotion dur="10s" repeatCount="indefinite"
-      path="M 500 227 L 670 115 L 730 95 L 820 180 L 670 227 L 450 135 L 350 95 L 220 170 L 370 227 L 520 150 L 600 95 L 770 227 Z"
-      calcMode="linear" />
-  </circle>
-</g>
-<circle class="still" cx="550" cy="227" r="6.5" fill="#ffffff" stroke="#77e3ff" stroke-width="1.5" />
-
-<!-- Brick Hit Spark Effects -->
-<g class="moving">
-  <circle cx="670" cy="115" r="1" fill="#77e3ff" opacity="0">
-    <animate attributeName="r" values="2;16;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="0.75s"/>
-    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="0.75s"/>
-  </circle>
-  <circle cx="730" cy="95" r="1" fill="#77e3ff" opacity="0">
-    <animate attributeName="r" values="2;16;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="1.35s"/>
-    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="1.35s"/>
-  </circle>
-  <circle cx="450" cy="135" r="1" fill="#77e3ff" opacity="0">
-    <animate attributeName="r" values="2;16;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="3.25s"/>
-    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="3.25s"/>
-  </circle>
-  <circle cx="350" cy="95" r="1" fill="#77e3ff" opacity="0">
-    <animate attributeName="r" values="2;16;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="3.85s"/>
-    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="3.85s"/>
-  </circle>
-  <circle cx="520" cy="150" r="1" fill="#77e3ff" opacity="0">
-    <animate attributeName="r" values="2;16;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="5.75s"/>
-    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="5.75s"/>
-  </circle>
-  <circle cx="600" cy="95" r="1" fill="#77e3ff" opacity="0">
-    <animate attributeName="r" values="2;16;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="6.45s"/>
-    <animate attributeName="opacity" values="0;1;0" keyTimes="0;0.04;0.08" dur="10s" repeatCount="indefinite" begin="6.45s"/>
-  </circle>
-</g>
-
-<!-- Mini Mascot (Player 01) -->
-<g transform="translate(1015, 205)">
-  <g class="moving">
-    ${cycleMarkup('run-sheet')}
-  </g>
-  <g class="still">
-    ${cycleMarkup('run-sheet', false)}
-  </g>
-  <text x="0" y="24" font-size="9" class="mono" text-anchor="middle" fill="#8eabc3">P1 SRIJAN</text>
-</g>
-
-<!-- Divider Line -->
-<path d="M38 266H1062" stroke="#203547" stroke-width="1.5"/>
-
-<!-- HUD / Stats -->
-<g transform="translate(0, 5)">
-  <text x="38" y="305" font-size="28" font-weight="bold">1,840</text>
-  <text x="38" y="328" font-size="11" class="mono muted">ARCADE SCORE</text>
-
-  <text x="260" y="305" font-size="28" font-weight="bold" fill="#52e1bf">❤❤❤</text>
-  <text x="260" y="328" font-size="11" class="mono muted">BALLS LEFT</text>
-
-  <text x="480" y="305" font-size="28" font-weight="bold">${s.total.toLocaleString()}</text>
-  <text x="480" y="328" font-size="11" class="mono muted">CALENDAR BRICKS</text>
-
-  <text x="740" y="305" font-size="28" font-weight="bold">${s.best} <tspan font-size="18" font-weight="normal" fill="#8eabc3">days</tspan></text>
-  <text x="740" y="328" font-size="11" class="mono muted">BEST STREAK</text>
-</g>
-
-<!-- Footer hint -->
-<text x="38" y="366" font-size="12" class="muted">Click anywhere to play the interactive Breakout game in your browser with real physics, sound, and live input.</text>
-
-</svg>
-`;
-
-// Save both breakout-v2.svg and quest-v2.svg (for backwards compatibility)
+<path d="M38 271H1062" stroke="#203d52" stroke-width="1.5"/>
+<text x="38" y="306" font-size="28" font-weight="650">${boardSummary.quiet}</text><text x="38" y="329" font-size="11" class="mono muted">QUIET BLOCKS TO CLEAR</text>
+<text x="305" y="306" font-size="28" font-weight="650" fill="#56d7ff">${boardSummary.protected}</text><text x="305" y="329" font-size="11" class="mono muted">PROTECTED CONTRIBUTION DAYS</text>
+<text x="623" y="306" font-size="28" font-weight="650">${boardSummary.future}</text><text x="623" y="329" font-size="11" class="mono muted">FUTURE DATE OUTLINES</text>
+<a href="https://srimi1.github.io/Srimi1/" target="_blank"><g transform="translate(850 285)" cursor="pointer"><rect width="212" height="47" rx="23.5" fill="url(#accent)"/><text x="106" y="29" text-anchor="middle" font-size="11" class="mono" fill="#03121d" font-weight="700">PLAY PHYSICS ARCADE ↗</text></g></a>
+<text x="38" y="365" font-size="12" class="muted">Quiet-run depth sets 1–3 hit durability. The linked game adds real collision physics, cracks, fragments, combos, and lives.</text>
+</svg>`;
 await writeFile('assets/breakout-v2.svg', breakout);
 await writeFile('assets/quest-v2.svg', breakout);
 
 // 3. RHYTHM CHART
 const months = {};
-for (const w of data.weeks) for (const d of w.contributionDays) months[d.date.slice(0, 7)] = (months[d.date.slice(0, 7)] || 0) + d.contributionCount;
-const langs = {};
-for (const r of repos.filter(r => !r.fork && r.language)) langs[r.language] = (langs[r.language] || 0) + 1;
-const top = Object.entries(langs).sort((a, b) => b[1] - a[1]).slice(0, 5), entries = Object.entries(months), max = Math.max(1, ...Object.values(months));
+for (const week of data.weeks) for (const day of week.contributionDays) months[day.date.slice(0, 7)] = (months[day.date.slice(0, 7)] || 0) + day.contributionCount;
+const languages = {};
+for (const repo of repos.filter(repo => !repo.fork && repo.language)) languages[repo.language] = (languages[repo.language] || 0) + 1;
+const topLanguages = Object.entries(languages).sort((a, b) => b[1] - a[1]).slice(0, 5);
+const monthEntries = Object.entries(months);
+const maximum = Math.max(1, ...Object.values(months));
 let chart = start(335, 'Activity rhythm and languages', 'Monthly contribution counts and public original repositories grouped by primary language.');
 chart += text(36, 40, 'THE BUILD RHYTHM', 15, 'mono') + text(36, 67, 'Contributions per month', 14, 'muted') + text(700, 40, 'TOOLS OF THE TRADE', 15, 'mono') + text(700, 67, 'Public original repos · primary language', 14, 'muted');
-for (const [i, [m, n]] of entries.entries()) {
-  const x = 38 + i * 46, h = 140 * n / max;
-  chart += `<rect class="reveal" x="${x}" y="${248 - h}" width="28" height="${Math.max(2, h)}" rx="4" fill="#0caaf5" style="animation-delay:${i * .06}s"/>` + text(x, 239 - h, n, 10, 'muted') + text(x, 274, m.slice(5), 11, 'muted');
+for (const [index, [month, count]] of monthEntries.entries()) {
+  const x = 38 + index * 46;
+  const height = 140 * count / maximum;
+  chart += `<rect class="reveal" x="${x}" y="${248 - height}" width="28" height="${Math.max(2, height)}" rx="4" fill="#0caaf5" style="animation-delay:${index * .06}s"/>` + text(x, 239 - height, count, 10, 'muted') + text(x, 274, month.slice(5), 11, 'muted');
 }
-for (const [i, [l, n]] of top.entries()) {
-  const y = 105 + i * 37;
-  chart += text(700, y, l, 14) + text(1030, y, n, 14, 'muted') + `<rect x="800" y="${y - 10}" width="${210 * n / top[0][1]}" height="10" rx="5" fill="${['#09a9f4', '#57c6f7', '#90e0ff', '#347cbb', '#506a86'][i]}" class="reveal"/>`;
+for (const [index, [language, count]] of topLanguages.entries()) {
+  const y = 105 + index * 37;
+  chart += text(700, y, language, 14) + text(1030, y, count, 14, 'muted') + `<rect x="800" y="${y - 10}" width="${210 * count / topLanguages[0][1]}" height="10" rx="5" fill="${['#09a9f4', '#57c6f7', '#90e0ff', '#347cbb', '#506a86'][index]}" class="reveal"/>`;
 }
-chart += text(38, 313, `Snapshot ${data.updatedAt.slice(0, 10)} · ${repos.length} public repositories · ${repos.filter(r => !r.fork).length} originals · ${repos.filter(r => r.fork).length} forks`, 12, 'muted') + '</svg>';
+chart += text(38, 313, `Snapshot ${data.updatedAt.slice(0, 10)} · ${repos.length} public repositories · ${repos.filter(repo => !repo.fork).length} originals · ${repos.filter(repo => repo.fork).length} forks`, 12, 'muted') + '</svg>';
 await writeFile('assets/rhythm.svg', chart);
 
-console.log(`Generated profile: ${repos.length} public repos, ${s.days} days, generated Break the Year arcade.`);
+// 4. 360-DEGREE LOGO WRAPPERS FOR THE GITHUB README
+await mkdir('assets/logo-orbits', {recursive: true});
+for (const [index, project] of featured.entries()) {
+  const logo = await dataUri(`docs/${project.image}`);
+  const delay = -(index * 1.75);
+  const wrapper = `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img"><title>${escapeXml(project.name)} logo rotating through 360 degrees</title><style>.logo{transform-box:fill-box;transform-origin:center;animation:orbit 7s cubic-bezier(.45,.05,.55,.95) ${delay}s infinite}.halo{animation:breathe 3.5s ease-in-out ${delay}s infinite}@keyframes orbit{0%{transform:perspective(300px) rotateY(0deg) rotateX(0deg)}25%{transform:perspective(300px) rotateY(90deg) rotateX(7deg)}50%{transform:perspective(300px) rotateY(180deg) rotateX(0deg)}75%{transform:perspective(300px) rotateY(270deg) rotateX(-7deg)}100%{transform:perspective(300px) rotateY(360deg) rotateX(0deg)}}@keyframes breathe{50%{opacity:.7;transform:scale(1.08)}}@media(prefers-reduced-motion:reduce){*{animation:none!important}.logo{transform:none!important}}</style><defs><radialGradient id="bg"><stop stop-color="#153a57"/><stop offset="1" stop-color="#07131f"/></radialGradient><filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#000" flood-opacity=".42"/></filter><clipPath id="clip"><rect x="24" y="24" width="80" height="80" rx="18"/></clipPath></defs><rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)" stroke="#294b63"/><circle class="halo" cx="64" cy="64" r="43" fill="none" stroke="#42c8ff" stroke-opacity=".18"/><g class="logo" filter="url(#shadow)"><image x="24" y="24" width="80" height="80" preserveAspectRatio="xMidYMid meet" clip-path="url(#clip)" xlink:href="${logo}"/></g></svg>`;
+  await writeFile(`assets/logo-orbits/${project.repo}.svg`, wrapper);
+}
 
-const demo = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-36 -74 72 88" role="img"><title>Srijan running — eight-frame stride cycle</title><style>.still{display:none}@media(prefers-reduced-motion:reduce){.moving{display:none}.still{display:inline}}</style><defs><image id="sheet" width="1536" height="1024" xlink:href="${runner}"/></defs><g class="moving">${cycleMarkup('sheet')}</g><g class="still">${cycleMarkup('sheet', false)}</g></svg>`;
-await writeFile('docs/assets/run-demo.svg', demo);
+console.log(`Generated profile: ${repos.length} public repos, ${stats.days} calendar days, ${boardSummary.quiet} quiet blocks, ${boardSummary.protected} protected days, ${featured.length} rotating project logos.`);

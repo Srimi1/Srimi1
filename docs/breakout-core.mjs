@@ -1,134 +1,186 @@
-// Pure Breakout rules: no DOM, fully unit-testable. The UI in breakout.mjs
-// renders this state into SVG and feeds it input + animation frames.
+// Pure Breakout domain rules. Matter.js owns collision resolution in breakout.mjs;
+// this module owns calendar layout, durability, scoring, lives, and game phases.
 export const BOARD_W = 1000;
-export const BOARD_H = 480;
+export const BOARD_H = 620;
 export const BALL_R = 8;
-export const PADDLE_W = 110;
-export const PADDLE_H = 14;
-export const PADDLE_Y = BOARD_H - 34;
+export const PADDLE_W = 118;
+export const PADDLE_H = 15;
+export const PADDLE_Y = BOARD_H - 38;
 export const START_LIVES = 3;
-export const START_SPEED = 380;
-export const MAX_SPEED = 720;
-export const SPEED_UP = 1.6;
-export const BRICK_COLS = 10;
-export const BRICK_TOP = 46;
-export const BRICK_H = 22;
-export const BRICK_GAP = 6;
-export const BRICK_MARGIN = 24;
-export const LEVEL_ORDER = ['NONE', 'FIRST_QUARTILE', 'SECOND_QUARTILE', 'THIRD_QUARTILE', 'FOURTH_QUARTILE'];
-export const LEVEL_COLORS = {NONE: '#26405a', FIRST_QUARTILE: '#145170', SECOND_QUARTILE: '#087eae', THIRD_QUARTILE: '#0ba9ed', FOURTH_QUARTILE: '#78e2ff'};
-export const levelPoints = level => 10 * (1 + Math.max(0, LEVEL_ORDER.indexOf(level)));
+export const START_SPEED = 8.2;
+export const MAX_SPEED = 12.4;
+export const SPEED_UP = 0.055;
+export const GAME_YEAR = 2026;
+export const BRICK_COLS = 53;
+export const BRICK_TOP = 102;
+export const BRICK_H = 24;
+export const BRICK_GAP_X = 3;
+export const BRICK_GAP_Y = 5;
+export const BRICK_MARGIN_X = 28;
+export const LEVEL_ORDER = ['FIRST_QUARTILE', 'SECOND_QUARTILE', 'THIRD_QUARTILE', 'FOURTH_QUARTILE'];
+export const LEVEL_COLORS = {
+  NONE: '#19334b',
+  FIRST_QUARTILE: '#8bdcff',
+  SECOND_QUARTILE: '#39aef5',
+  THIRD_QUARTILE: '#176fca',
+  FOURTH_QUARTILE: '#173a94',
+  FUTURE: '#0c1925',
+};
 
-// One brick per calendar day: the last BRICK_COLS weeks become columns,
-// weekdays become rows, so the wall IS the recent contribution graph.
-export function buildBricks(weeks, cols = BRICK_COLS) {
-  const slice = weeks.slice(-cols);
-  const n = slice.length;
-  if (!n) return [];
-  const w = (BOARD_W - 2 * BRICK_MARGIN - (n - 1) * BRICK_GAP) / n;
-  const bricks = [];
-  slice.forEach((week, col) => {
-    for (const day of week.contributionDays) {
-      bricks.push({
-        x: BRICK_MARGIN + col * (w + BRICK_GAP),
-        y: BRICK_TOP + day.weekday * (BRICK_H + BRICK_GAP),
-        w, h: BRICK_H,
-        level: day.contributionLevel || 'NONE',
-        count: day.contributionCount || 0,
-        date: day.date,
-        points: levelPoints(day.contributionLevel),
-        alive: true,
-      });
-    }
-  });
-  return bricks;
+const pad = value => String(value).padStart(2, '0');
+const iso = date => `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}`;
+const utcDate = value => {
+  const [year, month, day] = String(value).slice(0, 10).split('-').map(Number);
+  return new Date(Date.UTC(year, month - 1, day));
+};
+const addDays = (date, amount) => new Date(date.getTime() + amount * 86400000);
+
+export function quietHitsForRun(runLength) {
+  if (runLength >= 7) return 3;
+  if (runLength >= 3) return 2;
+  return 1;
 }
 
-export function createGame(bricks) {
-  const state = {
-    phase: 'serve', score: 0, lives: START_LIVES,
-    speed: START_SPEED, bricks, bricksLeft: bricks.filter(b => b.alive).length,
-    paddle: {x: BOARD_W / 2, w: PADDLE_W, h: PADDLE_H, y: PADDLE_Y},
-    ball: {x: BOARD_W / 2, y: PADDLE_Y - BALL_R, vx: 0, vy: 0, r: BALL_R},
+export function buildYearBoard(weeks, {year = GAME_YEAR, snapshotDate} = {}) {
+  const byDate = new Map();
+  for (const week of weeks || []) {
+    for (const day of week.contributionDays || []) byDate.set(day.date, day);
+  }
+
+  const first = new Date(Date.UTC(year, 0, 1));
+  const last = new Date(Date.UTC(year, 11, 31));
+  const startSunday = addDays(first, -first.getUTCDay());
+  const latestData = [...byDate.keys()].sort().at(-1) || `${year}-01-01`;
+  const snapshot = utcDate(snapshotDate || latestData);
+  const brickW = (BOARD_W - BRICK_MARGIN_X * 2 - (BRICK_COLS - 1) * BRICK_GAP_X) / BRICK_COLS;
+  const slots = [];
+  let quietRun = 0;
+
+  for (let cursor = first; cursor <= last; cursor = addDays(cursor, 1)) {
+    const date = iso(cursor);
+    const source = byDate.get(date);
+    const contributionCount = Number(source?.contributionCount || 0);
+    const future = cursor > snapshot;
+    const protectedDay = !future && contributionCount > 0;
+    if (future || protectedDay) quietRun = 0;
+    else quietRun += 1;
+    const maxHits = future || protectedDay ? 0 : quietHitsForRun(quietRun);
+    const weekIndex = Math.floor((cursor - startSunday) / (7 * 86400000));
+    const weekday = cursor.getUTCDay();
+
+    slots.push({
+      id: date,
+      date,
+      year,
+      weekIndex,
+      weekday,
+      x: BRICK_MARGIN_X + weekIndex * (brickW + BRICK_GAP_X),
+      y: BRICK_TOP + weekday * (BRICK_H + BRICK_GAP_Y),
+      w: brickW,
+      h: BRICK_H,
+      count: contributionCount,
+      level: source?.contributionLevel || 'NONE',
+      kind: future ? 'future' : protectedDay ? 'protected' : 'quiet',
+      maxHits,
+      hitsLeft: maxHits,
+      quietRun,
+      alive: !future,
+    });
+  }
+  return slots;
+}
+
+export function summarizeBoard(slots) {
+  return slots.reduce((summary, slot) => {
+    summary.total += 1;
+    summary[slot.kind] += 1;
+    if (slot.kind !== 'future') summary.elapsed += 1;
+    if (slot.kind === 'protected') summary.contributions += slot.count;
+    return summary;
+  }, {total: 0, elapsed: 0, quiet: 0, protected: 0, future: 0, contributions: 0});
+}
+
+export function collisionRole(slot) {
+  if (slot.kind === 'future') return 'none';
+  if (slot.kind === 'protected') return 'sensor';
+  return 'solid';
+}
+
+export function createGame(slots) {
+  const bricks = slots.map(slot => ({...slot}));
+  return {
+    phase: 'serve',
+    score: 0,
+    lives: START_LIVES,
+    combo: 0,
+    speed: START_SPEED,
+    bricks,
+    quietLeft: bricks.filter(brick => brick.kind === 'quiet' && brick.alive).length,
   };
-  return state;
 }
 
-export function serve(state) {
-  state.phase = 'serve';
-  state.ball.x = state.paddle.x;
-  state.ball.y = state.paddle.y - state.ball.r;
-  state.ball.vx = 0;
-  state.ball.vy = 0;
-}
-
-export function launch(state, angle = -Math.PI / 3) {
+export function launch(state) {
   if (state.phase !== 'serve') return false;
   state.phase = 'play';
-  state.ball.vx = state.speed * Math.cos(angle);
-  state.ball.vy = state.speed * Math.sin(angle);
   return true;
 }
 
-export function movePaddle(state, x) {
-  state.paddle.x = Math.min(BOARD_W - state.paddle.w / 2, Math.max(state.paddle.w / 2, x));
-  if (state.phase === 'serve') { state.ball.x = state.paddle.x; }
-}
+export function hitBrick(state, id) {
+  if (state.phase !== 'play') return null;
+  const brick = state.bricks.find(candidate => candidate.id === id);
+  if (!brick || !brick.alive || brick.kind === 'future') return null;
 
-// Returns 'x' or 'y' for the reflection axis when the ball overlaps a rect, else null.
-export function hitAxis(ball, rect) {
-  const cx = Math.min(rect.x + rect.w, Math.max(rect.x, ball.x));
-  const cy = Math.min(rect.y + rect.h, Math.max(rect.y, ball.y));
-  const dx = ball.x - cx, dy = ball.y - cy;
-  if (dx * dx + dy * dy > ball.r * ball.r) return null;
-  const penX = ball.r - Math.abs(dx), penY = ball.r - Math.abs(dy);
-  return penX < penY ? 'x' : 'y';
-}
-
-function bouncePaddle(state) {
-  const offset = Math.min(1, Math.max(-1, (state.ball.x - state.paddle.x) / (state.paddle.w / 2)));
-  const a = offset * 1.05; // up to ~60° off vertical
-  state.ball.vx = state.speed * Math.sin(a);
-  state.ball.vy = -Math.abs(state.speed * Math.cos(a));
-  state.ball.y = state.paddle.y - state.ball.r;
-}
-
-// Advance the simulation by dt seconds. Returns events for the UI/tests.
-export function step(state, dt) {
-  if (state.phase !== 'play') return [];
-  const events = [];
-  const ball = state.ball;
-  const dist = Math.hypot(ball.vx, ball.vy) * dt;
-  const n = Math.max(1, Math.ceil(dist / ball.r));
-  for (let s = 0; s < n; s++) {
-    ball.x += ball.vx * dt / n;
-    ball.y += ball.vy * dt / n;
-    if (ball.x < ball.r) { ball.x = ball.r; ball.vx = Math.abs(ball.vx); }
-    else if (ball.x > BOARD_W - ball.r) { ball.x = BOARD_W - ball.r; ball.vx = -Math.abs(ball.vx); }
-    if (ball.y < ball.r) { ball.y = ball.r; ball.vy = Math.abs(ball.vy); }
-    const p = state.paddle;
-    if (ball.vy > 0 && hitAxis(ball, {x: p.x - p.w / 2, y: p.y, w: p.w, h: p.h})) { bouncePaddle(state); events.push({type: 'paddle'}); }
-    for (let i = 0; i < state.bricks.length; i++) {
-      const brick = state.bricks[i];
-      if (!brick.alive) continue;
-      const axis = hitAxis(ball, brick);
-      if (!axis) continue;
-      brick.alive = false;
-      state.bricksLeft--;
-      state.score += brick.points;
-      state.speed = Math.min(MAX_SPEED, state.speed + SPEED_UP);
-      if (axis === 'x') { ball.vx = ball.x < brick.x + brick.w / 2 ? -Math.abs(ball.vx) : Math.abs(ball.vx); }
-      else { ball.vy = ball.y < brick.y + brick.h / 2 ? -Math.abs(ball.vy) : Math.abs(ball.vy); }
-      events.push({type: 'brick', index: i, points: brick.points});
-      break;
-    }
+  if (brick.kind === 'protected') {
+    state.combo = 0;
+    return {type: 'protected', id, level: brick.level, count: brick.count};
   }
-  if (state.bricksLeft === 0) { state.phase = 'won'; events.push({type: 'win', score: state.score}); }
-  else if (ball.y - ball.r > BOARD_H) {
-    state.lives--;
-    events.push({type: 'life', lives: state.lives});
-    if (state.lives <= 0) { state.phase = 'over'; events.push({type: 'over', score: state.score}); }
-    else serve(state);
+
+  brick.hitsLeft -= 1;
+  state.combo += 1;
+  const damagePoints = 10 * state.combo;
+  state.score += damagePoints;
+
+  if (brick.hitsLeft > 0) {
+    return {
+      type: 'damage',
+      id,
+      hitsLeft: brick.hitsLeft,
+      maxHits: brick.maxHits,
+      score: state.score,
+      combo: state.combo,
+      points: damagePoints,
+    };
   }
-  return events;
+
+  brick.alive = false;
+  state.quietLeft -= 1;
+  const breakBonus = 20 * brick.maxHits;
+  state.score += breakBonus;
+  state.speed = Math.min(MAX_SPEED, state.speed + SPEED_UP);
+  const event = {
+    type: 'shatter',
+    id,
+    maxHits: brick.maxHits,
+    score: state.score,
+    combo: state.combo,
+    points: damagePoints + breakBonus,
+    quietLeft: state.quietLeft,
+  };
+  if (state.quietLeft === 0) {
+    state.phase = 'won';
+    return {...event, won: true};
+  }
+  return event;
+}
+
+export function loseLife(state) {
+  if (state.phase !== 'play') return null;
+  state.lives -= 1;
+  state.combo = 0;
+  if (state.lives <= 0) {
+    state.phase = 'over';
+    return {type: 'over', lives: 0, score: state.score};
+  }
+  state.phase = 'serve';
+  return {type: 'life', lives: state.lives, score: state.score};
 }

@@ -1,170 +1,125 @@
 <div align="center">
 
-<img src="assets/hero-v2.svg" width="100%" alt="Srijan Saanand — Build what you wish existed. Native apps, useful tools, and agent experiments." />
+<img src="assets/hero-v2.svg" width="100%" alt="Srijan Saanand — useful ideas, built all the way. Native products, agent systems, and honest evidence." />
 
 <br />
 
-**[The workshop](#the-workshop)** &nbsp; / &nbsp; **[Play Break the Year](https://srimi1.github.io/Srimi1/)** &nbsp; / &nbsp; **[All projects](#the-full-journey)** &nbsp; / &nbsp; **[Say hello](https://linkedin.com/in/srijan-saanand)**
+**[Selected work](#selected-work)** &nbsp; / &nbsp; **[Play Break the Quiet Days](https://srimi1.github.io/Srimi1/)** &nbsp; / &nbsp; **[How projects were selected](#what-counts-as-success)** &nbsp; / &nbsp; **[Say hello](https://linkedin.com/in/srijan-saanand)**
 
 </div>
 
 <br />
 
-I’m **Srijan**, a developer and student in India. I build native desktop and mobile apps, mostly things I wanted to exist and couldn’t find, and the agent tooling that helps me build them faster.
+I’m **Srijan**, a developer and student in India. I build native products and agent systems, usually because I wanted the tool and could not find a version I trusted.
 
-The habit I care about most: **ship it properly.** Signed builds, quality gates, useful release notes, and documentation that is honest about what works and what is still an experiment.
+My rule is simple: **ship the useful part, test the risky part, and document the unfinished part.**
 
-**Swift & SwiftUI** · **Rust** · **TypeScript** · **Python** · **Kotlin**<br />
-macOS · iOS · Android · agent tools & MCP
+**Swift & SwiftUI** · **Rust** · **TypeScript** · **Python**<br />
+macOS · iOS · agent runtimes · local-first tools
 
-## The workshop
+## Selected work
 
-### Selected work
-
-A few projects that best show what I build: native interfaces, useful everyday tools, and the systems behind agents.
+These are the four public projects that currently have the strongest evidence of success: a substantial working implementation, a reproducible path, meaningful quality gates, and claims that match what is actually shipped or verified.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/Notch-hub"><img src="docs/assets/projects/notch-hub.png" width="88" height="88" alt="NotchHub logo" /></a>
+<a href="https://github.com/Srimi1/Notch-hub"><img src="assets/logo-orbits/Notch-hub.svg" width="96" height="96" alt="NotchHub logo rotating through 360 degrees" /></a>
 
-#### [NotchHub ↗](https://github.com/Srimi1/Notch-hub)
+### [NotchHub ↗](https://github.com/Srimi1/Notch-hub)
 **The MacBook notch, put to work.**
 
-Meetings, clipboard, media, Focus, and system status in a local-first AppKit and SwiftUI dashboard.
+A native, local-first dashboard for meetings, timers, media, clipboard, Focus, battery, and system status.
 
-`Native macOS` · Native desktop engineering
+`SHIPPED` · `v0.9.0` · `44 test files` · `Universal DMG` · `CI + CodeQL`
+
+<sub>The public DMG is ad-hoc signed and not notarized; that limitation is documented.</sub>
 
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/Wallps"><img src="docs/assets/projects/wallps.png" width="88" height="88" alt="Wallps logo" /></a>
+<a href="https://github.com/Srimi1/P-Agents"><img src="assets/logo-orbits/P-Agents.svg" width="96" height="96" alt="P-Agents logo rotating through 360 degrees" /></a>
 
-#### [Wallps ↗](https://github.com/Srimi1/Wallps)
-**Give the desktop a little life.**
+### [P-Agents ↗](https://github.com/Srimi1/P-Agents)
+**Agents that can delegate without losing the trail.**
 
-Live video wallpapers, a local library, and battery-aware playback. SwiftUI / AVFoundation on Mac; Electron on Windows.
+A Rust multi-agent harness with streaming ReAct execution, gated tools, parallel subagents, and replayable sessions.
 
-`macOS + Windows` · Cross-platform release
+`VALIDATED TOOLING` · `5 Rust crates` · `Offline E2E` · `macOS + Linux CI` · `6 personas`
+
+<sub>Validated from source and in CI; there is not yet a packaged public release.</sub>
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/Internet-speed-reader"><img src="docs/assets/projects/internet-speed-reader.png" width="88" height="88" alt="Internet Speed Reader logo" /></a>
+<a href="https://github.com/Srimi1/Internet-speed-reader"><img src="assets/logo-orbits/Internet-speed-reader.svg" width="96" height="96" alt="Internet Speed Reader logo rotating through 360 degrees" /></a>
 
-#### [Internet Speed Reader ↗](https://github.com/Srimi1/Internet-speed-reader)
+### [Internet Speed Reader ↗](https://github.com/Srimi1/Internet-speed-reader)
 **Know what your connection is doing.**
 
-Live traffic in the menu bar, manual speed tests, and outage detection. Public builds are ad-hoc signed, not notarized.
+A macOS menu-bar utility with live traffic, outage detection, manual capacity checks, and local history.
 
-`Swift · macOS` · Everyday utility
+`SHIPPED` · `v1.1.0` · `187 tests` · `31 suites` · `DMG + SHA-256`
 
-</td>
-<td width="50%" valign="top">
-
-<a href="https://github.com/Srimi1/muse-codex"><img src="docs/assets/projects/muse-codex.png" width="88" height="88" alt="Muse Codex logo" /></a>
-
-#### [Muse Codex ↗](https://github.com/Srimi1/muse-codex)
-**A new model connection. The same tools.**
-
-A compatibility gateway that preserves Muse’s tools, approvals, and sandbox. Source-only, Apple silicon, pinned Muse version.
-
-`Rust · experimental` · Runtime integration
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-<a href="https://github.com/Srimi1/LifeOs-Inbox"><img src="docs/assets/projects/lifeos-inbox.jpg" width="88" height="88" alt="LifeOS Inbox logo" /></a>
-
-#### [LifeOS Inbox ↗](https://github.com/Srimi1/LifeOs-Inbox)
-**An inbox an agent can reason about.**
-
-Typed triage capabilities for follow-ups, obligations, and daily briefs, with services for persistence and scheduling.
-
-`TypeScript · agents` · Agent-first architecture
+<sub>The released build is v1.1.0; newer work on the default branch is not presented here as a release.</sub>
 
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/The-Keyboard-project"><img src="docs/assets/projects/the-keyboard-project.png" width="88" height="88" alt="The Keyboard Project logo" /></a>
+<a href="https://github.com/Srimi1/The-Keyboard-project"><img src="assets/logo-orbits/The-Keyboard-project.svg" width="96" height="96" alt="The Keyboard Project logo rotating through 360 degrees" /></a>
 
-#### [The Keyboard Project ↗](https://github.com/Srimi1/The-Keyboard-project)
+### [The Keyboard Project ↗](https://github.com/Srimi1/The-Keyboard-project)
 **The Android typing feel, on iPhone.**
 
-AOSP-inspired key geometry and multi-item clipboard history inside an iOS keyboard extension.
+A native keyboard extension with familiar geometry, layered input, accessibility actions, and local clipboard history.
 
-`Swift · iOS` · Native mobile engineering
+`PRE-RELEASE` · `50 Swift files` · `17/17 UI trials` · `CI-gated` · `Device gate open`
+
+<sub>A successful engineering candidate, not a launched product; physical-device acceptance remains open.</sub>
 
 </td>
 </tr>
 </table>
 
-### Agents, harnesses, and experiments
-
-| Project | What I’m building | Where it stands |
-| :--- | :--- | :--- |
-| **[P-Agents](https://github.com/Srimi1/P-Agents)** | A Rust agent harness with streaming, isolated sub-agents, gated tools, and replayable sessions. | Learning and building in public. |
-| **[P-Harness](https://github.com/Srimi1/P-Harness)** | A TypeScript research CLI: deconstruct, explore, deep-read, and produce cited reports. | Research tooling. |
-| **[Sera](https://github.com/Srimi1/Sera-Autonomous-Agent)** | ReAct CLI, SQLite/FTS5 memory, provider adapters, approvals, and context compression. | First five phases of a 100-phase plan complete. |
-| **[AI.Trader](https://github.com/Srimi1/Ai.Trader)** | Multi-agent market research, alternative data, backtesting, and portfolio experiments. | Research; not investment advice. |
-| **[AI Constitution](https://github.com/Srimi1/Constitution)** | A shared governance layer for my AI tools, with secret checks and launch safeguards. | Workflow infrastructure. |
-| **[120fps Player](https://github.com/Srimi1/120fps-player)** | An Android player exploring on-device motion interpolation. | Player and diagnostics run; **frame interpolation is not implemented**. |
-| **[Budget Guard](https://github.com/Srimi1/potential-octo-dollop)** | An iPhone grocery budget tracker with integer-paise totals and weight-based entry. | Phase 1 complete; scanning and Live Activities are planned. |
-
-### Small tools, real use
-
-[**Prompt Forge**](https://github.com/Srimi1/Prompt-Forge) turns rough ideas into structured AI prompts.<br />
-[**claude-design-mcp**](https://github.com/Srimi1/-claude-design-mcp-) prepares project context for Claude Design through a Rust MCP server.<br />
-[**iPhone Wallpaper Resizer**](https://github.com/Srimi1/iphone-wallpaper-resizer) is a drag-and-drop, offline HTML utility.<br />
-[**Research Pro**](https://github.com/Srimi1/Research-Pro) packages academic research workflows as skills and commands.<br />
-[**New Jarvis**](https://github.com/Srimi1/New-Jarvis) starts a macOS workspace with a double clap.<br />
-[**Trieon Labs**](https://github.com/Srimi1/trieonlabs.com) is the home for the things I’m building.
-
-### More from the workshop
-
-Existing logos and project artwork from the rest of the collection.
-
-<table><tr>
-<td align="center" width="25%"><a href="https://github.com/Srimi1/P-Harness"><img src="docs/assets/projects/p-harness.jpg" width="72" height="72" alt="P-Harness artwork" /><br /><strong>P-Harness</strong></a></td>
-<td align="center" width="25%"><a href="https://github.com/Srimi1/Constitution"><img src="docs/assets/projects/constitution.png" width="72" height="72" alt="AI Constitution artwork" /><br /><strong>AI Constitution</strong></a></td>
-<td align="center" width="25%"><a href="https://github.com/Srimi1/Veronica"><img src="docs/assets/projects/veronica.png" width="72" height="72" alt="Veronica logo" /><br /><strong>Veronica</strong></a></td>
-<td align="center" width="25%"><a href="https://github.com/Srimi1/Friday-core"><img src="docs/assets/projects/friday-core.png" width="72" height="72" alt="Friday Core logo" /><br /><strong>Friday Core</strong></a></td>
-</tr><tr>
-<td align="center" width="25%"><a href="https://github.com/Srimi1/trieonlabs.com"><img src="docs/assets/projects/trieonlabs.com.svg" width="72" height="72" alt="Trieon Labs logo" /><br /><strong>Trieon Labs</strong></a></td>
-<td align="center" width="25%"><a href="https://github.com/Srimi1/Anti"><img src="docs/assets/projects/anti.svg" width="72" height="72" alt="Nagi / Anti logo" /><br /><strong>Nagi / Anti</strong></a></td>
-<td align="center" width="25%"><a href="https://github.com/Srimi1/bots"><img src="docs/assets/projects/bots.png" width="72" height="72" alt="DockBuddy artwork" /><br /><strong>DockBuddy</strong></a></td>
-</tr></table>
-
-## A year, one square at a time
+## Break the Quiet Days
 
 <a href="https://srimi1.github.io/Srimi1/">
-<img src="assets/breakout-v2.svg" width="100%" alt="Break the Year: an arcade breakout game built from Srijan's GitHub contribution calendar. Click to play." />
+<img src="assets/breakout-v2.svg" width="100%" alt="Break the Quiet Days: a static 2026 contribution fortress. Quiet dates are breakable and contribution dates are protected." />
 </a>
 
-**[Play Break the Year →](https://srimi1.github.io/Srimi1/)**<br />
-A breakout arcade game built from my real contribution calendar: every brick is a recent calendar day, brighter bricks score more. Move the paddle, keep the ball alive, and clear the whole wall. Your best score is saved in the browser.
+**[Play the full physics arcade →](https://srimi1.github.io/Srimi1/)**
 
-<sub>An empty square means no recorded GitHub contributions, not “no work.” Studying, resting, and building offline belong in the story too. The README plays an animation; the linked playground is interactive.</sub>
+The board contains every date in **2026**. Dates with recorded GitHub contributions become permanent blue energy shields: light blue, medium blue, dark blue, and deep blue by contribution intensity. They pulse on contact and let the ball continue, so no quiet target can be trapped behind an indestructible pattern. Quiet days are the objective. Short gaps break in one hit; longer gaps crack over two hits; deep quiet runs take three. Future dates stay as outlines and are never mislabeled as inactivity.
+
+The README preview is deliberately static. The linked game uses **Matter.js collision physics**, paddle steering, staged cracks, impact rings, fragments, combo scoring, three lives, keyboard/pointer/touch input, pause, and a saved best score.
+
+<sub>A quiet calendar square means no recorded GitHub contribution, not “no work.” Studying, resting, private work, and offline building do not appear in this graph.</sub>
 
 <br />
 
-<img src="assets/rhythm.svg" width="100%" alt="Animated monthly contribution totals and public original repositories grouped by primary language." />
+<img src="assets/rhythm.svg" width="100%" alt="Monthly contribution totals and public original repositories grouped by primary language." />
 
-<sub>Charts refresh daily through GitHub Actions. Calendar totals follow GitHub’s contribution rules. Language bars count public original repositories by their primary language, excluding forks; they are not percentages of commits.</sub>
+<sub>Profile graphics refresh from public GitHub data. Calendar totals follow GitHub’s contribution rules. Language bars count public original repositories by primary language; they are not percentages of commits.</sub>
 
-## The full journey
+## What counts as success
 
-The earlier assistants, prototypes, plugins, and forks are still here. **[Browse the complete public project catalogue](CATALOG.md)** for all 47 repositories found in the September 2026 rescan, including the Friday / Veronica lineage and the experiments that never reached a finished release. Forks are labelled as forks.
+A project is selected when the public repository provides convincing evidence across the dimensions below. Stars and recency are not treated as proof by themselves.
+
+| Dimension | What I looked for |
+| :--- | :--- |
+| **Working implementation** | Substantial source that fulfills the central claim rather than a plan, shell, or prompt alone. |
+| **Proof** | A release, runnable demo, reproducible offline path, screenshots, or concrete validation artifacts. |
+| **Quality** | Automated tests, CI, security checks, deterministic end-to-end validation, or release checksums. |
+| **Reproducibility** | Clear requirements, install/build instructions, pinned dependencies, and an understandable project structure. |
+| **Claim integrity** | Shipped work is labeled shipped; source-validated work and pre-release work are labeled honestly. |
 
 <details>
-<summary>Profile history & how this page works</summary>
+<summary>How this profile stays current</summary>
 
-The [previous README](README.previous.md) is preserved as a historical snapshot. The redesigned profile is generated from public repository metadata and the contribution calendar. The [maintenance guide](MAINTENANCE.md) explains the data, animation, game controls, and daily refresh workflow.
+The contribution data and generated profile graphics refresh through GitHub Actions. The avatar at `docs/assets/avatar.png` is intentionally preserved. The four-project selection is curated rather than generated from stars or repository count, so experimental work cannot silently enter the showcase.
 
 </details>
 
@@ -172,9 +127,8 @@ The [previous README](README.previous.md) is preserved as a historical snapshot.
 
 <div align="center">
 
-**Most of what’s here started because I wanted the thing to exist.**<br />
-If one of them is useful to you too, that’s the best part.
+**Build the proof. Keep the limits honest.**
 
-[GitHub](https://github.com/Srimi1) &nbsp; · &nbsp; [LinkedIn](https://linkedin.com/in/srijan-saanand) &nbsp; · &nbsp; [Play Break the Year](https://srimi1.github.io/Srimi1/)
+[GitHub](https://github.com/Srimi1) &nbsp; · &nbsp; [LinkedIn](https://linkedin.com/in/srijan-saanand) &nbsp; · &nbsp; [Play Break the Quiet Days](https://srimi1.github.io/Srimi1/)
 
 </div>

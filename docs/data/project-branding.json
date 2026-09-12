@@ -60,6 +60,12 @@
     "kind": "artwork"
   },
   {
+    "repo": "P-Agents",
+    "file": "assets/projects/p-agents.jpg",
+    "source": "generated for the profile redesign",
+    "kind": "logo"
+  },
+  {
     "repo": "Constitution",
     "file": "assets/projects/constitution.png",
     "source": "https://github.com/Srimi1/Constitution/blob/main/assets/banner.png",

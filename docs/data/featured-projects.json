@@ -2,55 +2,41 @@
   {
     "repo": "Notch-hub",
     "name": "NotchHub",
-    "stack": "Native macOS",
+    "status": "Shipped",
+    "stack": "Swift · AppKit · SwiftUI",
     "title": "The MacBook notch, put to work.",
-    "description": "Meetings, clipboard, media, Focus, and system status in a local-first AppKit and SwiftUI dashboard.",
-    "strength": "Native desktop engineering",
+    "description": "A native, local-first macOS dashboard for meetings, timers, media, clipboard, Focus, battery, and system status.",
+    "parameters": ["v0.9.0", "44 test files", "Universal DMG", "CI + CodeQL"],
     "image": "assets/projects/notch-hub.png"
   },
   {
-    "repo": "Wallps",
-    "name": "Wallps",
-    "stack": "macOS + Windows",
-    "title": "Give the desktop a little life.",
-    "description": "Live video wallpapers, a local library, and battery-aware playback. SwiftUI / AVFoundation on Mac; Electron on Windows.",
-    "strength": "Cross-platform release",
-    "image": "assets/projects/wallps.png"
+    "repo": "P-Agents",
+    "name": "P-Agents",
+    "status": "Validated tooling",
+    "stack": "Rust · Multi-agent systems",
+    "title": "Agents that can delegate without losing the trail.",
+    "description": "A model-agnostic harness with streaming ReAct execution, gated tools, parallel subagents, and replayable sessions.",
+    "parameters": ["5 Rust crates", "Offline E2E", "macOS + Linux CI", "6 personas"],
+    "image": "assets/projects/p-agents.jpg"
   },
   {
     "repo": "Internet-speed-reader",
     "name": "Internet Speed Reader",
-    "stack": "Swift \u00b7 macOS",
+    "status": "Shipped",
+    "stack": "Swift · macOS",
     "title": "Know what your connection is doing.",
-    "description": "Live traffic in the menu bar, manual speed tests, and outage detection. Public builds are ad-hoc signed, not notarized.",
-    "strength": "Everyday utility",
+    "description": "A menu-bar utility with live traffic, outage detection, manual capacity checks, and local history.",
+    "parameters": ["v1.1.0", "187 tests", "31 suites", "DMG + SHA-256"],
     "image": "assets/projects/internet-speed-reader.png"
-  },
-  {
-    "repo": "muse-codex",
-    "name": "Muse Codex",
-    "stack": "Rust \u00b7 experimental",
-    "title": "A new model connection. The same tools.",
-    "description": "A compatibility gateway that preserves Muse\u2019s tools, approvals, and sandbox. Source-only, Apple silicon, pinned Muse version.",
-    "strength": "Runtime integration",
-    "image": "assets/projects/muse-codex.png"
-  },
-  {
-    "repo": "LifeOs-Inbox",
-    "name": "LifeOS Inbox",
-    "stack": "TypeScript \u00b7 agents",
-    "title": "An inbox an agent can reason about.",
-    "description": "Typed triage capabilities for follow-ups, obligations, and daily briefs, with services for persistence and scheduling.",
-    "strength": "Agent-first architecture",
-    "image": "assets/projects/lifeos-inbox.jpg"
   },
   {
     "repo": "The-Keyboard-project",
     "name": "The Keyboard Project",
-    "stack": "Swift \u00b7 iOS",
+    "status": "Pre-release",
+    "stack": "Swift · iOS",
     "title": "The Android typing feel, on iPhone.",
-    "description": "AOSP-inspired key geometry and multi-item clipboard history inside an iOS keyboard extension.",
-    "strength": "Native mobile engineering",
+    "description": "A native keyboard extension with familiar geometry, layered input, accessibility actions, and local clipboard history.",
+    "parameters": ["50 Swift files", "17/17 UI trials", "CI-gated", "Device gate open"],
     "image": "assets/projects/the-keyboard-project.png"
   }
 ]
