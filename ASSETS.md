@@ -10,5 +10,6 @@
 | Existing avatar | `docs/assets/avatar.png` | Profile and site identity | Preserved byte-for-byte; never regenerated. |
 | Existing app marks | `docs/assets/projects/*` | Project identity | Original project artwork; no semantic edits. |
 | Rotating wrappers | `assets/logo-orbits/*.svg` | 360-degree 3D logo motion in GitHub README | Generated locally from selected app marks with reduced-motion fallback. |
+| Arcade autoplay loop | `assets/arcade-autoplay.gif` | Proof the README arcade actually autoplays, since GitHub strips scripts from README HTML | A real recording of the live Pages build (Chrome + Matter.js, captured with Puppeteer), not a mockup. Re-record after gameplay or visual changes; it is not part of the automated daily refresh. |
 
 The gameplay effects are deterministic SVG/CSS/Web Audio rendering rather than baked image sprites so they remain sharp at every viewport size.

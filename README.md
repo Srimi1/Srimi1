@@ -87,14 +87,14 @@ A native keyboard extension with familiar geometry, layered input, accessibility
 ## Break the Quiet Days
 
 <a href="https://srimi1.github.io/Srimi1/">
-<img src="assets/breakout-v2.svg" width="100%" alt="Break the Quiet Days: a static 2026 contribution fortress. Quiet dates are breakable and contribution dates are protected." />
+<img src="assets/arcade-autoplay.gif" width="100%" alt="Break the Quiet Days playing itself: a recorded loop of the live 2026 contribution fortress autoplaying, the paddle tracking the ball and quiet-day blocks cracking and breaking on their own." />
 </a>
 
 **[Play the full physics arcade →](https://srimi1.github.io/Srimi1/)**
 
 The board contains every date in **2026**. Dates with recorded GitHub contributions become permanent blue energy shields: light blue, medium blue, dark blue, and deep blue by contribution intensity. They pulse on contact and let the ball continue, so no quiet target can be trapped behind an indestructible pattern. Quiet days are the objective. Short gaps break in one hit; longer gaps crack over two hits; deep quiet runs take three. Future dates stay as outlines and are never mislabeled as inactivity.
 
-The README preview is deliberately static. The linked game **autoplays on load** — the paddle tracks the ball on its own until you touch it — and uses **Matter.js collision physics**, paddle steering, staged cracks, impact rings, fragments, combo scoring, three lives, keyboard/pointer/touch input, pause, and a saved best score.
+The clip above is a real recording of the live arcade — GitHub strips scripts from READMEs, so this is a captured loop, not a running canvas. Open the link and the same board runs for real: it **autoplays on load** — the paddle tracks the ball on its own until you touch it — with **Matter.js collision physics**, paddle steering, staged cracks, impact rings, fragments, combo scoring, three lives, keyboard/pointer/touch input, pause, and a saved best score.
 
 <sub>A quiet calendar square means no recorded GitHub contribution, not “no work.” Studying, resting, private work, and offline building do not appear in this graph.</sub>
 
