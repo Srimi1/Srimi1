@@ -94,7 +94,7 @@ A native keyboard extension with familiar geometry, layered input, accessibility
 
 The board contains every date in **2026**. Dates with recorded GitHub contributions become permanent blue energy shields: light blue, medium blue, dark blue, and deep blue by contribution intensity. They pulse on contact and let the ball continue, so no quiet target can be trapped behind an indestructible pattern. Quiet days are the objective. Short gaps break in one hit; longer gaps crack over two hits; deep quiet runs take three. Future dates stay as outlines and are never mislabeled as inactivity.
 
-The README preview is deliberately static. The linked game uses **Matter.js collision physics**, paddle steering, staged cracks, impact rings, fragments, combo scoring, three lives, keyboard/pointer/touch input, pause, and a saved best score.
+The README preview is deliberately static. The linked game **autoplays on load** — the paddle tracks the ball on its own until you touch it — and uses **Matter.js collision physics**, paddle steering, staged cracks, impact rings, fragments, combo scoring, three lives, keyboard/pointer/touch input, pause, and a saved best score.
 
 <sub>A quiet calendar square means no recorded GitHub contribution, not “no work.” Studying, resting, private work, and offline building do not appear in this graph.</sub>
 

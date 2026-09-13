@@ -20,7 +20,8 @@ import {
 const $ = id => document.getElementById(id);
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const demoMode = new URLSearchParams(location.search).has('demo');
+let autoplay = !reducedMotion;
+let autoplayPending = false;
 const Matter = window.Matter;
 if (!Matter) throw new Error('Matter.js failed to load');
 const {Engine, Bodies, Body, Composite, Events} = Matter;
@@ -222,8 +223,27 @@ try {
     clearTimeout(statusTimer);
     $('status').textContent = message;
     statusTimer = setTimeout(() => {
-      if (game.phase === 'play') $('status').textContent = 'Clear every quiet day. Contribution days hold the line.';
+      if (game.phase !== 'play') return;
+      $('status').textContent = autoplay
+        ? 'Autoplaying — the paddle is tracking the ball. Move the mouse or press an arrow key to take over.'
+        : 'Clear every quiet day. Contribution days hold the line.';
     }, 2200);
+  }
+
+  function scheduleAutoplay(action, delay) {
+    if (autoplayPending) return;
+    autoplayPending = true;
+    setTimeout(() => {
+      autoplayPending = false;
+      if (autoplay && !paused) action();
+    }, delay);
+  }
+
+  function takeControl() {
+    if (!autoplay) return;
+    autoplay = false;
+    autoplayPending = false;
+    flashStatus('You have the paddle now. Autoplay is off — reload the page to watch it play itself again.');
   }
 
   function saveBest() {
@@ -360,7 +380,7 @@ try {
     unlockAudio();
     if (['over', 'won'].includes(game.phase)) newGame();
     if (!launch(game)) return;
-    const offset = demoMode ? .28 : (Math.random() * .7 - .35);
+    const offset = Math.random() * .7 - .35;
     Body.setVelocity(ballBody, {x: game.speed * Math.sin(offset), y: -Math.abs(game.speed * Math.cos(offset))});
     flashStatus('Ball in play. Clear quiet days; contribution days are permanent bumpers.');
     updateHud();
@@ -380,7 +400,9 @@ try {
     renderCalendar();
     buildPhysics();
     updateHud();
-    flashStatus(`${boardSummary.quiet} quiet blocks are breakable. ${boardSummary.protected} contribution days will hold.`);
+    flashStatus(autoplay
+      ? `${boardSummary.quiet} quiet blocks are breakable. Autoplaying now — move the paddle any time to take over.`
+      : `${boardSummary.quiet} quiet blocks are breakable. ${boardSummary.protected} contribution days will hold.`);
   }
 
   function draw() {
@@ -413,10 +435,15 @@ try {
         setBallSpeed();
         accumulator -= 1000 / 120;
       }
-      if (demoMode) movePaddle(ballBody.position.x);
+      if (autoplay) movePaddle(ballBody.position.x);
     } else if (!paused && game.phase === 'serve') {
-      if (demoMode) movePaddle(BOARD_W / 2);
+      if (autoplay) {
+        movePaddle(BOARD_W / 2);
+        scheduleAutoplay(startBall, 850);
+      }
       serveBall();
+    } else if (!paused && autoplay && ['over', 'won'].includes(game.phase)) {
+      scheduleAutoplay(newGame, 2600);
     }
     if (!paused) {
       const keyboardSpeed = 9.5;
@@ -427,20 +454,24 @@ try {
   }
 
   board.addEventListener('pointermove', event => {
+    takeControl();
     const bounds = board.getBoundingClientRect();
     movePaddle((event.clientX - bounds.left) / bounds.width * BOARD_W);
   });
-  board.addEventListener('pointerdown', () => startBall());
+  board.addEventListener('pointerdown', () => { takeControl(); startBall(); });
   document.addEventListener('keydown', event => {
     const tag = document.activeElement?.tagName;
     const interactive = ['BUTTON', 'INPUT', 'TEXTAREA', 'SUMMARY', 'A'].includes(tag);
     if (event.code === 'Space' && !interactive) {
       event.preventDefault();
+      takeControl();
       startBall();
     } else if (['ArrowLeft', 'ArrowRight', 'KeyA', 'KeyD'].includes(event.code)) {
+      takeControl();
       keys.add(event.code === 'ArrowLeft' || event.code === 'KeyA' ? 'left' : 'right');
       if (document.querySelector('.breakout').contains(document.activeElement)) event.preventDefault();
     } else if (event.code === 'KeyP' && !interactive) {
+      takeControl();
       setPaused(!paused);
     }
   });
@@ -450,14 +481,13 @@ try {
   });
   document.addEventListener('visibilitychange', () => { if (document.hidden) setPaused(true); });
   boardScroll.addEventListener('focus', () => flashStatus('Game focused. Use left and right arrows to move; Space launches; P pauses.'));
-  $('launch').addEventListener('click', startBall);
-  $('pause').addEventListener('click', () => setPaused(!paused));
-  $('newgame').addEventListener('click', () => { unlockAudio(); newGame(); });
+  $('launch').addEventListener('click', () => { takeControl(); startBall(); });
+  $('pause').addEventListener('click', () => { takeControl(); setPaused(!paused); });
+  $('newgame').addEventListener('click', () => { takeControl(); unlockAudio(); newGame(); });
 
   $('board-desc').textContent = `Break the Quiet Days is a 2026 Breakout board. ${boardSummary.quiet} quiet days can be cleared in one to three hits. ${boardSummary.protected} days with recorded contributions are indestructible blue bumpers. ${boardSummary.future} future dates are outlines.`;
   newGame();
   requestAnimationFrame(frame);
-  if (demoMode && !reducedMotion) setTimeout(startBall, 700);
 } catch (error) {
   $('status').textContent = 'The calendar could not load. Reload the page to try again.';
   console.error(error);
