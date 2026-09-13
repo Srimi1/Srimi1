@@ -87,7 +87,7 @@ A native keyboard extension with familiar geometry, layered input, accessibility
 ## Break the Quiet Days
 
 <a href="https://srimi1.github.io/Srimi1/">
-<img src="assets/arcade-autoplay.gif" width="100%" alt="Break the Quiet Days playing itself: a recorded loop of the live 2026 contribution fortress autoplaying, the paddle tracking the ball and quiet-day blocks cracking and breaking on their own." />
+<img src="assets/arcade-autoplay.gif?v=2" width="100%" alt="Break the Quiet Days playing itself: a recorded loop of the live 2026 contribution fortress autoplaying, the paddle tracking the ball and quiet-day blocks cracking and breaking on their own." />
 </a>
 
 **[Play the full physics arcade →](https://srimi1.github.io/Srimi1/)**
