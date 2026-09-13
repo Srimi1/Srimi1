@@ -25,7 +25,7 @@ These are the four public projects that currently have the strongest evidence of
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/Notch-hub"><img src="assets/logo-orbits/Notch-hub.svg" width="96" height="96" alt="NotchHub logo rotating through 360 degrees" /></a>
+<a href="https://github.com/Srimi1/Notch-hub"><img src="assets/logo-orbits/Notch-hub.svg?v=2" width="96" height="96" alt="NotchHub logo rotating through 360 degrees" /></a>
 
 ### [NotchHub ↗](https://github.com/Srimi1/Notch-hub)
 **The MacBook notch, put to work.**
@@ -39,7 +39,7 @@ A native, local-first dashboard for meetings, timers, media, clipboard, Focus, b
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/P-Agents"><img src="assets/logo-orbits/P-Agents.svg" width="96" height="96" alt="P-Agents logo rotating through 360 degrees" /></a>
+<a href="https://github.com/Srimi1/P-Agents"><img src="assets/logo-orbits/P-Agents.svg?v=2" width="96" height="96" alt="P-Agents logo rotating through 360 degrees" /></a>
 
 ### [P-Agents ↗](https://github.com/Srimi1/P-Agents)
 **Agents that can delegate without losing the trail.**
@@ -55,7 +55,7 @@ A Rust multi-agent harness with streaming ReAct execution, gated tools, parallel
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/Internet-speed-reader"><img src="assets/logo-orbits/Internet-speed-reader.svg" width="96" height="96" alt="Internet Speed Reader logo rotating through 360 degrees" /></a>
+<a href="https://github.com/Srimi1/Internet-speed-reader"><img src="assets/logo-orbits/Internet-speed-reader.svg?v=2" width="96" height="96" alt="Internet Speed Reader logo rotating through 360 degrees" /></a>
 
 ### [Internet Speed Reader ↗](https://github.com/Srimi1/Internet-speed-reader)
 **Know what your connection is doing.**
@@ -69,7 +69,7 @@ A macOS menu-bar utility with live traffic, outage detection, manual capacity ch
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/The-Keyboard-project"><img src="assets/logo-orbits/The-Keyboard-project.svg" width="96" height="96" alt="The Keyboard Project logo rotating through 360 degrees" /></a>
+<a href="https://github.com/Srimi1/The-Keyboard-project"><img src="assets/logo-orbits/The-Keyboard-project.svg?v=2" width="96" height="96" alt="The Keyboard Project logo rotating through 360 degrees" /></a>
 
 ### [The Keyboard Project ↗](https://github.com/Srimi1/The-Keyboard-project)
 **The Android typing feel, on iPhone.**
