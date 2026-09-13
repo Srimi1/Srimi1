@@ -22,6 +22,8 @@ const SVG_NS = 'http://www.w3.org/2000/svg';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let autoplay = !reducedMotion;
 let autoplayPending = false;
+let autoplayAimX = BOARD_W / 2;
+let autoplayNextLookMs = 0;
 const Matter = window.Matter;
 if (!Matter) throw new Error('Matter.js failed to load');
 const {Engine, Bodies, Body, Composite, Events} = Matter;
@@ -375,6 +377,20 @@ try {
     if (game.phase === 'serve') serveBall();
   }
 
+  // A real player reacts late, eyeballs the landing spot instead of computing it, and
+  // can only move the paddle so fast — so the autoplay "bot" gets the same limits instead
+  // of teleporting onto the ball's exact x every frame like a scripted demo would.
+  const AUTOPLAY_MAX_STEP = 10.5;
+  function autoplayFollow(targetX, now) {
+    if (now >= autoplayNextLookMs) {
+      autoplayNextLookMs = now + 110 + Math.random() * 170;
+      const misjudge = (Math.random() - 0.5) * 52;
+      autoplayAimX = clamp(targetX + misjudge, PADDLE_W / 2, BOARD_W - PADDLE_W / 2);
+    }
+    const step = clamp(autoplayAimX - paddleBody.position.x, -AUTOPLAY_MAX_STEP, AUTOPLAY_MAX_STEP);
+    movePaddle(paddleBody.position.x + step);
+  }
+
   function startBall() {
     if (paused) return;
     unlockAudio();
@@ -435,10 +451,10 @@ try {
         setBallSpeed();
         accumulator -= 1000 / 120;
       }
-      if (autoplay) movePaddle(ballBody.position.x);
+      if (autoplay) autoplayFollow(ballBody.position.x, now);
     } else if (!paused && game.phase === 'serve') {
       if (autoplay) {
-        movePaddle(BOARD_W / 2);
+        autoplayFollow(BOARD_W / 2, now);
         scheduleAutoplay(startBall, 850);
       }
       serveBall();
