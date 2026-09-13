@@ -454,7 +454,7 @@ try {
   }
 
   board.addEventListener('pointermove', event => {
-    takeControl();
+    if (autoplay) return;
     const bounds = board.getBoundingClientRect();
     movePaddle((event.clientX - bounds.left) / bounds.width * BOARD_W);
   });
