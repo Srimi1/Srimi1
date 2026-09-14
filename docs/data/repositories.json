@@ -210,6 +210,16 @@
     "pushed_at": "2026-04-26T16:10:03Z"
   },
   {
+    "name": "mac-game",
+    "html_url": "https://github.com/Srimi1/mac-game",
+    "description": null,
+    "language": "Swift",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-14T06:16:04Z"
+  },
+  {
     "name": "muse-codex",
     "html_url": "https://github.com/Srimi1/muse-codex",
     "description": "Independent macOS compatibility gateway connecting Meta Muse Code to OpenAI models while preserving Muse tools, approvals, and sandboxing.",
@@ -217,7 +227,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-05T15:49:39Z"
+    "pushed_at": "2026-09-13T12:50:39Z"
   },
   {
     "name": "Nagi-plugin",
@@ -407,7 +417,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-13T03:37:23Z"
+    "pushed_at": "2026-09-13T06:18:07Z"
   },
   {
     "name": "The-Keyboard-project",
