@@ -212,12 +212,12 @@
   {
     "name": "mac-game",
     "html_url": "https://github.com/Srimi1/mac-game",
-    "description": null,
+    "description": "A neon-retro Breakout adventure for Apple Silicon Macs, built with SwiftUI and SpriteKit.",
     "language": "Swift",
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-14T06:16:04Z"
+    "pushed_at": "2026-09-15T04:23:04Z"
   },
   {
     "name": "muse-codex",
@@ -227,7 +227,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-13T12:50:39Z"
+    "pushed_at": "2026-09-14T06:40:38Z"
   },
   {
     "name": "Nagi-plugin",
@@ -307,7 +307,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-01T04:41:53Z"
+    "pushed_at": "2026-09-14T07:14:15Z"
   },
   {
     "name": "P-Harness",
@@ -417,7 +417,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-13T06:18:07Z"
+    "pushed_at": "2026-09-14T06:26:55Z"
   },
   {
     "name": "The-Keyboard-project",
