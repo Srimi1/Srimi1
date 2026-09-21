@@ -230,6 +230,16 @@
     "pushed_at": "2026-09-15T04:23:04Z"
   },
   {
+    "name": "muse--claude",
+    "html_url": "https://github.com/Srimi1/muse--claude",
+    "description": null,
+    "language": "TypeScript",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-21T06:08:18Z"
+  },
+  {
     "name": "muse-codex",
     "html_url": "https://github.com/Srimi1/muse-codex",
     "description": "Independent macOS compatibility gateway connecting Meta Muse Code to OpenAI models while preserving Muse tools, approvals, and sandboxing.",
@@ -427,7 +437,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-19T06:00:22Z"
+    "pushed_at": "2026-09-20T06:25:06Z"
   },
   {
     "name": "The-Keyboard-project",
