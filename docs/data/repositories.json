@@ -40,6 +40,26 @@
     "pushed_at": "2026-04-03T17:12:27Z"
   },
   {
+    "name": "antigravity--mobile",
+    "html_url": "https://github.com/Srimi1/antigravity--mobile",
+    "description": null,
+    "language": "Kotlin",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-09-30T06:13:04Z"
+  },
+  {
+    "name": "AntigravityMobile",
+    "html_url": "https://github.com/Srimi1/AntigravityMobile",
+    "description": "A feature-rich mobile dashboard for Antigravity IDE that lets you stream live AI conversations, monitor model quotas, and browse or edit workspace files from any device on your local network. Includes a distraction-free Lite Mode and optional PIN security.",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 1,
+    "pushed_at": "2026-09-29T12:51:28Z"
+  },
+  {
     "name": "bots",
     "html_url": "https://github.com/Srimi1/bots",
     "description": null,
@@ -167,7 +187,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-28T16:27:32Z"
+    "pushed_at": "2026-09-29T15:25:20Z"
   },
   {
     "name": "Internet-speed-reader",
@@ -447,7 +467,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-28T07:03:07Z"
+    "pushed_at": "2026-09-29T07:00:28Z"
   },
   {
     "name": "The-Keyboard-project",
