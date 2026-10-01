@@ -59,6 +59,7 @@ try {
     });
     await page.setViewport(viewport);
     await page.goto(url, { waitUntil: "networkidle0" });
+    await page.bringToFront();
     await page.waitForFunction(
       () => !document.querySelector("#start").disabled,
     );
@@ -115,6 +116,16 @@ try {
     const getPosition = () =>
       page.$eval("#canvas", (e) => e.dataset.position.split(",").map(Number));
     const startPosition = await getPosition();
+    const waitForMovement = () =>
+      page.waitForFunction(
+        (startX) =>
+          Number(
+            document.querySelector("#canvas").dataset.position.split(",")[0],
+          ) >
+          startX + 65,
+        { timeout: 5000 },
+        startPosition[0],
+      );
     if (name === "mobile") {
       assert.equal(await page.$eval("#touch-controls", (e) => e.hidden), false);
       const box = await (await page.$('[data-hold="right"]')).boundingBox();
@@ -122,11 +133,11 @@ try {
         box.x + box.width / 2,
         box.y + box.height / 2,
       );
-      await delay(500);
+      await waitForMovement();
       await page.touchscreen.touchEnd();
     } else {
       await page.keyboard.down("ArrowRight");
-      await delay(500);
+      await waitForMovement();
       await page.keyboard.up("ArrowRight");
     }
     assert.ok(
