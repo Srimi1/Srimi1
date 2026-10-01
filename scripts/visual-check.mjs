@@ -128,7 +128,27 @@ try {
       );
     if (name === "mobile") {
       assert.equal(await page.$eval("#touch-controls", (e) => e.hidden), false);
-      const box = await (await page.$('[data-hold="right"]')).boundingBox();
+      const right = await page.$('[data-hold="right"]');
+      // Starting the mobile game smoothly scrolls the arcade into view. Settle
+      // that scroll before calculating the viewport coordinates of a touch.
+      await right.evaluate((e) =>
+        e.scrollIntoView({ block: "center", behavior: "instant" }),
+      );
+      await page.evaluate(
+        () =>
+          new Promise((resolve) =>
+            requestAnimationFrame(() => requestAnimationFrame(resolve)),
+          ),
+      );
+      const box = await right.boundingBox();
+      assert.ok(
+        await page.evaluate(
+          ({ x, y }) =>
+            document.elementFromPoint(x, y)?.dataset.hold === "right",
+          { x: box.x + box.width / 2, y: box.y + box.height / 2 },
+        ),
+        "mobile movement button must be under the touch coordinates",
+      );
       await page.touchscreen.touchStart(
         box.x + box.width / 2,
         box.y + box.height / 2,
