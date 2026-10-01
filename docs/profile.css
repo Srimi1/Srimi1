@@ -35,8 +35,7 @@ a {
 a:hover {
   color: #f4d77b;
 }
-a:focus-visible,
-button:focus-visible {
+a:focus-visible {
   outline: 2px solid #7ce4f1;
   outline-offset: 5px;
 }
@@ -61,7 +60,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 28px 30px;
+  padding: 28px;
   border-bottom: 1px solid #213247;
 }
 .signature {
@@ -69,6 +68,7 @@ header {
     800 26px "Barlow Condensed",
     sans-serif;
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 .signature b {
   color: #7ce4f1;
@@ -80,7 +80,7 @@ nav {
   color: #96aaba;
 }
 main {
-  padding: 30px 28px;
+  padding: 28px;
 }
 .eyebrow {
   font:
@@ -89,63 +89,34 @@ main {
   color: #96aaba;
   letter-spacing: 1px;
 }
-.world {
-  margin-top: 18px;
+.hero {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid #355267;
+  background: #101c30;
 }
-.frame-caption {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 12px;
-  font:
-    10px "Space Mono",
-    monospace;
-  color: #96aaba;
-}
-.frame-caption span:first-child {
-  color: #f4d77b;
-}
-canvas {
-  display: block;
+.hero-art {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  aspect-ratio: 2;
-  border: 1px solid #355267;
-  background: #0b1220;
+  height: 100%;
+  object-fit: cover;
 }
-.story-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 18px 0 28px;
-  border-bottom: 1px solid #213247;
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #07101ecf, #07101e70 34%, transparent 60%);
 }
-.story-foot p {
-  font-size: 12px;
-  line-height: 1.7;
-  color: #96aaba;
-  margin: 0;
+.hero-copy {
+  position: relative;
+  width: 46%;
+  padding: 48px 38px;
 }
-.story-foot strong {
-  color: #edf4f5;
-  font-weight: 500;
-}
-button {
-  background: transparent;
+.hero-copy .eyebrow {
   color: #f4d77b;
-  padding: 9px 13px;
-  border: 1px solid #355267;
-  font:
-    10px "Space Mono",
-    monospace;
-  cursor: pointer;
-  white-space: nowrap;
-}
-.intro {
-  padding: 44px 0 48px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  font-size: 10px;
+  margin: 0 0 35px;
 }
 h1,
 h2 {
@@ -153,18 +124,69 @@ h2 {
     800 clamp(36px, 5vw, 56px)/1 "Barlow Condensed",
     sans-serif;
   margin: 0;
-  text-transform: uppercase;
+}
+h1 {
+  font-size: clamp(40px, 5.5vw, 68px);
 }
 h1 em,
 h2 em {
-  font-style: normal;
   color: #f4d77b;
+  font-style: normal;
 }
-.intro p {
+.hero-description {
+  color: #c5d1dd;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 26px 0;
+}
+.primary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  background: #f4d77b;
+  color: #0b1220;
+  padding: 13px 18px;
+  font-size: 13px;
+}
+.primary-link:hover {
+  background: #fce8a8;
+  color: #0b1220;
+}
+.intro-line {
+  border-bottom: 1px solid #213247;
+  padding: 14px 0;
+}
+.intro-line img {
+  display: block;
+  width: min(640px, 100%);
+  height: auto;
+  margin: auto;
+}
+.intro {
+  padding: 44px 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+.intro-copy p {
   color: #96aaba;
   line-height: 1.75;
   font-size: 15px;
-  margin: 0;
+  margin: 0 0 14px;
+}
+.skills {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  padding: 6px 0;
+}
+.skills img {
+  height: 24px;
+  width: auto;
+}
+.intro-copy .platforms {
+  font-size: 12px;
+  margin: 7px 0 0;
 }
 .work-heading {
   display: flex;
@@ -215,16 +237,31 @@ h2 em {
 .project-status {
   color: #7ce4f1;
 }
-.project-status.prerelease {
-  color: #f4d77b;
-}
+.project-status.prerelease,
 .project-arrow {
   color: #f4d77b;
 }
 .all-work {
   display: block;
-  padding: 25px 0 20px;
+  padding: 25px 0;
   border-top: 1px solid #213247;
+}
+.activity {
+  padding: 30px 0 12px;
+}
+.activity h2 {
+  font-size: 40px;
+  margin-bottom: 24px;
+}
+.activity img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.activity p:not(.eyebrow) {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #96aaba;
 }
 footer {
   display: flex;
@@ -239,32 +276,74 @@ footer {
 footer a {
   color: #f4d77b;
 }
+@media (max-width: 950px) and (min-width: 701px) {
+  .hero-copy {
+    padding: 26px;
+    width: 49%;
+  }
+  .hero-copy .eyebrow {
+    margin-bottom: 20px;
+    font-size: 8px;
+  }
+  .hero-description {
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .project-row {
+    grid-template-columns: 25px 42px 1fr 90px 16px;
+    gap: 13px;
+  }
+  .project-stack {
+    display: none;
+  }
+}
 @media (max-width: 700px) {
   header,
   main,
   footer {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   header {
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  .signature {
+    font-size: 22px;
+  }
   nav {
     gap: 16px;
+    font-size: 12px;
   }
-  .frame-caption {
-    font-size: 8px;
+  main {
+    padding-top: 20px;
   }
-  .frame-caption span:last-child {
+  .hero {
+    aspect-ratio: auto;
+  }
+  .hero-art {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .hero-shade {
     display: none;
   }
-  .story-foot {
-    align-items: start;
-    gap: 15px;
+  .hero-copy {
+    width: 100%;
+    padding: 23px;
   }
-  .story-foot p {
-    font-size: 11px;
+  .hero-copy .eyebrow {
+    margin-bottom: 20px;
+    font-size: 9px;
+  }
+  h1 {
+    font-size: 44px;
+  }
+  .hero-description {
+    margin: 20px 0;
+    font-size: 14px;
   }
   .intro {
     grid-template-columns: 1fr;
@@ -289,6 +368,9 @@ footer a {
   .project-stack,
   .project-status {
     display: none;
+  }
+  .activity h2 {
+    font-size: 36px;
   }
   footer {
     flex-wrap: wrap;

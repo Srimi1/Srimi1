@@ -1,6 +1,6 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, copyFile } from "node:fs/promises";
 import { extname } from "node:path";
-import { summarize } from "../docs/game-core.mjs";
+import { summarize } from "../docs/profile-data.mjs";
 
 const read = (path) => readFile(path, "utf8").then(JSON.parse);
 const data = await read("docs/data/activity.json");
@@ -101,6 +101,7 @@ chart +=
     "muted",
   ) + "</svg>";
 await writeFile("assets/rhythm.svg", chart);
+await copyFile("assets/rhythm.svg", "docs/assets/rhythm.svg");
 
 console.log(
   `Generated static profile graphics: ${repos.length} public repos, ${stats.days} calendar days.`,

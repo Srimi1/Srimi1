@@ -1,9 +1,11 @@
-name: Publish Code Together
+name: Publish profile
 on:
   push:
     branches: [main]
     paths:
       [
+        "README.md",
+        "assets/**",
         "docs/**",
         "tests/**",
         "scripts/**",
@@ -26,18 +28,15 @@ jobs:
           node-version: "22"
       - run: npm ci
       - run: npm test
-      - name: Verify generated README story
-        run: npm run check:story
-      - name: Verify desktop and touch gameplay
+      - name: Verify desktop and mobile portfolio
         run: |
-          PORT=8084 node scripts/preview-server.mjs > /tmp/signal-preview.log 2>&1 &
+          PORT=8084 node scripts/preview-server.mjs > /tmp/profile-preview.log 2>&1 &
           curl --silent --fail --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:8084/ > /dev/null
-          CHROME_BIN=/usr/bin/google-chrome FULL_CAMPAIGN=1 npm run test:visual
-          CHROME_BIN=/usr/bin/google-chrome VERIFY_STORY_LOOP=1 npm run test:story
+          CHROME_BIN=/usr/bin/google-chrome npm run test:visual
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: signal-run-browser-checks
+          name: profile-browser-checks
           path: qa/
           retention-days: 7
       - uses: actions/upload-pages-artifact@v3
@@ -53,6 +52,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy Code Together
+      - name: Deploy portfolio
         id: deployment
         uses: actions/deploy-pages@v4

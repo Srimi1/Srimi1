@@ -16,20 +16,20 @@ const types = {
   ".png": "image/png",
   ".jpg": "image/jpeg",
   ".gif": "image/gif",
+  ".svg": "image/svg+xml",
 };
 
-export async function servePreview(port = 0, { exporter = false } = {}) {
+export async function servePreview(port = 0) {
   const server = createServer(async (req, res) => {
     try {
       const pathname = decodeURIComponent(
         new URL(req.url, "http://localhost").pathname,
       );
-      const vendor = exporter && pathname === "/__gifenc.mjs";
-      const path = vendor
-        ? join(root, "node_modules/gifenc/dist/gifenc.esm.js")
-        : resolve(docs, "." + (pathname === "/" ? "/index.html" : pathname));
-      if (!vendor && !path.startsWith(docs + sep))
-        throw new Error("Invalid path");
+      const path = resolve(
+        docs,
+        "." + (pathname === "/" ? "/index.html" : pathname),
+      );
+      if (!path.startsWith(docs + sep)) throw new Error("Invalid path");
       const data = await readFile(path);
       res.writeHead(200, {
         "Content-Type": types[extname(path)] || "application/octet-stream",
@@ -49,5 +49,5 @@ if (
   import.meta.url === pathToFileURL(resolve(process.argv[1])).href
 ) {
   const { origin } = await servePreview(Number(process.env.PORT || 8088));
-  console.log(`Code Together preview: ${origin}`);
+  console.log(`Srijan × Sarah profile preview: ${origin}`);
 }

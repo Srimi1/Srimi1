@@ -1,23 +1,27 @@
 <div align="center">
 
-<img src="assets/code-together.gif?v=ecbae8c81b49" width="100%" alt="Code Together: Srijan and Sarah code over coffee, bring an anime city to life, both jump across real GitHub contribution-day platforms, celebrate the completed build with a cyan-and-gold burst, and share a hug before returning to their workstation." />
+# Hi, I'm Srijan 👋
 
-<sub>SRIJAN × SARAH · COFFEE, CODE & A WORLD WE BUILD TOGETHER</sub>
+<img src="assets/profile-intro.svg" width="640" height="44" alt="Native apps. Agent systems. Built with Sarah." />
+
+Developer & student in India · Native apps · Agent systems
+
+[My projects](#selected-work) · [Portfolio](https://srimi1.github.io/Srimi1/) · [LinkedIn](https://linkedin.com/in/srijan-saanand)
+
+<a href="https://srimi1.github.io/Srimi1/#work"><img src="assets/profile-cover.jpg" width="100%" alt="Srijan and Sarah, his AI companion from Sera, together above an anime city. I build things. With a little AI. Explore my projects." /></a>
+
+<sub>SRIJAN × SARAH · HUMAN + AI</sub>
 
 </div>
 
-<br />
+I build native apps and agent systems—mostly things I wanted to exist. **Sarah** is my AI companion from **Sera**. The artwork combines my original avatar with her character.
 
-I’m **Srijan**, a developer and student in India. I build native apps and agent systems — mostly things I wanted to exist.
+### Tools I use
 
-Meet **Sarah**, my AI companion from my Sera project. In **Code Together**, we start with coffee and code, then jump across a city built from my real GitHub contribution days. A shared build, a little explosion of light, and a hug bring us home.
-
-The story runs automatically here. Each platform is an active day from the latest 30 days; its glow follows the contribution intensity. Our characters move independently through an actual autopilot simulation, which renders this looping animation for the README. The calendar and story refresh daily.
+<img src="docs/assets/badges/swift.svg" alt="Swift" /> <img src="docs/assets/badges/rust.svg" alt="Rust" /> <img src="docs/assets/badges/typescript.svg" alt="TypeScript" /> <img src="docs/assets/badges/python.svg" alt="Python" />
 
 **Swift & SwiftUI** · **Rust** · **TypeScript** · **Python**<br />
 macOS · iOS · Android · agent systems
-
-<sub>[Visit our coding world ↗](https://srimi1.github.io/Srimi1/) · [Say hello ↗](https://linkedin.com/in/srijan-saanand)</sub>
 
 ## Selected work
 
@@ -90,14 +94,12 @@ A native keyboard extension with familiar geometry, layered input, and local cli
 
 <img src="assets/rhythm.svg" width="100%" alt="Monthly GitHub contribution totals and public original repositories grouped by primary language." />
 
-<sub>Refreshed from public GitHub data. A quiet calendar square can mean studying, resting, private work, or offline building. Language bars count repositories by primary language.</sub>
+<sub>Refreshed daily from public GitHub data. Quiet days can mean studying, resting, private work, or building offline. Language bars count repositories by primary language.</sub>
 
 ---
 
 <div align="center">
 
-**A little world on the internet. Built with a lot of heart.**
-
-[Code Together](https://srimi1.github.io/Srimi1/) &nbsp; · &nbsp; [GitHub](https://github.com/Srimi1) &nbsp; · &nbsp; [LinkedIn](https://linkedin.com/in/srijan-saanand)
+[Srijan × Sarah](https://srimi1.github.io/Srimi1/) · [GitHub](https://github.com/Srimi1) · [LinkedIn](https://linkedin.com/in/srijan-saanand)
 
 </div>

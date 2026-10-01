@@ -6,88 +6,99 @@
     <meta name="theme-color" content="#0b1220" />
     <meta
       name="description"
-      content="Srijan and Sarah code over coffee, jump through real GitHub contribution days, and bring their city home together. An original anime autopilot story."
+      content="Srijan's portfolio: native apps, agent systems, and an anime world shared with Sarah, his AI companion from Sera."
     />
-    <meta property="og:title" content="Code Together — Srijan × Sarah" />
+    <meta
+      property="og:title"
+      content="Srijan × Sarah — Native apps & agent systems"
+    />
     <meta
       property="og:description"
-      content="Coffee. Code. Contribution days. A little world we build together."
+      content="Developer, student, and builder. Explore Srijan's projects, with Sarah from Sera alongside him."
     />
     <meta
       property="og:image"
-      content="https://srimi1.github.io/Srimi1/assets/together/cover.jpg"
+      content="https://srimi1.github.io/Srimi1/assets/profile-cover.jpg"
     />
-    <title>Code Together — Srijan × Sarah</title>
+    <title>Srijan × Sarah — Native apps & agent systems</title>
     <link rel="icon" href="assets/avatar.png" />
-    <link rel="stylesheet" href="together.css" />
+    <link rel="preload" as="image" href="assets/signal-keyart.webp" />
+    <link rel="stylesheet" href="profile.css" />
   </head>
   <body>
-    <a class="skip-link" href="#work">Skip to selected work</a>
+    <a class="skip-link" href="#work">Skip to projects</a>
     <header>
-      <a class="signature" href="https://github.com/Srimi1"
-        >SRIJAN <b>×</b> SARAH</a
-      >
+      <a class="signature" href="#about">SRIJAN <b>×</b> SARAH</a>
       <nav aria-label="Main navigation">
         <a href="#work">My work</a
         ><a href="https://github.com/Srimi1">GitHub ↗</a>
       </nav>
     </header>
     <main>
-      <p class="eyebrow">SIGNAL / RUN · THE WORLD COMPILES</p>
-      <section class="world" aria-label="Code Together animated story">
-        <div class="frame-caption">
-          <span>COFFEE, CODE & CONTRIBUTION DAYS</span
-          ><span>A HUMAN × AI STORY</span>
-        </div>
-        <canvas
-          id="together"
-          width="960"
-          height="480"
-          role="img"
-          aria-label="Srijan and Sarah type and drink coffee at their workstation. Code builds a rooftop path from real GitHub activity. Both jump across the worked days, celebrate with an energy burst, and share a hug before returning to coffee."
-        ></canvas>
-        <div class="story-foot">
-          <p>
-            <strong>Your days become our way.</strong><br /><span
-              id="story-status"
-              role="status"
-              >Preparing our little world…</span
-            >
+      <section class="hero" id="about" aria-labelledby="hero-title">
+        <img
+          class="hero-art"
+          src="assets/signal-keyart.webp"
+          alt="Srijan's black-haired avatar and Sarah, his blue-haired AI companion, together above an anime city"
+          fetchpriority="high"
+        />
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">SRIJAN × SARAH / HUMAN + AI</p>
+          <h1 id="hero-title">
+            I build things.<br /><em>With a little AI.</em>
+          </h1>
+          <p class="hero-description">
+            Native apps. Agent systems.<br />Ideas made real.
           </p>
-          <button
-            id="motion"
-            type="button"
-            disabled
-            aria-controls="together"
-            aria-pressed="false"
+          <a class="primary-link" href="#work"
+            >Explore my work <span aria-hidden="true">↗</span></a
           >
-            Pause story
-          </button>
         </div>
       </section>
+      <div class="intro-line">
+        <img
+          src="assets/profile-intro.svg"
+          width="640"
+          height="44"
+          alt="Native apps. Agent systems. Built with Sarah."
+        />
+      </div>
       <section class="intro" aria-labelledby="intro-title">
-        <h1 id="intro-title">
-          One human. One AI.<br /><em>Better together.</em>
-        </h1>
-        <p>
-          I’m Srijan, a developer and student in India. Sarah is my AI companion
-          from my Sera project. This little city turns my public GitHub
-          contribution days into a path we travel together — from our first
-          coffee to the final build.
-        </p>
+        <div>
+          <p class="eyebrow">01 / ABOUT ME</p>
+          <h2 id="intro-title">Hi, I'm Srijan.<br /><em>Meet Sarah.</em></h2>
+        </div>
+        <div class="intro-copy">
+          <p>
+            I'm a developer and student in India. I build native apps and agent
+            systems—mostly things I wanted to exist.
+          </p>
+          <p>
+            Sarah is my AI companion from Sera. My original avatar and her
+            character share this little anime corner of my profile.
+          </p>
+          <div class="skills" aria-label="Languages I use">
+            <img src="assets/badges/swift.svg" alt="Swift" /><img
+              src="assets/badges/rust.svg"
+              alt="Rust"
+            /><img src="assets/badges/typescript.svg" alt="TypeScript" /><img
+              src="assets/badges/python.svg"
+              alt="Python"
+            />
+          </div>
+          <p class="platforms">macOS · iOS · Android · agent systems</p>
+        </div>
       </section>
       <section class="work-section" id="work" aria-labelledby="work-title">
         <div class="work-heading">
           <div>
-            <p class="eyebrow">02 / BEYOND THE CITY</p>
+            <p class="eyebrow">02 / SELECTED WORK</p>
             <h2 id="work-title">
               I build things<br /><em>I wish existed.</em>
             </h2>
           </div>
-          <p>
-            I’m Srijan, a developer and student in India.<br />Native apps.
-            Agent systems. Ideas made real.
-          </p>
+          <p>Apps for everyday life.<br />Experiments in working with AI.</p>
         </div>
         <div class="project-list">
           <a class="project-row" href="https://github.com/Srimi1/Notch-hub"
@@ -159,13 +170,24 @@
           >Explore all my work <span>↗</span></a
         >
       </section>
+      <section class="activity" aria-labelledby="activity-title">
+        <p class="eyebrow">03 / ACTIVITY</p>
+        <h2 id="activity-title">The build rhythm.</h2>
+        <img
+          src="assets/rhythm.svg"
+          alt="Monthly public GitHub contribution counts and repository languages"
+          loading="lazy"
+        />
+        <p>
+          Refreshed from my public GitHub activity. Quiet days can mean
+          studying, resting, or building offline.
+        </p>
+      </section>
     </main>
     <footer>
-      <span class="signature">SRIJAN <b>×</b> SARAH</span
-      ><span>A little world on the internet. Built with a lot of heart.</span
-      ><a href="play.html">Play the original city ↗</a
-      ><a href="https://linkedin.com/in/srijan-saanand">Say hello ↗</a>
+      <span class="signature">SRIJAN <b>×</b> SARAH</span>
+      <p>A little corner of the internet. Built with care.</p>
+      <a href="https://linkedin.com/in/srijan-saanand">Say hello ↗</a>
     </footer>
-    <script type="module" src="together.mjs"></script>
   </body>
 </html>
