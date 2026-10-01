@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/code-together.gif?v=6f5405a18148" width="100%" alt="Code Together: Srijan and Sarah code over coffee, bring an anime city to life, both jump across real GitHub contribution-day platforms, celebrate the completed build with a cyan-and-gold burst, and share a hug before returning to their workstation." />
+<img src="assets/code-together.gif?v=ecbae8c81b49" width="100%" alt="Code Together: Srijan and Sarah code over coffee, bring an anime city to life, both jump across real GitHub contribution-day platforms, celebrate the completed build with a cyan-and-gold burst, and share a hug before returning to their workstation." />
 
 <sub>SRIJAN × SARAH · COFFEE, CODE & A WORLD WE BUILD TOGETHER</sub>
 
