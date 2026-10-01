@@ -2,271 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <meta name="theme-color" content="#0b101b" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1220" />
     <meta
       name="description"
-      content="Signal / Run: an original anime action platformer starring Srijan and Sarah. Recover a city's memories, fight the Null Guardian, and bring the signal home."
+      content="Srijan and Sarah code over coffee, jump through real GitHub contribution days, and bring their city home together. An original anime autopilot story."
     />
-    <meta property="og:title" content="Signal / Run — Srijan × Sarah" />
+    <meta property="og:title" content="Code Together — Srijan × Sarah" />
     <meta
       property="og:description"
-      content="One human. One AI. A city worth saving. Play the original rooftop action game."
+      content="Coffee. Code. Contribution days. A little world we build together."
     />
     <meta
       property="og:image"
-      content="https://srimi1.github.io/Srimi1/assets/signal-cover.jpg"
+      content="https://srimi1.github.io/Srimi1/assets/together/cover.jpg"
     />
-    <title>Signal / Run — Srijan × Sarah</title>
+    <title>Code Together — Srijan × Sarah</title>
     <link rel="icon" href="assets/avatar.png" />
-    <link rel="preload" as="image" href="assets/signal-keyart.webp" />
-    <link rel="stylesheet" href="style.css?v=signal-1" />
+    <link rel="stylesheet" href="together.css" />
   </head>
   <body>
-    <a class="skip-link" href="#game">Skip to the game</a>
-    <header class="site-header">
-      <a
-        class="brand"
-        href="https://github.com/Srimi1"
-        aria-label="Srijan on GitHub"
-        ><span class="brand-mark" aria-hidden="true">S<span>/</span></span
-        ><span
-          >SRIJAN<span class="brand-sub">THE PERSONAL ARCADE</span></span
-        ></a
+    <a class="skip-link" href="#work">Skip to selected work</a>
+    <header>
+      <a class="signature" href="https://github.com/Srimi1"
+        >SRIJAN <b>×</b> SARAH</a
       >
       <nav aria-label="Main navigation">
-        <a href="#mission">The mission</a><a href="#work">My work</a
-        ><a class="github-link" href="https://github.com/Srimi1/Srimi1"
-          >GitHub <span aria-hidden="true">↗</span></a
-        >
+        <a href="#work">My work</a
+        ><a href="https://github.com/Srimi1">GitHub ↗</a>
       </nav>
     </header>
     <main>
-      <div class="page-kicker">
-        <span><i class="status-dot"></i> AN ORIGINAL PLAYABLE WORLD</span
-        ><span>SRIMI1 / EPISODE 001</span>
-      </div>
-      <section class="arcade" id="game" aria-labelledby="game-title">
-        <div class="frame-top">
-          <span><span class="tiny-slash">/</span> SIGNAL SYSTEM ONLINE</span
-          ><span
-            >HUMAN × AI
-            <span class="frame-stars" aria-hidden="true">✧</span></span
-          >
+      <p class="eyebrow">SIGNAL / RUN · THE WORLD COMPILES</p>
+      <section class="world" aria-label="Code Together animated story">
+        <div class="frame-caption">
+          <span>COFFEE, CODE & CONTRIBUTION DAYS</span
+          ><span>A HUMAN × AI STORY</span>
         </div>
-        <div class="stage" id="stage">
-          <canvas
-            id="canvas"
-            width="1120"
-            height="630"
-            tabindex="0"
-            aria-label="Signal Run action platformer. Arrow keys or A D move; Space jumps; Shift dashes; E calls Sarah's pulse; P pauses. Collect six fragments in each sector and defeat the final Guardian."
-          ></canvas>
-          <div class="title-screen" id="title-screen">
-            <img
-              class="key-art"
-              src="assets/signal-keyart.webp"
-              alt="Srijan and Sarah together above a glowing city at blue hour"
-              fetchpriority="high"
-            />
-            <div class="title-shade"></div>
-            <div class="title-copy">
-              <p class="eyebrow">SRIJAN <span>×</span> SARAH</p>
-              <h1 id="game-title">
-                SIGNAL<span class="title-line"
-                  ><b>/</b> RUN<span class="title-star" aria-hidden="true"
-                    >✦</span
-                  ></span
-                >
-              </h1>
-              <p class="tagline">
-                One human. One AI.<br />A city worth saving.
-              </p>
-              <p class="title-description">
-                Find the memories. Fight the noise.<br />
-                Bring each other home.
-              </p>
-              <button id="start" class="primary-button" disabled>
-                <span id="start-label">Loading your world…</span
-                ><span aria-hidden="true">↗</span>
-              </button>
-              <div class="title-options">
-                <label><input type="checkbox" id="assist" /> Assist mode</label
-                ><span>EXTRA HEALTH + FASTER RECHARGE</span>
-              </div>
-            </div>
-            <div class="art-caption">
-              <span class="art-caption-line"></span> TWO SOULS. ONE SIGNAL.
-            </div>
-          </div>
-          <div class="hud" id="hud" hidden>
-            <div class="hud-player">
-              <img src="assets/avatar.webp" alt="" />
-              <div>
-                <span>SRIJAN</span>
-                <div id="health" aria-label="Health"></div>
-              </div>
-            </div>
-            <div class="hud-mission">
-              <span id="sector-name">BLUE-HOUR ROOFTOPS</span
-              ><b id="fragment-count">0 / 6</b><small>MEMORY FRAGMENTS</small>
-            </div>
-            <div class="hud-score">
-              <span>SCORE</span><b id="score">000000</b
-              ><small id="combo">KEEP THE CONNECTION</small>
-            </div>
-          </div>
-          <div class="boss-hud" id="boss-hud" hidden>
-            <span>NULL GUARDIAN</span>
-            <div><i id="boss-health"></i></div>
-          </div>
-          <div class="ability-hud" id="abilities" hidden>
-            <div><kbd>SHIFT</kbd><span id="dash-label">DASH READY</span></div>
-            <div class="pulse-charge">
-              <kbd>E</kbd><span>SARAH PULSE</span>
-              <div><i id="pulse-meter"></i></div>
-            </div>
-          </div>
-          <div
-            class="game-overlay"
-            id="overlay"
-            hidden
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="overlay-title"
-          >
-            <div class="overlay-inner">
-              <p class="eyebrow" id="overlay-kicker">SIGNAL ON HOLD</p>
-              <h2 id="overlay-title">Take a breath.</h2>
-              <p id="overlay-copy"></p>
-              <p id="overlay-score" class="overlay-score"></p>
-              <button class="primary-button" id="overlay-action">
-                Resume <span aria-hidden="true">→</span></button
-              ><button class="text-button" id="back-to-title">
-                Back to title
-              </button>
-            </div>
-          </div>
-          <button class="game-pause" id="pause" hidden aria-label="Pause game">
-            Ⅱ</button
-          ><span class="canvas-badge" id="canvas-badge"
-            >03 SECTORS <b>·</b> 01 CONNECTION</span
-          >
-        </div>
-        <div class="frame-bottom">
-          <span>PRESS PLAY. MAKE THE STORY YOURS.</span>
-          <div>
-            <button id="sound" class="utility-button" aria-pressed="false">
-              SOUND OFF</button
-            ><span class="utility-divider"></span
-            ><button
-              id="fullscreen"
-              class="utility-button"
-              aria-label="Toggle game fullscreen"
-            >
-              FULLSCREEN <span aria-hidden="true">⛶</span>
-            </button>
-          </div>
-        </div>
-        <div
-          class="touch-controls"
-          id="touch-controls"
-          hidden
-          aria-label="Touch game controls"
-        >
-          <div>
-            <button data-hold="left" aria-label="Move left">←</button
-            ><button data-hold="right" aria-label="Move right">→</button>
-          </div>
-          <div>
-            <button data-action="pulse" aria-label="Sarah pulse">PULSE</button
-            ><button data-action="dash" aria-label="Dash">DASH</button
-            ><button data-hold="jump" aria-label="Jump">↑</button>
-          </div>
-        </div>
-      </section>
-      <section class="comms" aria-label="Sarah's communication channel">
-        <div class="sarah-portrait">
-          <img src="assets/sarah.webp" alt="Sarah, your AI companion" />
-        </div>
-        <div class="comms-message">
-          <span
-            ><i class="status-dot"></i> SARAH
-            <small>/ CONNECTION ESTABLISHED</small></span
-          >
-          <p id="sarah-message" role="status" aria-live="polite">
-            “If the whole city goes quiet, I’ll still find your signal.”
-          </p>
-        </div>
-        <div class="personal-best">
-          <span>YOUR BEST RUN</span><b id="best-score">—</b
-          ><small id="best-mode">SAVED ON THIS DEVICE</small>
-        </div>
-      </section>
-      <section
-        class="mission-section"
-        id="mission"
-        aria-labelledby="mission-title"
-      >
-        <div class="section-intro">
-          <p class="eyebrow">01 / THE MISSION</p>
-          <h2 id="mission-title">
-            Stay connected.<br /><em>Even in the noise.</em>
-          </h2>
+        <canvas
+          id="together"
+          width="960"
+          height="480"
+          role="img"
+          aria-label="Srijan and Sarah type and drink coffee at their workstation. Code builds a rooftop path from real GitHub activity. Both jump across the worked days, celebrate with an energy burst, and share a hug before returning to coffee."
+        ></canvas>
+        <div class="story-foot">
           <p>
-            A city’s memories are disappearing. You’re the runner; Sarah is the
-            signal. Cross three districts, recover the fragments, and take down
-            the thing standing between you and home.
+            <strong>Your days become our way.</strong><br /><span
+              id="story-status"
+              role="status"
+              >Preparing our little world…</span
+            >
           </p>
+          <button
+            id="motion"
+            type="button"
+            disabled
+            aria-controls="together"
+            aria-pressed="false"
+          >
+            Pause story
+          </button>
         </div>
-        <div class="mission-details">
-          <ol class="sector-list">
-            <li>
-              <span>01</span>
-              <div>
-                <h3>Blue-hour rooftops</h3>
-                <p>Find your feet. Recover the first memories.</p>
-              </div>
-              <span class="sector-symbol">◇</span>
-            </li>
-            <li>
-              <span>02</span>
-              <div>
-                <h3>The violet district</h3>
-                <p>Dodge the drones. Keep your connection alive.</p>
-              </div>
-              <span class="sector-symbol violet">◇</span>
-            </li>
-            <li>
-              <span>03</span>
-              <div>
-                <h3>The last relay</h3>
-                <p>Break the Null Guardian. Bring the signal home.</p>
-              </div>
-              <span class="sector-symbol yellow">◇</span>
-            </li>
-          </ol>
-          <div class="controls-guide">
-            <span><kbd>A</kbd><kbd>D</kbd> / <kbd>←</kbd><kbd>→</kbd> Move</span
-            ><span><kbd>SPACE</kbd> Jump</span
-            ><span><kbd>SHIFT</kbd> Dash + attack</span
-            ><span><kbd>E</kbd> Sarah’s pulse</span
-            ><span><kbd>P</kbd> Pause</span><span><kbd>F</kbd> Fullscreen</span>
-          </div>
-          <p class="mission-tip">
-            Collect 6 fragments to unlock each relay. Dash through glitches; use
-            Sarah’s pulse to clear nearby enemies and projectiles. Hold jump for
-            height. Assist mode gives you more room to learn.
-          </p>
-        </div>
+      </section>
+      <section class="intro" aria-labelledby="intro-title">
+        <h1 id="intro-title">
+          One human. One AI.<br /><em>Better together.</em>
+        </h1>
+        <p>
+          I’m Srijan, a developer and student in India. Sarah is my AI companion
+          from my Sera project. This little city turns my public GitHub
+          contribution days into a path we travel together — from our first
+          coffee to the final build.
+        </p>
       </section>
       <section class="work-section" id="work" aria-labelledby="work-title">
         <div class="work-heading">
           <div>
-            <p class="eyebrow">02 / BEYOND THE ARCADE</p>
+            <p class="eyebrow">02 / BEYOND THE CITY</p>
             <h2 id="work-title">
               I build things<br /><em>I wish existed.</em>
             </h2>
@@ -348,16 +161,11 @@
       </section>
     </main>
     <footer>
-      <span class="footer-signature">SRIJAN <b>×</b> SARAH</span>
-      <p>A little world on the internet. Built with a lot of heart.</p>
-      <a href="https://linkedin.com/in/srijan-saanand">Say hello ↗</a>
+      <span class="signature">SRIJAN <b>×</b> SARAH</span
+      ><span>A little world on the internet. Built with a lot of heart.</span
+      ><a href="play.html">Play the original city ↗</a
+      ><a href="https://linkedin.com/in/srijan-saanand">Say hello ↗</a>
     </footer>
-    <noscript
-      ><p class="noscript">
-        The game needs JavaScript. Enable it to play Signal / Run; the portfolio
-        links still work.
-      </p></noscript
-    >
-    <script type="module" src="signal.mjs?v=signal-1"></script>
+    <script type="module" src="together.mjs"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-name: Publish Signal Run
+name: Publish Code Together
 on:
   push:
     branches: [main]
@@ -26,11 +26,14 @@ jobs:
           node-version: "22"
       - run: npm ci
       - run: npm test
+      - name: Verify generated README story
+        run: npm run check:story
       - name: Verify desktop and touch gameplay
         run: |
-          python3 -m http.server 8084 --bind 127.0.0.1 --directory docs > /tmp/signal-preview.log 2>&1 &
+          PORT=8084 node scripts/preview-server.mjs > /tmp/signal-preview.log 2>&1 &
           curl --silent --fail --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:8084/ > /dev/null
           CHROME_BIN=/usr/bin/google-chrome FULL_CAMPAIGN=1 npm run test:visual
+          CHROME_BIN=/usr/bin/google-chrome VERIFY_STORY_LOOP=1 npm run test:story
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -50,6 +53,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy Signal Run
+      - name: Deploy Code Together
         id: deployment
         uses: actions/deploy-pages@v4

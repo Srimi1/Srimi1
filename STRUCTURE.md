@@ -1,17 +1,21 @@
 # Repository structure
 
-- `README.md`: GitHub profile, a still cover linking to the game, four existing projects, and the public activity chart.
-- `docs/index.html`: semantic title screen, game controls, Sarah's comms, mission explanation, and portfolio.
-- `docs/style.css`: responsive visual layout, locally hosted fonts, touch controls, fullscreen, and reduced motion.
-- `docs/signal-core.mjs`: game state, three sectors, movement/jump physics, collisions, attacks, damage, scoring, relays, Guardian, and terminal states. No DOM or browser dependency.
-- `docs/signal.mjs`: fixed-step browser loop, Canvas scene and character rendering, input, overlays, optional Web Audio, and local best scores.
-- `docs/runner.mjs`: frame coordinates and timing for the preserved eight-frame avatar atlas.
-- `docs/assets/`: original identities, optimized runtime assets, key art, static social cover, project logos, and licensed local fonts.
-- `docs/data/`: public GitHub snapshots and existing curated project metadata.
-- `scripts/public-calendar.mjs`, `scripts/refresh.mjs`, `scripts/generate.mjs`: public-data parsing and static chart maintenance.
-- `scripts/visual-check.mjs`: real browser input checks, screenshots, and optional still-cover export.
-- `tests/`: deterministic game, contribution-parser, and sprite tests.
-- `design/signal-art-prompt.md`: exact generation prompt and character-reference roles.
-- `.github/workflows/`: validated Pages deployment and public-profile data refresh.
+- `README.md`: automatic Code Together story, introduction, preserved selected projects, and activity chart.
+- `assets/code-together.gif`, `assets/code-together.json`: rendered loop and verifiable calendar/route provenance.
+- `docs/index.html`, `docs/together.css`, `docs/together.mjs`: automatic story page, semantic portfolio, pause, and reduced motion.
+- `docs/together-core.mjs`: contribution platforms, two independent autopilot characters, physical trajectories, and story chapters.
+- `docs/together-render.mjs`: Canvas coding/coffee scene, city, poses, physical jumps, build bloom, and embrace.
+- `docs/kinematics.mjs`: shared motion constants and landing physics.
+- `docs/assets/together/`: separate transparent character atlases, coordinated hug atlas, and actual social cover.
+- `docs/play.html`, `docs/style.css`, `docs/signal-core.mjs`, `docs/signal.mjs`: preserved original manual Signal / Run.
+- `docs/runner.mjs`, `docs/assets/`, `docs/data/`: original identities/game sprites, licensed fonts, selected project logos, and public snapshots.
+- `scripts/preview-server.mjs`: Node preview server and exporter asset serving.
+- `scripts/render-together.mjs`: browser checks, optimized GIF export/validation, provenance, and stale-output check.
+- `scripts/together-check.mjs`: real automatic playback, full-loop, and phone verification.
+- `scripts/visual-check.mjs`: original manual campaign verification.
+- `scripts/public-calendar.mjs`, `scripts/refresh.mjs`, `scripts/generate.mjs`: public calendar validation and chart maintenance.
+- `tests/`: duet calendar/physics, original game, public parser, and running-atlas tests.
+- `design/code-together-plan.md`, `design/code-together-art-prompts.md`: implemented concept and exact generation prompts.
+- `.github/workflows/`: verified Pages publication and daily contribution-story refresh.
 
-The new runtime has no third-party JavaScript dependencies. Puppeteer is used only during development and CI. Previous game code and the autoplay GIF are retained in Git history, rather than shipped on Pages.
+No external browser runtime dependencies are required. Puppeteer and gifenc are development dependencies; Gifsicle optimizes the rendered GIF.

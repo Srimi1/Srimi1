@@ -3,7 +3,7 @@ import { join } from "node:path";
 import assert from "node:assert/strict";
 import puppeteer from "puppeteer-core";
 
-const url = process.env.PREVIEW_URL || "http://127.0.0.1:8084/";
+const url = process.env.PREVIEW_URL || "http://127.0.0.1:8084/play.html";
 const output = process.env.VISUAL_OUTPUT || join(process.cwd(), "qa");
 const candidates = [
   process.env.CHROME_BIN,

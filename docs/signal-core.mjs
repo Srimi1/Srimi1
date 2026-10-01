@@ -1,4 +1,10 @@
 // Signal / Run's simulation. No browser, network, or rendering dependencies.
+import {
+  integrateBody,
+  GRAVITY,
+  JUMP_SPEED,
+  RUN_SPEED,
+} from "./kinematics.mjs";
 export const VIEW = { width: 1120, height: 630, ground: 534 };
 export const STEP = 1 / 120;
 export const SECTORS = [
@@ -279,7 +285,7 @@ export function stepGame(game, input = {}, dt = STEP) {
   if (input.jumpPressed) p.jumpBuffer = 0.15;
   if (p.grounded) p.coyote = 0.1;
   if (p.jumpBuffer > 0 && p.coyote > 0 && p.dashTime === 0) {
-    p.vy = -700;
+    p.vy = -JUMP_SPEED;
     p.grounded = false;
     p.coyote = 0;
     p.jumpBuffer = 0;
@@ -311,30 +317,12 @@ export function stepGame(game, input = {}, dt = STEP) {
     p.vx = p.facing * 920;
     p.vy = 0;
   } else {
-    const target = axis * 300;
+    const target = axis * RUN_SPEED;
     p.vx += (target - p.vx) * Math.min(1, dt * (p.grounded ? 19 : 11));
-    p.vy = Math.min(860, p.vy + 1750 * dt);
+    p.vy = Math.min(860, p.vy + GRAVITY * dt);
     if (axis) p.facing = axis;
   }
-  const previousFeet = p.y + p.h;
-  p.x = clamp(p.x + p.vx * dt, 0, world.width - p.w);
-  p.y += p.vy * dt;
-  p.grounded = false;
-  if (p.vy >= 0) {
-    for (const platform of [...world.platforms].sort((a, b) => a.y - b.y)) {
-      if (
-        p.x + p.w > platform.x &&
-        p.x < platform.x + platform.w &&
-        previousFeet <= platform.y + 1 &&
-        p.y + p.h >= platform.y
-      ) {
-        p.y = platform.y - p.h;
-        p.vy = 0;
-        p.grounded = true;
-        break;
-      }
-    }
-  }
+  integrateBody(p, world.platforms, world.width, dt);
   if (p.y > VIEW.height + 100) hurt(game, p.x);
   for (const memory of world.memories) {
     if (!memory.taken && overlaps(p, memory)) {

@@ -6,12 +6,17 @@
     "generate": "node scripts/generate.mjs",
     "refresh": "node scripts/refresh.mjs",
     "test": "node --test tests/*.test.mjs",
-    "test:visual": "node scripts/visual-check.mjs"
+    "test:visual": "node scripts/visual-check.mjs",
+    "render:story": "node scripts/render-together.mjs",
+    "check:story": "node scripts/render-together.mjs --check",
+    "test:story": "node scripts/together-check.mjs",
+    "preview": "node scripts/preview-server.mjs"
   },
   "engines": {
     "node": ">=22"
   },
   "devDependencies": {
+    "gifenc": "1.0.3",
     "puppeteer-core": "25.10.0"
   }
 }
