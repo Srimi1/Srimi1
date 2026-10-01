@@ -1,35 +1,30 @@
-# Profile maintenance
+# Maintaining Signal / Run
 
-The previous profile is preserved in `README.previous.md` and in Git history. This redesign changes only the profile repository; the project repositories and the GitHub account avatar are untouched.
+The GitHub profile uses a static, clickable cover; GitHub Pages serves the playable game from `docs/`. No run begins before a player presses Enter the city. The existing GitHub account avatar is unchanged.
 
-## Data and refresh
+## Development and verification
 
-`npm run refresh` reads GitHub's signed-out public contribution calendar and every page of public owned repositories, then regenerates the SVGs. It requires `GH_TOKEN` or `GITHUB_TOKEN`. It publishes an explicit allowlist of public metadata fields. Private repository names, descriptions, contents, and hidden activity are never part of the public snapshot. The calendar request has no Authorization header, even when the repository API uses a token. A change to GitHub’s calendar HTML fails closed instead of fabricating counts.
+Use Node 22 or later and run `npm ci`. Preview the site with `python3 -m http.server 8084 --bind 127.0.0.1 --directory docs` and open http://127.0.0.1:8084/.
 
-`npm run generate` rebuilds assets from the checked-in snapshot without credentials. It reads `docs/assets/avatar.png` but never writes it. `npm test` checks calendar parsing, streak calculations, full-year slot generation, one/two/three-hit durability, protected contribution blocks, game phases, scoring, and a Matter.js collision reflection. Node 22 or later is required. Matter.js 0.20.0 is the only runtime dependency and its browser build is vendored at `docs/vendor/matter.min.js` for reliable static hosting.
+- `npm test` checks the calendar parser, sprite atlas, and game rules, including a complete three-sector victory using only valid controls in standard and assist mode.
+- `npm run test:visual` checks desktop and phone layout, keyboard and touch movement, jump, attacks, pause/focus behavior, first-sector completion, progression, saved scores, and absence of browser errors. It writes screenshots to ignored `qa/`.
+- `EXPORT_COVER=1 npm run test:visual` also exports the still title screen to `assets/signal-cover.jpg` and its byte-identical social-preview copy in `docs/assets/`. Run this after title-screen design changes.
+- Set `CHROME_BIN`, `PREVIEW_URL`, or `VISUAL_OUTPUT` when using a different browser executable, preview port, or screenshot directory. The script detects macOS Chrome and common Linux Chrome/Chromium paths.
 
-The refresh workflow runs daily at 01:23 UTC and can be dispatched manually. GitHub may delay scheduled runs. A failed API request leaves the last committed snapshot intact. The update date is visible on the charts and playground. GitHub's calendar can include up to 371 days across 53 weeks. Active days have a positive contribution count; quiet days have zero. An unfinished today does not reset the current streak until another quiet date intervenes.
-
-The language chart counts original public repositories by primary language; forks and repositories without a detected language are excluded from the bars. It does not claim to measure commit language or proficiency. Partial months in the monthly chart remain partial.
+The publish workflow tests the rules and real browser interactions before deploying. Screenshots from CI are retained as a workflow artifact. A failed check prevents the new Pages deployment.
 
 ## Game
 
-GitHub READMEs cannot execute JavaScript, so `assets/breakout-v2.svg` is a deliberately static preview with no fake ball, paddle, hit spark, or mascot animation. It links to the playable GitHub Pages edition at https://srimi1.github.io/Srimi1/.
+Three rooftop sectors lead to the final Null Guardian. Each relay requires six memory fragments; the final relay additionally requires defeating the Guardian. Players directly control movement, variable-height jump, dash attack, and Sarah's area pulse. All fourteen memories in each sector are optional beyond the six required. The game has no imposed time limit; speed and pickup/attack combos reward better runs.
 
-The playable game builds all 365 dates in 2026. Dates after the public snapshot are non-colliding outlines. Elapsed quiet dates are destructible blocks: the first two days of a quiet run require one hit, days three through six require two, and day seven onward requires three. Dates with recorded contributions are indestructible pass-through energy shields whose shade follows GitHub contribution intensity. They emit collision events and visual/audio feedback but do not alter the ball trajectory, preventing quiet targets from becoming permanently enclosed. The player wins by clearing every quiet block; protected blocks remain standing.
+`docs/signal-core.mjs` owns deterministic simulation and transitions. `docs/signal.mjs` handles Canvas rendering, original character sprites, keyboard and touch input, HUD, story messages, synthesized audio, fullscreen, and persistence. The simulation advances in 1/120-second steps. Holding jump gives more height; coyote time and jump buffering allow forgiving platform controls.
 
-Matter.js owns ball, paddle, wall, brick, and loss-sensor collisions. `docs/breakout-core.mjs` owns deterministic calendar and game rules. `docs/breakout.mjs` connects the physics engine to SVG rendering, staged cracks, shatter fragments, impact rings, a short ball trail, Web Audio feedback, combo scoring, saved best score, and pointer/touch/keyboard input. Pause freezes the simulation; hiding the tab auto-pauses. Reduced motion removes transient animation and lowers the starting speed. The public data is also available as an accessible text table.
+Pause freezes the simulation. Leaving or hiding the tab pauses it automatically; returning requires a deliberate resume. The title screen and overlays do not run an idle simulation. Reduced motion suppresses screen shake and particle bursts. Sound is off until the player enables it. Assist mode increases health, shortens dash cooldown, and increases pulse recharge and reach. Scores for standard and assist mode are stored separately on the current device; unavailable browser storage does not prevent play.
 
-Preview locally with `python3 -m http.server 8080 --directory docs`, then open http://localhost:8080. GitHub Pages is configured to deploy through Actions, serving only `docs/`.
+Sarah's dialogue is written for the game. No live AI service, account, API, analytics, or tracking SDK is used. Runtime artwork and fonts are hosted with the game.
 
-## Avatar and visual assets
+## Profile graphics and identity
 
-`docs/assets/avatar.png` is the existing avatar and must remain byte-identical. The generated hero embeds this file so GitHub's image renderer has no external image dependency. The GitHub account photo is a separate account setting and is never changed by this repository.
+The daily refresh reads only GitHub's public contribution calendar and allowlisted public repository metadata. It updates the static contribution chart; it does not rewrite the game, README, cover, character identities, or project selection. `npm run generate` rebuilds these static graphics from the checked-in snapshot without credentials. `npm run refresh` needs `GH_TOKEN` or `GITHUB_TOKEN`, fails closed on source changes, and leaves the previous snapshot intact on failure.
 
-The game art direction and impact references live in `design/` and are documented in `ASSETS.md`. P-Agents had no project identity asset, so `docs/assets/projects/p-agents.jpg` provides a generated mark. Existing project logos remain unchanged.
-
-## Project selection and logo motion
-
-The profile shows exactly four evidence-backed repositories: NotchHub, P-Agents, Internet Speed Reader, and The Keyboard Project. Selection requires a substantial implementation, concrete proof or reproducible validation, meaningful quality gates, reproducible setup, and honest claim boundaries. Stars and recency are not selection criteria. Experimental and partial projects remain available in the user's repository list but are not promoted on the profile.
-
-`docs/data/featured-projects.json` is the editorial shortlist and source for generated README logo wrappers. `assets/logo-orbits/*.svg` embeds each selected logo and applies a complete 360-degree CSS 3D rotation with a stationary reduced-motion fallback. The GitHub Pages cards apply the same rotation directly in CSS.
+`docs/assets/avatar.png` is the original avatar. Generation reads it and must never replace it. Its expected SHA-256 is documented in `ASSETS.md`. The four selected projects and their original marks remain preserved. `README.previous.md` and `design/legacy-breakout-notes.md` record earlier designs; their instructions describe the retired arcade.

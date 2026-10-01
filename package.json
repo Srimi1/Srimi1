@@ -11,9 +11,6 @@
   "engines": {
     "node": ">=22"
   },
-  "dependencies": {
-    "matter-js": "0.20.0"
-  },
   "devDependencies": {
     "puppeteer-core": "25.10.0"
   }

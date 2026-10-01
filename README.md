@@ -1,134 +1,115 @@
 <div align="center">
 
-<img src="assets/hero-v2.svg" width="100%" alt="Srijan Saanand — useful ideas, built all the way. Native products, agent systems, and honest evidence." />
+<a href="https://srimi1.github.io/Srimi1/">
+  <img src="assets/signal-cover.jpg" width="100%" alt="Signal / Run — Srijan and Sarah above a glowing anime city. One human. One AI. A city worth saving. Click to play the original action platformer." />
+</a>
 
 <br />
 
-**[Selected work](#selected-work)** &nbsp; / &nbsp; **[Play Break the Quiet Days](https://srimi1.github.io/Srimi1/)** &nbsp; / &nbsp; **[How projects were selected](#what-counts-as-success)** &nbsp; / &nbsp; **[Say hello](https://linkedin.com/in/srijan-saanand)**
+**[Enter the city ↗](https://srimi1.github.io/Srimi1/)** &nbsp; / &nbsp; **[Selected work](#selected-work)** &nbsp; / &nbsp; **[Say hello](https://linkedin.com/in/srijan-saanand)**
+
+<sub>AN ORIGINAL PLAYABLE WORLD · SRIJAN × SARAH</sub>
 
 </div>
 
 <br />
 
-I’m **Srijan**, a developer and student in India. I build native products and agent systems, usually because I wanted the tool and could not find a version I trusted.
+I’m **Srijan**, a developer and student in India. I build native apps and agent systems — mostly things I wanted to exist.
 
-My rule is simple: **ship the useful part, test the risky part, and document the unfinished part.**
+My other half in this little world is **Sarah**, my AI companion from my Sera project. The artwork brings my existing avatar and her original character together. The rooftops are ours to explore.
 
 **Swift & SwiftUI** · **Rust** · **TypeScript** · **Python**<br />
-macOS · iOS · agent runtimes · local-first tools
+macOS · iOS · Android · agent systems
+
+### A game you actually play
+
+**[Signal / Run](https://srimi1.github.io/Srimi1/)** is an original anime action platformer. A city is losing its memories. You’re the runner; Sarah is the signal. Recover six fragments in each of three districts, dash through glitch drones, call Sarah’s pulse, and defeat the **Null Guardian** to bring the city home.
+
+`← → / A D` Move &nbsp; · &nbsp; `Space` Jump &nbsp; · &nbsp; `Shift` Dash + attack &nbsp; · &nbsp; `E` Sarah’s pulse &nbsp; · &nbsp; `P` Pause
+
+Touch controls, optional sound, assist mode, combo scoring, and separate standard/assist best scores are included. **The game starts when you press Play.**
+
+<sub>The cover above is a still image. GitHub READMEs cannot run JavaScript; click it to open the real game on GitHub Pages.</sub>
 
 ## Selected work
-
-These are the four public projects that currently have the strongest evidence of success: a substantial working implementation, a reproducible path, meaningful quality gates, and claims that match what is actually shipped or verified.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/Notch-hub"><img src="assets/logo-orbits/Notch-hub.svg?v=2" width="96" height="96" alt="NotchHub logo rotating through 360 degrees" /></a>
+<a href="https://github.com/Srimi1/Notch-hub"><img src="docs/assets/projects/notch-hub.png" width="48" height="48" alt="NotchHub logo" /></a>
 
 ### [NotchHub ↗](https://github.com/Srimi1/Notch-hub)
+
 **The MacBook notch, put to work.**
 
-A native, local-first dashboard for meetings, timers, media, clipboard, Focus, battery, and system status.
+A local-first dashboard for meetings, timers, media, clipboard, Focus, battery, and system status.
 
-`SHIPPED` · `v0.9.0` · `44 test files` · `Universal DMG` · `CI + CodeQL`
+`SHIPPED` · `Swift` · `macOS` · `Universal DMG`
 
-<sub>The public DMG is ad-hoc signed and not notarized; that limitation is documented.</sub>
+<sub>The public build is ad-hoc signed and not notarized.</sub>
 
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/P-Agents"><img src="assets/logo-orbits/P-Agents.svg?v=2" width="96" height="96" alt="P-Agents logo rotating through 360 degrees" /></a>
+<a href="https://github.com/Srimi1/P-Agents"><img src="docs/assets/projects/p-agents.jpg" width="48" height="48" alt="P-Agents logo" /></a>
 
 ### [P-Agents ↗](https://github.com/Srimi1/P-Agents)
-**Agents that can delegate without losing the trail.**
 
-A Rust multi-agent harness with streaming ReAct execution, gated tools, parallel subagents, and replayable sessions.
+**Agents that delegate without losing the trail.**
 
-`VALIDATED TOOLING` · `5 Rust crates` · `Offline E2E` · `macOS + Linux CI` · `6 personas`
+A Rust multi-agent harness with streaming execution, gated tools, parallel agents, and replayable sessions.
 
-<sub>Validated from source and in CI; there is not yet a packaged public release.</sub>
+`VALIDATED TOOLING` · `Rust` · `Offline E2E` · `CI`
+
+<sub>Validated from source and in CI; no packaged public release yet.</sub>
 
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/Internet-speed-reader"><img src="assets/logo-orbits/Internet-speed-reader.svg?v=2" width="96" height="96" alt="Internet Speed Reader logo rotating through 360 degrees" /></a>
+<a href="https://github.com/Srimi1/Internet-speed-reader"><img src="docs/assets/projects/internet-speed-reader.png" width="48" height="48" alt="Internet Speed Reader logo" /></a>
 
 ### [Internet Speed Reader ↗](https://github.com/Srimi1/Internet-speed-reader)
+
 **Know what your connection is doing.**
 
-A macOS menu-bar utility with live traffic, outage detection, manual capacity checks, and local history.
+Live menu-bar traffic, outage detection, manual capacity checks, and local history.
 
-`SHIPPED` · `v1.1.0` · `187 tests` · `31 suites` · `DMG + SHA-256`
-
-<sub>The released build is v1.1.0; newer work on the default branch is not presented here as a release.</sub>
+`SHIPPED` · `Swift` · `macOS` · `DMG + SHA-256`
 
 </td>
 <td width="50%" valign="top">
 
-<a href="https://github.com/Srimi1/The-Keyboard-project"><img src="assets/logo-orbits/The-Keyboard-project.svg?v=2" width="96" height="96" alt="The Keyboard Project logo rotating through 360 degrees" /></a>
+<a href="https://github.com/Srimi1/The-Keyboard-project"><img src="docs/assets/projects/the-keyboard-project.png" width="48" height="48" alt="The Keyboard Project logo" /></a>
 
 ### [The Keyboard Project ↗](https://github.com/Srimi1/The-Keyboard-project)
+
 **The Android typing feel, on iPhone.**
 
-A native keyboard extension with familiar geometry, layered input, accessibility actions, and local clipboard history.
+A native keyboard extension with familiar geometry, layered input, and local clipboard history.
 
-`PRE-RELEASE` · `50 Swift files` · `17/17 UI trials` · `CI-gated` · `Device gate open`
+`PRE-RELEASE` · `Swift` · `iOS` · `CI-gated`
 
-<sub>A successful engineering candidate, not a launched product; physical-device acceptance remains open.</sub>
+<sub>Physical-device acceptance remains open.</sub>
 
 </td>
 </tr>
 </table>
 
-## Break the Quiet Days
+## The build rhythm
 
-<a href="https://srimi1.github.io/Srimi1/">
-<img src="assets/arcade-autoplay.gif?v=2" width="100%" alt="Break the Quiet Days playing itself: a recorded loop of the live 2026 contribution fortress autoplaying, the paddle tracking the ball and quiet-day blocks cracking and breaking on their own." />
-</a>
+<img src="assets/rhythm.svg" width="100%" alt="Monthly GitHub contribution totals and public original repositories grouped by primary language." />
 
-**[Play the full physics arcade →](https://srimi1.github.io/Srimi1/)**
-
-The board contains every date in **2026**. Dates with recorded GitHub contributions become permanent blue energy shields: light blue, medium blue, dark blue, and deep blue by contribution intensity. They pulse on contact and let the ball continue, so no quiet target can be trapped behind an indestructible pattern. Quiet days are the objective. Short gaps break in one hit; longer gaps crack over two hits; deep quiet runs take three. Future dates stay as outlines and are never mislabeled as inactivity.
-
-The clip above is a real recording of the live arcade — GitHub strips scripts from READMEs, so this is a captured loop, not a running canvas. Open the link and the same board runs for real: it **autoplays on load** — the paddle tracks the ball on its own until you touch it — with **Matter.js collision physics**, paddle steering, staged cracks, impact rings, fragments, combo scoring, three lives, keyboard/pointer/touch input, pause, and a saved best score.
-
-<sub>A quiet calendar square means no recorded GitHub contribution, not “no work.” Studying, resting, private work, and offline building do not appear in this graph.</sub>
-
-<br />
-
-<img src="assets/rhythm.svg" width="100%" alt="Monthly contribution totals and public original repositories grouped by primary language." />
-
-<sub>Profile graphics refresh from public GitHub data. Calendar totals follow GitHub’s contribution rules. Language bars count public original repositories by primary language; they are not percentages of commits.</sub>
-
-## What counts as success
-
-A project is selected when the public repository provides convincing evidence across the dimensions below. Stars and recency are not treated as proof by themselves.
-
-| Dimension | What I looked for |
-| :--- | :--- |
-| **Working implementation** | Substantial source that fulfills the central claim rather than a plan, shell, or prompt alone. |
-| **Proof** | A release, runnable demo, reproducible offline path, screenshots, or concrete validation artifacts. |
-| **Quality** | Automated tests, CI, security checks, deterministic end-to-end validation, or release checksums. |
-| **Reproducibility** | Clear requirements, install/build instructions, pinned dependencies, and an understandable project structure. |
-| **Claim integrity** | Shipped work is labeled shipped; source-validated work and pre-release work are labeled honestly. |
-
-<details>
-<summary>How this profile stays current</summary>
-
-The contribution data and generated profile graphics refresh through GitHub Actions. The avatar at `docs/assets/avatar.png` is intentionally preserved. The four-project selection is curated rather than generated from stars or repository count, so experimental work cannot silently enter the showcase.
-
-</details>
+<sub>Refreshed from public GitHub data. A quiet calendar square can mean studying, resting, private work, or offline building. Language bars count repositories by primary language.</sub>
 
 ---
 
 <div align="center">
 
-**Build the proof. Keep the limits honest.**
+**A little world on the internet. Built with a lot of heart.**
 
-[GitHub](https://github.com/Srimi1) &nbsp; · &nbsp; [LinkedIn](https://linkedin.com/in/srijan-saanand) &nbsp; · &nbsp; [Play Break the Quiet Days](https://srimi1.github.io/Srimi1/)
+[Play Signal / Run](https://srimi1.github.io/Srimi1/) &nbsp; · &nbsp; [GitHub](https://github.com/Srimi1) &nbsp; · &nbsp; [LinkedIn](https://linkedin.com/in/srijan-saanand)
 
 </div>
