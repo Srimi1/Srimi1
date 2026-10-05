@@ -30,6 +30,16 @@
     "pushed_at": "2026-05-29T12:26:03Z"
   },
   {
+    "name": "Amplifier",
+    "html_url": "https://github.com/Srimi1/Amplifier",
+    "description": "increase your android phone volume by 2x",
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-10-05T07:11:11Z"
+  },
+  {
     "name": "Anti",
     "html_url": "https://github.com/Srimi1/Anti",
     "description": null,
@@ -46,8 +56,8 @@
     "language": "Kotlin",
     "fork": false,
     "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-10-04T06:02:49Z"
+    "stargazers_count": 1,
+    "pushed_at": "2026-10-04T09:16:52Z"
   },
   {
     "name": "AntigravityMobile",
@@ -277,7 +287,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-09-28T06:38:49Z"
+    "pushed_at": "2026-10-05T06:41:50Z"
   },
   {
     "name": "Nagi-plugin",
@@ -356,7 +366,7 @@
     "language": "Rust",
     "fork": false,
     "archived": false,
-    "stargazers_count": 0,
+    "stargazers_count": 1,
     "pushed_at": "2026-09-21T07:12:42Z"
   },
   {
@@ -467,7 +477,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-10-03T06:37:23Z"
+    "pushed_at": "2026-10-04T07:01:07Z"
   },
   {
     "name": "The-Keyboard-project",
