@@ -70,6 +70,16 @@
     "pushed_at": "2026-09-29T12:51:28Z"
   },
   {
+    "name": "AnyPS5",
+    "html_url": "https://github.com/Srimi1/AnyPS5",
+    "description": "Tool for automatic PS5 executables porting to Linux and Windows",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-10-07T12:55:47Z"
+  },
+  {
     "name": "bots",
     "html_url": "https://github.com/Srimi1/bots",
     "description": null,
@@ -436,8 +446,8 @@
     "language": "TypeScript",
     "fork": false,
     "archived": false,
-    "stargazers_count": 0,
-    "pushed_at": "2026-10-07T04:34:33Z"
+    "stargazers_count": 1,
+    "pushed_at": "2026-10-07T21:16:46Z"
   },
   {
     "name": "Research-Pro",
@@ -487,7 +497,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-10-06T07:38:33Z"
+    "pushed_at": "2026-10-07T07:19:02Z"
   },
   {
     "name": "The-Keyboard-project",
