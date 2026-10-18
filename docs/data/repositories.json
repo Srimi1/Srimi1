@@ -497,7 +497,17 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-10-16T05:56:17Z"
+    "pushed_at": "2026-10-17T05:40:52Z"
+  },
+  {
+    "name": "sxcmt-attend",
+    "html_url": "https://github.com/Srimi1/sxcmt-attend",
+    "description": null,
+    "language": "Kotlin",
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-10-17T11:31:25Z"
   },
   {
     "name": "The-Keyboard-project",
