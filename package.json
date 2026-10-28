@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "generate": "node scripts/generate.mjs",
+    "optimize:icons": "node scripts/optimize-icons.mjs",
     "refresh": "node scripts/refresh.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:visual": "node scripts/visual-check.mjs",

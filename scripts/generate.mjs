@@ -1,5 +1,4 @@
 import { readFile, writeFile, copyFile } from "node:fs/promises";
-import { extname } from "node:path";
 import { summarize } from "../docs/profile-data.mjs";
 
 const read = (path) => readFile(path, "utf8").then(JSON.parse);
@@ -11,49 +10,12 @@ const escapeXml = (value) =>
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll('"', "&quot;");
-const mimeFor = (path) =>
-  ({ ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml" })[
-    extname(path).toLowerCase()
-  ] || "image/png";
-const dataUri = async (path) =>
-  `data:${mimeFor(path)};base64,${(await readFile(path)).toString("base64")}`;
-const avatar = await dataUri("docs/assets/avatar.png");
-
 const start = (height, title, description) =>
   `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="${height}" viewBox="0 0 1100 ${height}" role="img"><title>${escapeXml(title)}</title><desc>${escapeXml(description)}</desc><style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:#edf5ff}.muted{fill:#8eabc3}.mono{font-family:"SF Mono",Monaco,"Cascadia Code","Roboto Mono",Consolas,monospace;letter-spacing:1.5px}</style><rect width="1100" height="${height}" rx="24" fill="#07131f" stroke="#1c3a50" stroke-width="1.5"/>`;
 const text = (x, y, value, size = 16, cssClass = "") =>
   `<text x="${x}" y="${y}" font-size="${size}" class="${cssClass}">${escapeXml(value)}</text>`;
 
-// 1. HERO BANNER — the avatar remains read-only and byte-identical.
-let hero = start(
-  420,
-  "Srijan Saanand — Build the proof.",
-  "Developer and student in India building native products and agent systems with honest evidence.",
-);
-hero += `<defs><clipPath id="portrait"><rect x="720" y="24" width="356" height="372" rx="18"/></clipPath><linearGradient id="line"><stop stop-color="#168fe4"/><stop offset=".5" stop-color="#56d7ff"/><stop offset="1" stop-color="#61e6ca"/></linearGradient></defs><path d="M40 36H665" stroke="#203d52"/><circle cx="49" cy="69" r="4" fill="#61e6ca"/>`;
-hero += text(65, 74, "SRIJAN SAANAND / @SRIMI1", 14, "mono");
-hero += text(40, 150, "Useful ideas.", 54);
-hero += text(40, 211, "Built all the way.", 54);
-hero += text(
-  40,
-  263,
-  "Native products. Agent systems. Honest evidence.",
-  20,
-  "muted",
-);
-hero += text(40, 300, "Developer & student · India", 17, "muted");
-hero += `<rect x="40" y="337" width="626" height="3" rx="2" fill="url(#line)"/>`;
-hero += text(
-  40,
-  375,
-  "SWIFT   /   RUST   /   TYPESCRIPT   /   PYTHON",
-  12,
-  "mono",
-);
-hero += `<image x="720" y="24" width="356" height="372" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait)" xlink:href="${avatar}"/></svg>`;
-await writeFile("assets/hero-v2.svg", hero);
-
-// 3. RHYTHM CHART
+// Public activity only. Historical hero assets stay preserved, not regenerated.
 const months = {};
 for (const week of data.weeks)
   for (const day of week.contributionDays)
@@ -104,5 +66,5 @@ await writeFile("assets/rhythm.svg", chart);
 await copyFile("assets/rhythm.svg", "docs/assets/rhythm.svg");
 
 console.log(
-  `Generated static profile graphics: ${repos.length} public repos, ${stats.days} calendar days.`,
+  `Generated public activity chart: ${repos.length} public repos, ${stats.days} calendar days.`,
 );

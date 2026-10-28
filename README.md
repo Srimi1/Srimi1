@@ -1,105 +1,60 @@
-<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/studio-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="assets/studio-light.svg" />
+  <img src="assets/studio-light.svg" width="100%" alt="Srijan × Sarah — Quiet Systems Studio" />
+</picture>
 
-# Hi, I'm Srijan 👋
+# Hi, I'm Srijan.
 
-<img src="assets/profile-intro.svg" width="640" height="44" alt="Native apps. Agent systems. Built with Sarah." />
+Developer and student in India. I build **native apps and agent systems**—mostly things I wanted to exist.
 
-Developer & student in India · Native apps · Agent systems
-
-[My projects](#selected-work) · [Portfolio](https://srimi1.github.io/Srimi1/) · [LinkedIn](https://linkedin.com/in/srijan-saanand)
-
-<a href="https://srimi1.github.io/Srimi1/#work"><img src="assets/profile-cover.jpg" width="100%" alt="Srijan and Sarah, his AI companion from Sera, together above an anime city. I build things. With a little AI. Explore my projects." /></a>
-
-<sub>SRIJAN × SARAH · HUMAN + AI</sub>
-
-</div>
-
-I build native apps and agent systems—mostly things I wanted to exist. **Sarah** is my AI companion from **Sera**. The artwork combines my original avatar with her character.
-
-### Tools I use
-
-<img src="docs/assets/badges/swift.svg" alt="Swift" /> <img src="docs/assets/badges/rust.svg" alt="Rust" /> <img src="docs/assets/badges/typescript.svg" alt="TypeScript" /> <img src="docs/assets/badges/python.svg" alt="Python" />
-
-**Swift & SwiftUI** · **Rust** · **TypeScript** · **Python**<br />
-macOS · iOS · Android · agent systems
+[Open the studio ↗](https://srimi1.github.io/Srimi1/#work) · [Selected work](#selected-work) · [LinkedIn](https://linkedin.com/in/srijan-saanand)
 
 ## Selected work
 
-<table>
-<tr>
-<td width="50%" valign="top">
+**[NotchHub ↗](https://github.com/Srimi1/Notch-hub)** · macOS · Public build<br />
+The MacBook notch, put to work: a local-first home for meetings, timers, media, clipboard, and system status.
 
-<a href="https://github.com/Srimi1/Notch-hub"><img src="docs/assets/projects/notch-hub.png" width="48" height="48" alt="NotchHub logo" /></a>
+**[P-Agents ↗](https://github.com/Srimi1/P-Agents)** · Rust · Source + CI<br />
+A multi-agent harness with streaming execution, gated tools, parallel agents, and replayable sessions.
 
-### [NotchHub ↗](https://github.com/Srimi1/Notch-hub)
-
-**The MacBook notch, put to work.**
-
-A local-first dashboard for meetings, timers, media, clipboard, Focus, battery, and system status.
-
-`SHIPPED` · `Swift` · `macOS` · `Universal DMG`
-
-<sub>The public build is ad-hoc signed and not notarized.</sub>
-
-</td>
-<td width="50%" valign="top">
-
-<a href="https://github.com/Srimi1/P-Agents"><img src="docs/assets/projects/p-agents.jpg" width="48" height="48" alt="P-Agents logo" /></a>
-
-### [P-Agents ↗](https://github.com/Srimi1/P-Agents)
-
-**Agents that delegate without losing the trail.**
-
-A Rust multi-agent harness with streaming execution, gated tools, parallel agents, and replayable sessions.
-
-`VALIDATED TOOLING` · `Rust` · `Offline E2E` · `CI`
-
-<sub>Validated from source and in CI; no packaged public release yet.</sub>
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-<a href="https://github.com/Srimi1/Internet-speed-reader"><img src="docs/assets/projects/internet-speed-reader.png" width="48" height="48" alt="Internet Speed Reader logo" /></a>
-
-### [Internet Speed Reader ↗](https://github.com/Srimi1/Internet-speed-reader)
-
-**Know what your connection is doing.**
-
+**[Internet Speed Reader ↗](https://github.com/Srimi1/Internet-speed-reader)** · macOS · Public build<br />
 Live menu-bar traffic, outage detection, manual capacity checks, and local history.
 
-`SHIPPED` · `Swift` · `macOS` · `DMG + SHA-256`
+**[The Keyboard Project ↗](https://github.com/Srimi1/The-Keyboard-project)** · iOS · Pre-release<br />
+The Android typing feel, on iPhone: familiar geometry, layered input, and local clipboard history.
 
-</td>
-<td width="50%" valign="top">
+<details>
+<summary>Build notes & availability</summary>
 
-<a href="https://github.com/Srimi1/The-Keyboard-project"><img src="docs/assets/projects/the-keyboard-project.png" width="48" height="48" alt="The Keyboard Project logo" /></a>
+NotchHub has a universal DMG; its public build is ad-hoc signed and not notarized. Internet Speed Reader provides a DMG and SHA-256 checksum.
 
-### [The Keyboard Project ↗](https://github.com/Srimi1/The-Keyboard-project)
+P-Agents is validated from source and in CI, with no packaged public release yet. The Keyboard Project still has physical-device acceptance work open.
 
-**The Android typing feel, on iPhone.**
+</details>
 
-A native keyboard extension with familiar geometry, layered input, and local clipboard history.
+**Tools:** Swift & SwiftUI · Rust · TypeScript · Python
 
-`PRE-RELEASE` · `Swift` · `iOS` · `CI-gated`
+---
 
-<sub>Physical-device acceptance remains open.</sub>
+<details>
+<summary>Srijan × Sarah — a little more personality</summary>
 
-</td>
-</tr>
-</table>
+**Sarah** is my AI companion from **Sera**. The artwork brings my original avatar and her character together in a small anime world.
 
-## The build rhythm
+<a href="https://srimi1.github.io/Srimi1/#sarah"><img src="assets/profile-cover.jpg" width="720" alt="Srijan's original avatar and Sarah, his blue-haired AI companion, together above an anime city." /></a>
+
+<sub>A scripted studio note from Sarah: “You found the quiet corner. Stay curious.”</sub>
+
+[Visit our corner of the studio ↗](https://srimi1.github.io/Srimi1/#sarah)
+
+</details>
+
+<details>
+<summary>The build rhythm</summary>
 
 <img src="assets/rhythm.svg" width="100%" alt="Monthly GitHub contribution totals and public original repositories grouped by primary language." />
 
 <sub>Refreshed daily from public GitHub data. Quiet days can mean studying, resting, private work, or building offline. Language bars count repositories by primary language.</sub>
 
----
-
-<div align="center">
-
-[Srijan × Sarah](https://srimi1.github.io/Srimi1/) · [GitHub](https://github.com/Srimi1) · [LinkedIn](https://linkedin.com/in/srijan-saanand)
-
-</div>
+</details>

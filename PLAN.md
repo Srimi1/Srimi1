@@ -1,7 +1,7 @@
-# Srijan × Sarah profile
+# Quiet Systems Studio
 
-Create a straightforward GitHub profile and portfolio that combines Srijan's original avatar with Sarah from Sera. Use the existing static duo artwork, a small conventional typing introduction, concise skill badges, the preserved selected projects, and a public activity chart.
+Ten design directions were compared for personal fit, clarity, creativity, performance, and GitHub compatibility. Three independent agent reviews favored a compact project-first studio overall, borrowing product summaries, native disclosures, and a discoverable Srijan × Sarah detail.
 
-The website is a static portfolio. The former game and long animated story are removed, including their runtime and regeneration steps. Old play links redirect to the portfolio.
+The README uses native GitHub rendering: real text, links, a small theme-aware SVG, and expandable details. The companion Pages site provides category filters, theme selection, and a keyboard-accessible command menu through a small local module. Core content remains available without JavaScript. The existing character art and four project identities stay intact.
 
-The daily workflow only refreshes public data and static charts. The profile's text animation has a reduced-motion fallback and needs no external service. Inspiration: https://github.com/rzashakeri/beautify-github-profile.
+The design board and rationale live in `docs/designs.html` and `design/selection.md`; source examples live in `design/research.md`. The former game stays removed. Daily automation refreshes only public data and the activity chart.

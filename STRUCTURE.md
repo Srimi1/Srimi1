@@ -1,17 +1,18 @@
 # Repository structure
 
-- `README.md`: introduction, Srijan–Sarah artwork, skill badges, selected projects, and public activity.
-- `assets/profile-cover.jpg`, `assets/profile-intro.svg`, `assets/rhythm.svg`: static banner, small text animation, and public chart for GitHub.
-- `docs/index.html`, `docs/profile.css`: static portfolio with local artwork/fonts and project links.
-- `docs/play.html`: redirects old game links to the portfolio.
-- `docs/profile-data.mjs`: contribution summary for chart generation.
-- `docs/assets/`: preserved identities and project logos, duo art, local badges, licensed fonts, and mirrored profile graphics.
-- `docs/data/`: public GitHub snapshots and selected-project metadata.
-- `scripts/preview-server.mjs`: local static preview.
-- `scripts/visual-check.mjs`: desktop, tablet, and mobile portfolio checks; optional static-cover capture.
-- `scripts/public-calendar.mjs`, `scripts/refresh.mjs`, `scripts/generate.mjs`: public data validation and static-chart maintenance.
-- `tests/calendar.test.mjs`: parsing and fail-closed source validation.
-- `design/signal-art-prompt.md`: exact provenance prompt for the reused duo artwork.
-- `.github/workflows/`: portfolio deployment and daily public-chart refresh.
+- `README.md`: compact GitHub profile with selected work and native disclosures.
+- `assets/studio-light.svg`, `assets/studio-dark.svg`: theme-aware identity headers.
+- `assets/rhythm.svg`: generated public contribution and repository-language chart.
+- `docs/index.html`, `docs/profile.css`, `docs/profile.mjs`: progressively enhanced portfolio; no runtime dependencies or third-party requests.
+- `docs/designs.html`: visual comparison of ten design directions.
+- `docs/play.html`: redirect for historical links.
+- `docs/assets/`: preserved original art, 96px project-icon derivatives, local licensed fonts, and chart.
+- `docs/data/`: public snapshots and historical selected-project metadata.
+- `scripts/preview-server.mjs`, `scripts/visual-check.mjs`: local preview and browser verification.
+- `scripts/optimize-icons.mjs`: reproducible project-icon optimization.
+- `scripts/public-calendar.mjs`, `scripts/refresh.mjs`, `scripts/generate.mjs`: public-data validation and chart refresh.
+- `tests/calendar.test.mjs`: parser and source validation tests.
+- `design/research.md`, `design/selection.md`: sources and independent design judgments.
+- `.github/workflows/`: checked deployment and daily public-data refresh.
 
-The portfolio needs no JavaScript runtime. Puppeteer is only a development dependency. Historical README/design notes and unused original source assets remain preserved.
+Puppeteer is a development dependency only. Historical artwork, README versions, and source design notes remain preserved.

@@ -1,20 +1,20 @@
-# Maintaining the profile
+# Maintaining the studio
 
-The website is a static portfolio starring Srijan and Sarah from Sera. The README uses a still banner, a small typing introduction, skill badges, selected projects, and public activity. The game and long story animation are removed. `play.html` redirects old links to the portfolio.
+The profile uses a compact, theme-aware README and a static GitHub Pages portfolio. Projects and navigation work without JavaScript. The small local module adds project filters, a command menu, and a persistent theme choice. Sarah's note is authored content, not a live AI service.
 
 ## Preview and checks
 
 Use Node 22 or later and Chrome/Chromium. Run `npm ci`, then `npm run preview` and open http://127.0.0.1:8088/.
 
-- `npm test`: public-calendar parsing and validation.
-- `PREVIEW_URL=http://127.0.0.1:8088/ npm run test:visual`: desktop, tablet, and mobile layouts, local assets, project links, old-link redirect, and typing/reduced-motion behavior.
-- `PREVIEW_URL=http://127.0.0.1:8088/ EXPORT_COVER=1 npm run test:visual`: also capture the actual static portfolio hero for the README and social preview.
-- `npm run generate`: regenerate static public charts and mirror the current activity chart into the website.
+- `npm test`: public-calendar parsing and source validation.
+- `PREVIEW_URL=http://127.0.0.1:8088/ npm run test:visual`: responsive layouts, assets, filters, keyboard interactions, theme, and progressive enhancement.
+- `npm run generate`: regenerate the public activity chart and its website copy from checked-in snapshots.
+- `npm run optimize:icons`: recreate 96px WebP project icons and a 128px Sarah portrait from preserved originals. Needs Chrome/Chromium; set `CHROME_BIN` when needed.
 
-Set `CHROME_BIN` if Chrome is at another location. Screenshots go into ignored `qa/profile/`. When changing the hero layout, export its still banner again before publishing. Keep the two `profile-intro.svg` copies identical. Reduced-motion visitors see a complete static sentence.
+Browser screenshots go into ignored `qa/profile/`. The design comparison is at `docs/designs.html`; research and independent selection notes are in `design/`. Keep both README banner variants small and semantically equivalent. Keep critical introduction and project information in real text.
 
-## Daily refresh
+## Publishing and daily refresh
 
-The existing GitHub workflow runs daily and supports manual dispatch. It fetches the signed-out public contribution calendar and public repository metadata, validates the source, and updates only public data and static charts. It does not regenerate story animations or restore games. A source failure preserves the existing snapshot.
+The existing Pages workflow runs tests and browser checks before publishing `docs/` on pushes to `main`. No build framework or runtime service is required. The daily workflow fetches only public contributions and repository metadata, validates them, and updates public data and the activity chart. A source failure preserves the previous snapshot. Historical hero assets are no longer regenerated.
 
-Keep the original avatar, Sarah illustration, and selected-project identities unchanged. See `ASSETS.md` for sources and preserved art.
+Keep the original avatar, Sarah illustration, duo artwork, and project identities unchanged. Optimized icon derivatives preserve their source files. Keep `play.html` as an old-link redirect; the former game remains removed. See `ASSETS.md` for provenance.

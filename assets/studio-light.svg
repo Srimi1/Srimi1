@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 112" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Srijan × Sarah — Quiet Systems Studio</title>
+  <desc id="desc">A compact cream wordmark with two connected green signals, one for Srijan and one for Sarah.</desc>
+  <rect x=".5" y=".5" width="959" height="111" rx="12" fill="#FAFAF7" stroke="#E2E6DD"/>
+  <path d="M32 34v44" stroke="#36644A" stroke-width="3"/>
+  <text x="54" y="46" fill="#536650" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="13" letter-spacing="2">SRIJAN × SARAH</text>
+  <text x="52" y="79" fill="#192B21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="27" font-weight="600" letter-spacing="-.5">Quiet Systems Studio</text>
+  <path d="M786 56h40m-20 0v-17m0 17v17" stroke="#CAD8CB" stroke-width="1.5"/>
+  <circle cx="778" cy="56" r="8" fill="#36644A"/>
+  <circle cx="834" cy="56" r="8" stroke="#36644A" stroke-width="2"/>
+  <circle cx="806" cy="37" r="2.5" fill="#CAD8CB"/>
+  <circle cx="806" cy="75" r="2.5" fill="#CAD8CB"/>
+  <path d="M898 30h10v10m0 32v10h-10" stroke="#AABAA9" stroke-width="1.5"/>
+</svg>
