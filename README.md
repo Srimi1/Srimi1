@@ -8,20 +8,20 @@
 
 Developer and student in India. I build **native apps and agent systems**—mostly things I wanted to exist.
 
-[Open the studio ↗](https://srimi1.github.io/Srimi1/#work) · [Selected work](#selected-work) · [LinkedIn](https://linkedin.com/in/srijan-saanand)
+[Open the studio](https://srimi1.github.io/Srimi1/#work) · [Selected work](#selected-work) · [LinkedIn](https://linkedin.com/in/srijan-saanand)
 
 ## Selected work
 
-**[NotchHub ↗](https://github.com/Srimi1/Notch-hub)** · macOS · Public build<br />
+**[NotchHub](https://github.com/Srimi1/Notch-hub)** · macOS · Public build<br />
 The MacBook notch, put to work: a local-first home for meetings, timers, media, clipboard, and system status.
 
-**[P-Agents ↗](https://github.com/Srimi1/P-Agents)** · Rust · Source + CI<br />
+**[P-Agents](https://github.com/Srimi1/P-Agents)** · Rust · Source + CI<br />
 A multi-agent harness with streaming execution, gated tools, parallel agents, and replayable sessions.
 
-**[Internet Speed Reader ↗](https://github.com/Srimi1/Internet-speed-reader)** · macOS · Public build<br />
+**[Internet Speed Reader](https://github.com/Srimi1/Internet-speed-reader)** · macOS · Public build<br />
 Live menu-bar traffic, outage detection, manual capacity checks, and local history.
 
-**[The Keyboard Project ↗](https://github.com/Srimi1/The-Keyboard-project)** · iOS · Pre-release<br />
+**[The Keyboard Project](https://github.com/Srimi1/The-Keyboard-project)** · iOS · Pre-release<br />
 The Android typing feel, on iPhone: familiar geometry, layered input, and local clipboard history.
 
 <details>
@@ -46,7 +46,7 @@ P-Agents is validated from source and in CI, with no packaged public release yet
 
 <sub>A scripted studio note from Sarah: “You found the quiet corner. Stay curious.”</sub>
 
-[Visit our corner of the studio ↗](https://srimi1.github.io/Srimi1/#sarah)
+[Visit our corner of the studio](https://srimi1.github.io/Srimi1/#sarah)
 
 </details>
 
