@@ -517,7 +517,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-11-15T07:56:15Z"
+    "pushed_at": "2026-11-16T08:03:54Z"
   },
   {
     "name": "sxcmt-attend",
@@ -568,6 +568,16 @@
     "archived": false,
     "stargazers_count": 0,
     "pushed_at": "2026-06-17T18:17:31Z"
+  },
+  {
+    "name": "travel-hacking-toolkit",
+    "html_url": "https://github.com/Srimi1/travel-hacking-toolkit",
+    "description": "AI-powered travel hacking and search with cash, points, miles, and award flights. Drop-in skills and MCP servers for Claude, Codex, and OpenCode.",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-11-09T14:54:02Z"
   },
   {
     "name": "trieonlabs.com",
