@@ -130,6 +130,16 @@
     "pushed_at": "2026-06-16T14:40:21Z"
   },
   {
+    "name": "deckcraft",
+    "html_url": "https://github.com/Srimi1/deckcraft",
+    "description": "DeckCraft: presentations and slide shows; an open-source, clean-room presentation app in pure Rust. Part of the ArtCraft Crafting Apps.",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-11-18T11:09:59Z"
+  },
+  {
     "name": "depthwall",
     "html_url": "https://github.com/Srimi1/depthwall",
     "description": null,
@@ -208,6 +218,16 @@
     "archived": false,
     "stargazers_count": 0,
     "pushed_at": "2026-09-25T05:50:39Z"
+  },
+  {
+    "name": "gridcraft",
+    "html_url": "https://github.com/Srimi1/gridcraft",
+    "description": "GridCraft: an open-source, clean-room spreadsheet in pure Rust. By ArtCraft.",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-11-18T14:53:00Z"
   },
   {
     "name": "Internet-speed-reader",
@@ -400,6 +420,16 @@
     "pushed_at": "2026-08-27T17:07:45Z"
   },
   {
+    "name": "pdfcraft",
+    "html_url": "https://github.com/Srimi1/pdfcraft",
+    "description": "PdfCraft: An open-source PDF reader and editor written from scratch in pure Rust",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-11-18T15:20:25Z"
+  },
+  {
     "name": "potential-octo-dollop",
     "html_url": "https://github.com/Srimi1/potential-octo-dollop",
     "description": null,
@@ -517,7 +547,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-11-17T09:18:20Z"
+    "pushed_at": "2026-11-18T08:37:32Z"
   },
   {
     "name": "sxcmt-attend",
@@ -618,5 +648,15 @@
     "archived": false,
     "stargazers_count": 0,
     "pushed_at": "2026-08-22T11:22:37Z"
+  },
+  {
+    "name": "wordcraft",
+    "html_url": "https://github.com/Srimi1/wordcraft",
+    "description": "WordCraft: an open-source, clean-room word processor in pure Rust",
+    "language": null,
+    "fork": true,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-11-18T15:16:39Z"
   }
 ]
