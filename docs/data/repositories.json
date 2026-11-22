@@ -480,6 +480,16 @@
     "pushed_at": "2025-07-16T15:27:33Z"
   },
   {
+    "name": "Re-SPSS",
+    "html_url": "https://github.com/Srimi1/Re-SPSS",
+    "description": "free version of R",
+    "language": null,
+    "fork": false,
+    "archived": false,
+    "stargazers_count": 0,
+    "pushed_at": "2026-11-21T14:22:01Z"
+  },
+  {
     "name": "rea",
     "html_url": "https://github.com/Srimi1/rea",
     "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
@@ -547,7 +557,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-11-20T08:40:13Z"
+    "pushed_at": "2026-11-21T08:21:26Z"
   },
   {
     "name": "sxcmt-attend",
