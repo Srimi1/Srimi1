@@ -492,7 +492,7 @@
   {
     "name": "Re-SPSS",
     "html_url": "https://github.com/Srimi1/Re-SPSS",
-    "description": "free version of R",
+    "description": "Pre-alpha, nothing usable yet. A planned free and open source (GPL-3.0-or-later) statistics app that will run SPSS® syntax and open and save .sav files offline, built on GNU PSPP compiled to WebAssembly. Not affiliated with IBM.",
     "language": null,
     "fork": false,
     "archived": false,
@@ -567,7 +567,7 @@
     "fork": false,
     "archived": false,
     "stargazers_count": 0,
-    "pushed_at": "2026-11-22T08:10:02Z"
+    "pushed_at": "2026-11-23T09:13:25Z"
   },
   {
     "name": "sxcmt-attend",
